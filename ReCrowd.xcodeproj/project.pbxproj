@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
+		0AE8F0F51FE277660080359F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F41FE277660080359F /* LocationService.swift */; };
+		0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F61FE27BEE0080359F /* CheckInService.swift */; };
+		0AE8F0F91FE2831F0080359F /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F81FE2831F0080359F /* FirebaseService.swift */; };
+		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
 		5623B94AC79D4B944DB2A4DB /* Pods_ReCrowd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */; };
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
@@ -32,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		0AE8F0F41FE277660080359F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0AE8F0F61FE27BEE0080359F /* CheckInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
+		0AE8F0F81FE2831F0080359F /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReCrowd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3860F741519FCFE8F560C926 /* Pods-ReCrowd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowd/Pods-ReCrowd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -96,6 +106,9 @@
 			isa = PBXGroup;
 			children = (
 				5B336A6A1FE14B4800A91E61 /* LoginService.swift */,
+				0AE8F0F41FE277660080359F /* LocationService.swift */,
+				0AE8F0F61FE27BEE0080359F /* CheckInService.swift */,
+				0AE8F0F81FE2831F0080359F /* FirebaseService.swift */,
 			);
 			name = Services;
 			path = "New Group";
@@ -105,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				5B336A6D1FE153AB00A91E61 /* User.swift */,
+				0AE8F0FA1FE2846D0080359F /* Event.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -134,6 +148,7 @@
 			children = (
 				5BD969AF1FDFEAC900CF2F12 /* LoginViewController.swift */,
 				5B336A701FE160B900A91E61 /* HomeViewController.swift */,
+				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
@@ -398,10 +413,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AE8F0F51FE277660080359F /* LocationService.swift in Sources */,
 				5B336A711FE160B900A91E61 /* HomeViewController.swift in Sources */,
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				5BD969B01FDFEAC900CF2F12 /* LoginViewController.swift in Sources */,
+				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
+				0AE8F0F91FE2831F0080359F /* FirebaseService.swift in Sources */,
 				5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */,
+				0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */,
+				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
