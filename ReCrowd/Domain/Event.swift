@@ -14,7 +14,7 @@ class Event: NSObject {
     public var id: Int
     public var coordinates: String
     
-    init(named name: String, withId: Int, withCoordinates coordinates: String) {
+    init(named name: String, withId id: Int, withCoordinates coordinates: String) {
         self.name = name
         self.id = id
         self.coordinates = coordinates

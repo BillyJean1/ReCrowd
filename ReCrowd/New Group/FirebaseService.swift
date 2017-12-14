@@ -18,7 +18,7 @@ class FirebaseService: NSObject {
         // Firebase shit
     }
     
-    func registerCheckIn(eventInRange: Event) {
+    func registerCheckIn(withEvent eventInRange: Event) {
         // Firebase stuff (tududu du du duu (tudu du du du duu)
     }
 
