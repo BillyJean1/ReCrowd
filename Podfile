@@ -12,11 +12,16 @@ target 'ReCrowd' do
     inherit! :search_paths
     # Pods for testing
   end
-        pod 'Firebase/Auth'
+  
+  # Pods for Firebase
+    pod 'Firebase/Auth'
 	pod 'Firebase/Core'
 
   # Pods for Facebook
   	pod 'Bolts'
   	pod 'FBSDKCoreKit'
   	pod 'FBSDKLoginKit'
+    
+  # Pods for UI
+    pod 'Font-Awesome-Swift', '~> 1.7.2'
 end

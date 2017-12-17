@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import FirebaseAuth
 class User {
     public var name: String?
     public var email: String?
@@ -17,5 +17,11 @@ class User {
         self.name = name
         self.email = email
         self.id = id
+    }
+    
+    init() {
+        self.name = Auth.auth().currentUser?.displayName
+        self.email = Auth.auth().currentUser?.email
+        self.id = Auth.auth().currentUser?.uid
     }
 }

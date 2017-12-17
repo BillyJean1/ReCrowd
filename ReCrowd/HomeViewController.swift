@@ -12,6 +12,6 @@ class HomeViewController: UIViewController {
     public var user: User?
     
     override func viewDidLoad() {
-        print(user?.id ?? "")
+       print(user?.id ?? "lol no user")
     }
 }
