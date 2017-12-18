@@ -12,8 +12,9 @@ target 'ReCrowd' do
     inherit! :search_paths
     # Pods for testing
   end
-        pod 'Firebase/Auth'
+  pod 'Firebase/Auth'
 	pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
   # Pods for Facebook
   	pod 'Bolts'
