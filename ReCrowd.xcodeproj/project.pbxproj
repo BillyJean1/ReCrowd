@@ -17,8 +17,9 @@
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
 		5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6A1FE14B4800A91E61 /* LoginService.swift */; };
 		5B336A6E1FE153AB00A91E61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6D1FE153AB00A91E61 /* User.swift */; };
-		5B97CBEF1FE7B7250094608B /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97CBEE1FE7B7250094608B /* LoginViewControllerTest.swift */; };
 		5B97CC491FE7CC720094608B /* UILoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */; };
+		5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */; };
+		5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */; };
 		5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */; };
 		5BD969B31FDFEAC900CF2F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B11FDFEAC900CF2F12 /* Main.storyboard */; };
 		5BD969B51FDFEAC900CF2F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B41FDFEAC900CF2F12 /* Assets.xcassets */; };
@@ -53,10 +54,11 @@
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B336A6A1FE14B4800A91E61 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		5B336A6D1FE153AB00A91E61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5B97CBEE1FE7B7250094608B /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5B97CC3F1FE7CC630094608B /* ReCrowdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReCrowdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B97CC431FE7CC630094608B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewController.swift; sourceTree = "<group>"; };
+		5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5BD969AA1FDFEAC900CF2F12 /* ReCrowd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReCrowd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD969B21FDFEAC900CF2F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -172,8 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				04AC88821FE6FCC300526B63 /* LoginViewController.swift */,
-				04AC88801FE6FCBD00526B63 /* HomeViewController.swift */,
+				5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */,
 				04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */,
+				04AC88801FE6FCBD00526B63 /* HomeViewController.swift */,
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
@@ -188,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				5BD969C41FDFEAC900CF2F12 /* Info.plist */,
-				5B97CBEE1FE7B7250094608B /* LoginViewControllerTest.swift */,
+				5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */,
 			);
 			path = ReCrowdTests;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 					};
 					5BD969BD1FDFEAC900CF2F12 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 5BD969A91FDFEAC900CF2F12;
 					};
@@ -490,6 +494,7 @@
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
+				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B97CBEF1FE7B7250094608B /* LoginViewControllerTest.swift in Sources */,
+				5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,11 +720,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReCrowdTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowdTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReCrowd.app/ReCrowd";
@@ -732,6 +739,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ReCrowdTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

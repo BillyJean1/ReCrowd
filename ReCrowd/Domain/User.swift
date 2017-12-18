@@ -20,8 +20,13 @@ class User {
     }
     
     init() {
-        self.name = Auth.auth().currentUser?.displayName
         self.email = Auth.auth().currentUser?.email
         self.id = Auth.auth().currentUser?.uid
+        self.name = Auth.auth().currentUser?.displayName
+        
+        if name == nil && email != nil {
+            let delimiter = "@"
+            name = email?.components(separatedBy: delimiter)[0] ?? nil
+        }
     }
 }

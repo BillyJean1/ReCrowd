@@ -8,9 +8,6 @@
 
 import XCTest
 @testable import ReCrowd
-@testable import FBSDKCoreKit
-@testable import FBSDKLoginKit
-
 
 class LoginViewControllerTest: XCTestCase {
     var viewController: LoginViewController!

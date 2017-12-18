@@ -12,7 +12,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FirebaseAuth
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     
     // SERVICES
     private let loginService = LoginService()
@@ -20,20 +20,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     // OUTLETS
     @IBOutlet weak var emailLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
-    @IBOutlet weak var recrowdLogoImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // FACEBOOK CONFIG
         facebookLoginButton.delegate = self
-
-        // UI CONFIG
-        setGradientBackground()
-        self.view.bringSubview(toFront: recrowdLogoImageView)
     
         emailLoginButton.setFAText(prefixText: "", icon: .FAEnvelope, postfixText: "Login in with e-mail", size: 18,  forState: .normal)
         emailLoginButton.setFATitleColor(color: .white, forState: .normal)
     }
+
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
@@ -66,17 +61,5 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 destination.user = sender as? User!
             }
         }
-    }
-
-    
-    func setGradientBackground() {
-        let colorTop =  UIColor(red: 151.0/255.0, green: 215.0/255.0, blue: 243.0/255.0, alpha: 1.0).cgColor
-        let colorBottom = UIColor(red: 18.0/255.0, green: 107.0/255.0, blue: 189.0/255.0, alpha: 1.0).cgColor
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [ colorTop, colorBottom]
-        gradientLayer.locations = [ 0.0, 1.0]
-        gradientLayer.frame = CGRect(x:0, y: 0, width: self.view.frame.width, height:self.view.frame.height/1.4)
-        
-        self.view.layer.addSublayer(gradientLayer)
     }
 }
