@@ -17,14 +17,22 @@
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
 		5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6A1FE14B4800A91E61 /* LoginService.swift */; };
 		5B336A6E1FE153AB00A91E61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6D1FE153AB00A91E61 /* User.swift */; };
+		5B97CBEF1FE7B7250094608B /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97CBEE1FE7B7250094608B /* LoginViewControllerTest.swift */; };
+		5B97CC491FE7CC720094608B /* UILoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */; };
 		5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */; };
 		5BD969B31FDFEAC900CF2F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B11FDFEAC900CF2F12 /* Main.storyboard */; };
 		5BD969B51FDFEAC900CF2F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B41FDFEAC900CF2F12 /* Assets.xcassets */; };
 		5BD969B81FDFEAC900CF2F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */; };
-		5BD969C31FDFEAC900CF2F12 /* ReCrowdTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD969C21FDFEAC900CF2F12 /* ReCrowdTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5B97CC441FE7CC630094608B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5BD969A21FDFEAC900CF2F12 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BD969A91FDFEAC900CF2F12;
+			remoteInfo = ReCrowd;
+		};
 		5BD969BF1FDFEAC900CF2F12 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5BD969A21FDFEAC900CF2F12 /* Project object */;
@@ -45,6 +53,10 @@
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B336A6A1FE14B4800A91E61 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		5B336A6D1FE153AB00A91E61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5B97CBEE1FE7B7250094608B /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
+		5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewControllerTest.swift; sourceTree = "<group>"; };
+		5B97CC3F1FE7CC630094608B /* ReCrowdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReCrowdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B97CC431FE7CC630094608B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BD969AA1FDFEAC900CF2F12 /* ReCrowd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReCrowd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD969B21FDFEAC900CF2F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -52,7 +64,6 @@
 		5BD969B71FDFEAC900CF2F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BD969B91FDFEAC900CF2F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BD969BE1FDFEAC900CF2F12 /* ReCrowdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReCrowdTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BD969C21FDFEAC900CF2F12 /* ReCrowdTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReCrowdTests.swift; sourceTree = "<group>"; };
 		5BD969C41FDFEAC900CF2F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		705418C614A0CB01D476442B /* Pods-ReCrowdTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowdTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowdTests/Pods-ReCrowdTests.release.xcconfig"; sourceTree = "<group>"; };
 		707AACD52350E2604C99E0B3 /* Pods-ReCrowdTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowdTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowdTests/Pods-ReCrowdTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -61,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5B97CC3C1FE7CC630094608B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BD969A71FDFEAC900CF2F12 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -119,11 +137,21 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		5B97CC401FE7CC630094608B /* ReCrowdUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */,
+				5B97CC431FE7CC630094608B /* Info.plist */,
+			);
+			path = ReCrowdUITests;
+			sourceTree = "<group>";
+		};
 		5BD969A11FDFEAC900CF2F12 = {
 			isa = PBXGroup;
 			children = (
 				5BD969AC1FDFEAC900CF2F12 /* ReCrowd */,
 				5BD969C11FDFEAC900CF2F12 /* ReCrowdTests */,
+				5B97CC401FE7CC630094608B /* ReCrowdUITests */,
 				5BD969AB1FDFEAC900CF2F12 /* Products */,
 				FF6951E449106C4211304384 /* Pods */,
 				29DAE96E254ED742D768B40E /* Frameworks */,
@@ -135,6 +163,7 @@
 			children = (
 				5BD969AA1FDFEAC900CF2F12 /* ReCrowd.app */,
 				5BD969BE1FDFEAC900CF2F12 /* ReCrowdTests.xctest */,
+				5B97CC3F1FE7CC630094608B /* ReCrowdUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,8 +187,8 @@
 		5BD969C11FDFEAC900CF2F12 /* ReCrowdTests */ = {
 			isa = PBXGroup;
 			children = (
-				5BD969C21FDFEAC900CF2F12 /* ReCrowdTests.swift */,
 				5BD969C41FDFEAC900CF2F12 /* Info.plist */,
+				5B97CBEE1FE7B7250094608B /* LoginViewControllerTest.swift */,
 			);
 			path = ReCrowdTests;
 			sourceTree = "<group>";
@@ -187,6 +216,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5B97CC3E1FE7CC630094608B /* ReCrowdUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B97CC461FE7CC630094608B /* Build configuration list for PBXNativeTarget "ReCrowdUITests" */;
+			buildPhases = (
+				5B97CC3B1FE7CC630094608B /* Sources */,
+				5B97CC3C1FE7CC630094608B /* Frameworks */,
+				5B97CC3D1FE7CC630094608B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B97CC451FE7CC630094608B /* PBXTargetDependency */,
+			);
+			name = ReCrowdUITests;
+			productName = ReCrowdUITests;
+			productReference = 5B97CC3F1FE7CC630094608B /* ReCrowdUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		5BD969A91FDFEAC900CF2F12 /* ReCrowd */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5BD969C71FDFEAC900CF2F12 /* Build configuration list for PBXNativeTarget "ReCrowd" */;
@@ -238,6 +285,11 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = BillyJeanOne;
 				TargetAttributes = {
+					5B97CC3E1FE7CC630094608B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 5BD969A91FDFEAC900CF2F12;
+					};
 					5BD969A91FDFEAC900CF2F12 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -264,11 +316,19 @@
 			targets = (
 				5BD969A91FDFEAC900CF2F12 /* ReCrowd */,
 				5BD969BD1FDFEAC900CF2F12 /* ReCrowdTests */,
+				5B97CC3E1FE7CC630094608B /* ReCrowdUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5B97CC3D1FE7CC630094608B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BD969A81FDFEAC900CF2F12 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,7 +362,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Font-Awesome-Swift/Font_Awesome_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-f0850809/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -326,9 +386,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ReCrowdTests/Pods-ReCrowdTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-Defines-NSData+zlib/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -407,6 +472,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5B97CC3B1FE7CC630094608B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B97CC491FE7CC720094608B /* UILoginViewControllerTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5BD969A61FDFEAC900CF2F12 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,13 +497,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD969C31FDFEAC900CF2F12 /* ReCrowdTests.swift in Sources */,
+				5B97CBEF1FE7B7250094608B /* LoginViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5B97CC451FE7CC630094608B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5BD969A91FDFEAC900CF2F12 /* ReCrowd */;
+			targetProxy = 5B97CC441FE7CC630094608B /* PBXContainerItemProxy */;
+		};
 		5BD969C01FDFEAC900CF2F12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5BD969A91FDFEAC900CF2F12 /* ReCrowd */;
@@ -458,6 +536,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5B97CC471FE7CC630094608B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ReCrowdUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowdUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReCrowd;
+			};
+			name = Debug;
+		};
+		5B97CC481FE7CC630094608B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ReCrowdUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowdUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ReCrowd;
+			};
+			name = Release;
+		};
 		5BD969C51FDFEAC900CF2F12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -573,6 +679,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VJ7954M2;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = ReCrowd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowd;
@@ -591,6 +698,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 59VJ7954M2;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = ReCrowd/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowd;
@@ -638,6 +746,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5B97CC461FE7CC630094608B /* Build configuration list for PBXNativeTarget "ReCrowdUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B97CC471FE7CC630094608B /* Debug */,
+				5B97CC481FE7CC630094608B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5BD969A51FDFEAC900CF2F12 /* Build configuration list for PBXProject "ReCrowd" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
