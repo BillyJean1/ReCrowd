@@ -10,17 +10,17 @@ import UIKit
 
 class CheckInViewController: UIViewController {
     
-    private var eventInRange: Event
+    private var eventInRange: Event?
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func checkIn() {
+    public func checkIn() {
         eventInRange = CheckInService.shared.checkIn()
     }
     
-    func confirmEvent(withEvent eventInRange: Event) {
+    public func confirmEvent(withEvent eventInRange: Event) {
         CheckInService.shared.registerCheckIn(withEvent: eventInRange)
     }
     
