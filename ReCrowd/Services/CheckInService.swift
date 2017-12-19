@@ -8,10 +8,10 @@
 
 import UIKit
 
-class CheckInService: NSObject {
+class CheckInService {
     public static let shared = CheckInService()
 
-    private override init() {}
+    private init() {}
     
     public func checkIn() -> Event {
         LocationService.shared.getLocation()
@@ -23,7 +23,7 @@ class CheckInService: NSObject {
         FirebaseService.shared.getEvents()
         return Event(withId: 1, named: "Example event", withLongitude: 1.0001, withLatitude: 1.5) // TODO: This is an example event.
     }
-    
+
     public func registerCheckIn(withEvent eventInRange: Event) {
         FirebaseService.shared.registerCheckIn(withEvent: eventInRange)
     }

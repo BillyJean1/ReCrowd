@@ -11,7 +11,8 @@ import Foundation
 class RecommendationService {
     
     public func checkForRecommendations() {
-        
-        
+        if let recommendations = FirebaseService.shared.getEventRecommendations() {
+            
+        }
     }
 }
