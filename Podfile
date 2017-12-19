@@ -7,7 +7,6 @@ target 'ReCrowd' do
   use_frameworks!
 
   # Pods for ReCrowd
-
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
@@ -19,7 +18,10 @@ target 'ReCrowd' do
   end
 
   # Pods for Facebook
-  	pod 'Bolts'
-  	pod 'FBSDKCoreKit'
-  	pod 'FBSDKLoginKit'
+  pod 'Bolts'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
+
+  # Pods for UI
+  pod 'Font-Awesome-Swift', '~> 1.7.2'
 end

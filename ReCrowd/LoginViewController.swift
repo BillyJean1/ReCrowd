@@ -7,22 +7,29 @@
 //
 
 import UIKit
+import Font_Awesome_Swift
 import FBSDKCoreKit
 import FBSDKLoginKit
+import FirebaseAuth
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
+    
+    // SERVICES
     private let loginService = LoginService()
     
-    @IBOutlet weak var errorMessageLabel: UILabel!
+    // OUTLETS
+    @IBOutlet weak var emailLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Facebook
         facebookLoginButton.delegate = self
-    }
     
-    // Facebook Login
+        emailLoginButton.setFAText(prefixText: "", icon: .FAEnvelope, postfixText: "Login in with e-mail", size: 18,  forState: .normal)
+        emailLoginButton.setFATitleColor(color: .white, forState: .normal)
+    }
+
+    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
             if user != nil {
@@ -30,14 +37,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             }
             
             if error != nil {
-                weakSelf?.errorMessageLabel.isEnabled = true
-                weakSelf?.errorMessageLabel.text = error
+                //weakSelf?.errorMessageLabel.isEnabled = true
+                //weakSelf?.errorMessageLabel.text = error
             } else {
-                weakSelf?.errorMessageLabel.isEnabled = false
+               // weakSelf?.errorMessageLabel.isEnabled = false
             }
         })
     }
-    
+
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Facebook did log out.")
     }
@@ -46,14 +53,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         if(segue.identifier == "Home"){
             if let destination = segue.destination as? HomeViewController {
                 
-                let initialViewController = UIStoryboard(name: "Main", bundle:nil).instantiateInitialViewController() as! UIViewController
-                let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
-                appDelegate.window?.rootViewController = initialViewController
-                
+                if let initialViewController = UIStoryboard(name: "Main", bundle:nil).instantiateInitialViewController(){
+                    if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
+                        appDelegate.window?.rootViewController = initialViewController
+                    }
+                }
                 destination.user = sender as? User!
-
             }
         }
     }
-
 }

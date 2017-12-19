@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase // Kevin: We need to find out why this is needed but not needed :D
 
 class FirebaseService: NSObject {
     private var ref: DatabaseReference!
