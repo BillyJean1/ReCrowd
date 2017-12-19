@@ -13,22 +13,22 @@
 		04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
-		0AE8F0F51FE277660080359F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F41FE277660080359F /* LocationService.swift */; };
-		0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F61FE27BEE0080359F /* CheckInService.swift */; };
-		0AE8F0F91FE2831F0080359F /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F81FE2831F0080359F /* FirebaseService.swift */; };
 		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
 		133354041FE809E9001F7E09 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133353FF1FE807B1001F7E09 /* LoginTests.swift */; };
 		5623B94AC79D4B944DB2A4DB /* Pods_ReCrowd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */; };
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
-		5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6A1FE14B4800A91E61 /* LoginService.swift */; };
 		5B336A6E1FE153AB00A91E61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6D1FE153AB00A91E61 /* User.swift */; };
 		5B97CC491FE7CC720094608B /* UILoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */; };
 		5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */; };
 		5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */; };
-		5BD65C111FE91F7E00BD3618 /* RecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C101FE91F7E00BD3618 /* RecommendationService.swift */; };
 		5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C121FE9263C00BD3618 /* Recommendation.swift */; };
-		5BD65C151FE9289F00BD3618 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C141FE9289F00BD3618 /* NotificationService.swift */; };
+		5BD65C1F1FE93C9600BD3618 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C191FE93C9500BD3618 /* LocationService.swift */; };
+		5BD65C201FE93C9600BD3618 /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1A1FE93C9600BD3618 /* CheckInService.swift */; };
+		5BD65C211FE93C9600BD3618 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1B1FE93C9600BD3618 /* FirebaseService.swift */; };
+		5BD65C221FE93C9600BD3618 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1C1FE93C9600BD3618 /* NotificationService.swift */; };
+		5BD65C231FE93C9600BD3618 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1D1FE93C9600BD3618 /* LoginService.swift */; };
+		5BD65C241FE93C9600BD3618 /* RecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1E1FE93C9600BD3618 /* RecommendationService.swift */; };
 		5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */; };
 		5BD969B31FDFEAC900CF2F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B11FDFEAC900CF2F12 /* Main.storyboard */; };
 		5BD969B51FDFEAC900CF2F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B41FDFEAC900CF2F12 /* Assets.xcassets */; };
@@ -59,24 +59,24 @@
 		04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
-		0AE8F0F41FE277660080359F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		0AE8F0F61FE27BEE0080359F /* CheckInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
-		0AE8F0F81FE2831F0080359F /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		133353FF1FE807B1001F7E09 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReCrowd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3860F741519FCFE8F560C926 /* Pods-ReCrowd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowd/Pods-ReCrowd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		5B336A6A1FE14B4800A91E61 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		5B336A6D1FE153AB00A91E61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5B97CC3F1FE7CC630094608B /* ReCrowdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReCrowdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B97CC431FE7CC630094608B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewController.swift; sourceTree = "<group>"; };
 		5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
-		5BD65C101FE91F7E00BD3618 /* RecommendationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RecommendationService.swift; path = ReCrowd/Services/RecommendationService.swift; sourceTree = SOURCE_ROOT; };
 		5BD65C121FE9263C00BD3618 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
-		5BD65C141FE9289F00BD3618 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = ReCrowd/Services/NotificationService.swift; sourceTree = SOURCE_ROOT; };
+		5BD65C191FE93C9500BD3618 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = ReCrowd/Services/LocationService.swift; sourceTree = SOURCE_ROOT; };
+		5BD65C1A1FE93C9600BD3618 /* CheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInService.swift; path = ReCrowd/Services/CheckInService.swift; sourceTree = SOURCE_ROOT; };
+		5BD65C1B1FE93C9600BD3618 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = ReCrowd/Services/FirebaseService.swift; sourceTree = SOURCE_ROOT; };
+		5BD65C1C1FE93C9600BD3618 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = ReCrowd/Services/NotificationService.swift; sourceTree = SOURCE_ROOT; };
+		5BD65C1D1FE93C9600BD3618 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = ReCrowd/Services/LoginService.swift; sourceTree = SOURCE_ROOT; };
+		5BD65C1E1FE93C9600BD3618 /* RecommendationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationService.swift; path = ReCrowd/Services/RecommendationService.swift; sourceTree = SOURCE_ROOT; };
 		5BD969AA1FDFEAC900CF2F12 /* ReCrowd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReCrowd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD969B21FDFEAC900CF2F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,20 +140,6 @@
 			name = "Plist Files";
 			sourceTree = "<group>";
 		};
-		5B336A6C1FE14B6200A91E61 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5B336A6A1FE14B4800A91E61 /* LoginService.swift */,
-				0AE8F0F41FE277660080359F /* LocationService.swift */,
-				0AE8F0F61FE27BEE0080359F /* CheckInService.swift */,
-				0AE8F0F81FE2831F0080359F /* FirebaseService.swift */,
-				5BD65C101FE91F7E00BD3618 /* RecommendationService.swift */,
-				5BD65C141FE9289F00BD3618 /* NotificationService.swift */,
-			);
-			name = Services;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		5B336A6F1FE153B900A91E61 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +157,19 @@
 				5B97CC431FE7CC630094608B /* Info.plist */,
 			);
 			path = ReCrowdUITests;
+			sourceTree = "<group>";
+		};
+		5BD65C181FE93C8400BD3618 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5BD65C1A1FE93C9600BD3618 /* CheckInService.swift */,
+				5BD65C1B1FE93C9600BD3618 /* FirebaseService.swift */,
+				5BD65C191FE93C9500BD3618 /* LocationService.swift */,
+				5BD65C1D1FE93C9600BD3618 /* LoginService.swift */,
+				5BD65C1C1FE93C9600BD3618 /* NotificationService.swift */,
+				5BD65C1E1FE93C9600BD3618 /* RecommendationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		5BD969A11FDFEAC900CF2F12 = {
@@ -205,8 +204,8 @@
 				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
+				5BD65C181FE93C8400BD3618 /* Services */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
-				5B336A6C1FE14B6200A91E61 /* Services */,
 				5BD969CD1FDFEB0600CF2F12 /* Supporting Files */,
 				5B336A691FE149BC00A91E61 /* Plist Files */,
 			);
@@ -517,21 +516,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD65C241FE93C9600BD3618 /* RecommendationService.swift in Sources */,
 				5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */,
 				04AC88831FE6FCC300526B63 /* LoginViewController.swift in Sources */,
+				5BD65C221FE93C9600BD3618 /* NotificationService.swift in Sources */,
+				5BD65C1F1FE93C9600BD3618 /* LocationService.swift in Sources */,
 				04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */,
 				04AC88811FE6FCBD00526B63 /* HomeViewController.swift in Sources */,
-				0AE8F0F51FE277660080359F /* LocationService.swift in Sources */,
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
-				0AE8F0F91FE2831F0080359F /* FirebaseService.swift in Sources */,
-				5BD65C111FE91F7E00BD3618 /* RecommendationService.swift in Sources */,
-				5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */,
-				0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
+				5BD65C201FE93C9600BD3618 /* CheckInService.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
-				5BD65C151FE9289F00BD3618 /* NotificationService.swift in Sources */,
+				5BD65C211FE93C9600BD3618 /* FirebaseService.swift in Sources */,
 				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
+				5BD65C231FE93C9600BD3618 /* LoginService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
