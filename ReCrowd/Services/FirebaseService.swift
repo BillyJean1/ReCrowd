@@ -40,10 +40,15 @@ class FirebaseService: NSObject {
     }
     
     func getEventRecommendations() -> [Recommendation]? {
-        if let event = self.getCheckedInEvent() {
-            // TODO: implement retrieval of recommendations linked to the event.
-        }
-        return nil
+        var recs: [Recommendation] = []
+        recs.append(Recommendation(withName: "Ali", withPoint: 200, withLongitude: 51.000, withLatitude: 5.000, withDescription: "Python python python"))
+        recs.append(Recommendation(withName: "Moham", withPoint: 200, withLongitude: 51.000, withLatitude: 5.000, withDescription: "Piranha piranha piranha"))
+        recs.append(Recommendation(withName: "BTaliban", withPoint: 200, withLongitude: 51.000, withLatitude: 5.000, withDescription: "Fata Fata Fata"))
+        return recs
+//        if let event = self.getCheckedInEvent() {
+//            // TODO: implement retrieval of recommendations linked to the event.
+//        }
+//        return nil
     }
     
     func registerCheckIn(withEvent eventInRange: Event) {

@@ -9,7 +9,6 @@
 import UIKit
 
 class Event: NSObject {
-    
     public var id: Int
     public var name: String
     public var longitude: Double

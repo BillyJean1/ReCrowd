@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         _ = NotificationService.shared // Instantiate
+        _ = RecommendationService.shared
         return true
     }
 
