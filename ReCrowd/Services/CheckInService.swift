@@ -9,9 +9,8 @@
 import UIKit
 
 class CheckInService: NSObject {
-    
     public static let shared = CheckInService()
-    
+
     private override init() {}
     
     public func checkIn() -> Event {
