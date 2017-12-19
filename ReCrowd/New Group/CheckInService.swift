@@ -21,8 +21,11 @@ class CheckInService: NSObject {
     }
     
     private func getEventInRange() -> Event {
-        FirebaseService.shared.getEvents()
-        return Event(withId: 1, named: "Example event", withLongitude: 1.0001, withLatitude: 1.5) // TODO: This is an example event.
+        FirebaseService.shared.getEvents(completionHandler: {_ in
+            //Hier iets doen wanneer er events terugkomen
+        })
+        
+        return Event(withId: 1, named: "Example event", withLongitude: 1.0001, withLatitude: 1.5, range: 600, start: NSDate().timeIntervalSince1970, end: NSDate().timeIntervalSince1970) // TODO: This is an example event.
     }
     
     public func registerCheckIn(withEvent eventInRange: Event) {

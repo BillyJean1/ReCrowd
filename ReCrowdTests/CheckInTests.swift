@@ -8,10 +8,17 @@
 
 import XCTest
 @testable import ReCrowd
+@testable import Firebase
+@testable import FirebaseDatabase
 
-class LoginTests: XCTestCase {
+class CheckInTests: XCTestCase {
+    
+    var firebaseService:FirebaseService!
+    
     override func setUp() {
         super.setUp()
+        firebaseService = FirebaseService.shared
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -21,6 +28,7 @@ class LoginTests: XCTestCase {
     }
     
     func testExample() {
+
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
@@ -33,3 +41,4 @@ class LoginTests: XCTestCase {
     }
     
 }
+

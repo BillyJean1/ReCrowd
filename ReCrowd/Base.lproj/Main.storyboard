@@ -32,7 +32,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtC-fG-C7i">
                                         <rect key="frame" x="0.0" y="50" width="255" height="30"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="255" id="YWg-fz-VWC"/>
                                             <constraint firstAttribute="height" constant="30" id="m3D-Nb-PXA"/>
@@ -222,6 +222,6 @@
         <image name="ReCrowd" width="167" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nrS-oW-4bV"/>
+        <segue reference="cUA-Hy-lUu"/>
     </inferredMetricsTieBreakers>
 </document>
