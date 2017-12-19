@@ -22,7 +22,7 @@ class CheckInService: NSObject {
     
     private func getEventInRange() -> Event {
         FirebaseService.shared.getEvents()
-        return Event(named: "Example event", withId: 1, withCoordinates: "example") // TODO: This is an example event.
+        return Event(withId: 1, named: "Example event", withLongitude: 1.0001, withLatitude: 1.5) // TODO: This is an example event.
     }
     
     public func registerCheckIn(withEvent eventInRange: Event) {

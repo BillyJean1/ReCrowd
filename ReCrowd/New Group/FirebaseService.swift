@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 
 class FirebaseService: NSObject {
-    var ref: DatabaseReference!
+    private var ref: DatabaseReference!
+    
+    public var user:User?
     
     public static let shared = FirebaseService()
     
@@ -18,12 +20,16 @@ class FirebaseService: NSObject {
          ref = Database.database().reference()
     }
     
-    func getEvents() {
+    func getEvents() -> [Event] {
         // Firebase shit
+        return []
     }
     
     func registerCheckIn(withEvent eventInRange: Event) {
-        self.ref.child("events").child("\(eventInRange.id)").setValue(["name":eventInRange.name, "coordinates":eventInRange.coordinates])
+        self.ref.child("events").child("\(eventInRange.id)").setValue(["name":eventInRange.name, "longitude":eventInRange.longitude, "latitude":eventInRange.latitude])
+        
+        self.ref.child("checkIns").setValue(["uid":user?.id!,"event_id":eventInRange.id])
+        
         // Firebase stuff (tududu du du duu (tudu du du du duu)
     }
 

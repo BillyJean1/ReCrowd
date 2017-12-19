@@ -24,10 +24,11 @@ class LoginService {
             else {
                 if let resultObj = result as? NSObject {
                     self.authFacebook()
-                    completionBlock(User(id: resultObj.value(forKey: "id") as! String? ?? nil,
-                                         name: resultObj.value(forKey: "name") as! String? ?? nil,
-                                         email: resultObj.value(forKey: "email") as! String? ?? nil), nil
-                    )
+                    let loggedInUser = User(id: resultObj.value(forKey: "id") as! String? ?? nil,
+                                            name: resultObj.value(forKey: "name") as! String? ?? nil,
+                                            email: resultObj.value(forKey: "email") as! String? ?? nil)
+                    completionBlock(loggedInUser, nil)
+                    FirebaseService.shared.user = loggedInUser
                 }
             }
         })

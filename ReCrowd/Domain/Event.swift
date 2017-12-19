@@ -10,14 +10,16 @@ import UIKit
 
 class Event: NSObject {
     
-    public var name: String
     public var id: Int
-    public var coordinates: String
+    public var name: String
+    public var longitude: Double
+    public var latitude: Double
     
-    init(named name: String, withId id: Int, withCoordinates coordinates: String) {
-        self.name = name
+    init(withId id: Int, named name: String, withLongitude longitude: Double, withLatitude latitude: Double) {
         self.id = id
-        self.coordinates = coordinates
+        self.name = name
+        self.longitude = longitude
+        self.latitude = latitude
     }
     
 }

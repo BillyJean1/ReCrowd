@@ -8,7 +8,7 @@
 
 import Foundation
 
-class User {
+class User:NSObject{
     public var name: String?
     public var email: String?
     public var id: String?

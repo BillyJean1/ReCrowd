@@ -1,19 +1,22 @@
 //
-//  ReCrowdTests.swift
-//  ReCrowdTests
+//  LoginTests.swift
+//  ReCrowd
 //
-//  Created by Ramon Schriks on 12-12-17.
+//  Created by Colin van der Geld on 18-12-17.
 //  Copyright © 2017 BillyJeanOne. All rights reserved.
 //
 
 import XCTest
 @testable import ReCrowd
 
-class ReCrowdTests: XCTestCase {
+class LoginTests: XCTestCase {
     
+    var firebaseService:FirebaseService!
     
     override func setUp() {
         super.setUp()
+        firebaseService = FirebaseService.shared
+        
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -23,6 +26,10 @@ class ReCrowdTests: XCTestCase {
     }
     
     func testExample() {
+        let event = Event(withId: -1, named: "TestEvent", withLongitude: 1.05, withLatitude: 1.50)
+        firebaseService.user = User(id: "-1", name: "abc", email: "abc@nl.nl")
+        firebaseService.registerCheckIn(withEvent: event)
+        
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
