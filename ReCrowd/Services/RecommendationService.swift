@@ -10,15 +10,13 @@ import Foundation
 
 class RecommendationService {
     public static let shared = RecommendationService()
-
-    private static let recommendationsUserDefaultKey = "recommendations"
-    private static let recommendationCheckInterval = 2 // Interval in seconds
+    public static let recommendationsUserDefaultKey = "recommendations"
     
     private init() {
-        _ = Timer.scheduledTimer(timeInterval: TimeInterval(RecommendationService.recommendationCheckInterval), target: self, selector: #selector(self.checkForRecommendations), userInfo: nil, repeats: true)
+        checkForRecommendations() // This is only for demo. It fires a notification once after opening and immediataly closing the app
     }
     
-    @objc func checkForRecommendations() {
+    @objc public func checkForRecommendations() {
         if let recommendations = FirebaseService.shared.getEventRecommendations() {
             let notEqual = compareToSavedRecommendations(recommendations: recommendations)
             if notEqual > 0 {
@@ -27,7 +25,7 @@ class RecommendationService {
                     withTitle: "ReCrowd - Nieuw aanbevelingen",
                     withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
             }
-            
+
             self.saveRecommendations(recommendations: recommendations)
         }
     }
@@ -60,17 +58,36 @@ class RecommendationService {
     /** Returns number of recommendations are not equal */
     private func compareToSavedRecommendations(recommendations: [Recommendation]) -> Int {
         if let savedRecommendations = getRecommendations() {
-            let sorted = savedRecommendations.sorted(by: { $0.name > $1.name })
+            let sortedSavedRecommendations = savedRecommendations.sorted(by: { $0.name > $1.name })
             let sortedInputRecommendations = recommendations.sorted(by: { $0.name > $1.name })
             
             var notEqual = 0
-            for (index,recommendation) in sortedInputRecommendations.enumerated() {
-                if recommendation.name != sorted[index].name {
-                    notEqual += 1
-                }
+            if sortedSavedRecommendations.count > sortedInputRecommendations.count {
+                notEqual = sortedSavedRecommendations.count - sortedInputRecommendations.count
+                notEqual += sortRecommendationsAndMeasureDifference(firstList: sortedInputRecommendations, secondList: sortedSavedRecommendations)
+                return notEqual
+                
+            } else if sortedSavedRecommendations.count < sortedInputRecommendations.count {
+                notEqual = sortedInputRecommendations.count - sortedSavedRecommendations.count
+                notEqual += sortRecommendationsAndMeasureDifference(firstList: sortedSavedRecommendations, secondList: sortedInputRecommendations)
+                return notEqual
+                
+            } else {
+                return sortRecommendationsAndMeasureDifference(firstList: sortedSavedRecommendations, secondList: sortedInputRecommendations)
             }
-            return notEqual
         }
         return recommendations.count
+    }
+    
+    private func sortRecommendationsAndMeasureDifference(firstList: [Recommendation], secondList: [Recommendation]) -> Int {
+        var notEqual = 0
+        for firstListRecommendation in firstList {
+            for secondListRecommendation in secondList {
+                if firstListRecommendation.name == secondListRecommendation.name {
+                    notEqual = notEqual + 1
+                }
+            }
+        }
+        return notEqual
     }
 }
