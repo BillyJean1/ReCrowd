@@ -20,7 +20,7 @@ class CheckInService {
     }
     
     private func getEventInRange() -> Event {
-        FirebaseService.shared.getEvents()
+//        FirebaseService.shared.getCheckedInEvents()
         return Event(withId: 1, named: "Example event", withLongitude: 1.0001, withLatitude: 1.5) // TODO: This is an example event.
     }
 

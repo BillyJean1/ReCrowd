@@ -33,7 +33,7 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
             if user != nil {
-                weakSelf?.performSegue(withIdentifier: "Home", sender: user)
+                weakSelf?.performSegue(withIdentifier: "Login", sender: user)
             }
             
             if error != nil {
@@ -50,8 +50,8 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "Home"){
-            if let destination = segue.destination as? HomeViewController {
+        if(segue.identifier == "Login"){
+            if let destination = segue.destination as? CheckInViewController {
                 
                 if let initialViewController = UIStoryboard(name: "Main", bundle:nil).instantiateInitialViewController(){
                     if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){

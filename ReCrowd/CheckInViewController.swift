@@ -10,10 +10,13 @@ import UIKit
 
 class CheckInViewController: UIViewController {
     
+    public var user: User?
+    
     private var eventInRange: Event?
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @IBAction func checkMeIn(_ sender: UIButton) {
+        checkIn()
+        performSegue(withIdentifier: "Recommendations", sender: self)
     }
     
     public func checkIn() {

@@ -10,9 +10,16 @@ import Foundation
 
 class RecommendationService {
     
+    public static var shared = RecommendationService()
+    
+    private init() {
+        
+    }
+    
     public func checkForRecommendations() {
+        print("RecommendationService :: checkForRecommendations()")
         if let recommendations = FirebaseService.shared.getEventRecommendations() {
-            
+            let checkedInEvent = FirebaseService.shared.getCheckedInEvent()
         }
     }
 }

@@ -32,7 +32,7 @@
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtC-fG-C7i">
                                         <rect key="frame" x="0.0" y="50" width="255" height="30"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="255" id="YWg-fz-VWC"/>
                                             <constraint firstAttribute="height" constant="30" id="m3D-Nb-PXA"/>
@@ -69,39 +69,65 @@
                         <outlet property="emailLoginButton" destination="mtC-fG-C7i" id="oAP-6g-wTD"/>
                         <outlet property="facebookLoginButton" destination="700-uv-jzM" id="iOs-5X-77h"/>
                         <outlet property="recrowdLogoImageView" destination="Imr-iP-Jdj" id="bVb-x6-9LK"/>
-                        <segue destination="DNk-DA-FHA" kind="show" identifier="Home" id="cUA-Hy-lUu"/>
+                        <segue destination="DNk-DA-FHA" kind="show" identifier="Login" id="cUA-Hy-lUu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-226" y="32"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Check In View Controller-->
         <scene sceneID="vTu-GE-X9W">
             <objects>
-                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DNk-DA-FHA" customClass="HomeViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DNk-DA-FHA" customClass="CheckInViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRT-8d-lOd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Succesvolle inlog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pD6-3J-4np">
-                                <rect key="frame" x="140.66666666666666" y="357.66666666666669" width="132.99999999999997" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOI-KK-Mnc">
+                                <rect key="frame" x="141" y="557" width="132" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Check mij in"/>
+                                <connections>
+                                    <action selector="checkMeIn:" destination="DNk-DA-FHA" eventType="touchUpInside" id="mpd-Ay-dcK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="f48-oh-sFY"/>
+                    </view>
+                    <connections>
+                        <segue destination="hFS-S6-BAT" kind="show" identifier="Recommendations" id="Xy6-oz-A6o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lVy-k7-Imj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="64"/>
+        </scene>
+        <!--Recommendation View Controller-->
+        <scene sceneID="9Db-DV-t19">
+            <objects>
+                <viewController id="hFS-S6-BAT" customClass="RecommendationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m2L-hx-3ov" customClass="Recom">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommendations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JS8-9L-geN">
+                                <rect key="frame" x="136" y="63" width="143" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="pD6-3J-4np" firstAttribute="centerY" secondItem="uRT-8d-lOd" secondAttribute="centerY" id="TRb-FX-58X"/>
-                            <constraint firstItem="pD6-3J-4np" firstAttribute="centerX" secondItem="uRT-8d-lOd" secondAttribute="centerX" id="wKK-69-UQ9"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="f48-oh-sFY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="RT3-Cv-tH0"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lVy-k7-Imj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rau-b2-2Zn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="56"/>
+            <point key="canvasLocation" x="1676.8115942028987" y="64.402173913043484"/>
         </scene>
         <!--Email Login View Controller-->
         <scene sceneID="HXz-hr-9Ci">
@@ -210,7 +236,7 @@
                         <outlet property="passwordTextField" destination="8hN-Pw-Pp0" id="OLh-3v-F0K"/>
                         <outlet property="recrowdLogoImageView" destination="OWJ-PF-JbE" id="ade-0X-cTP"/>
                         <outlet property="registerButton" destination="p5a-4L-3zs" id="6dt-Ob-iL9"/>
-                        <segue destination="DNk-DA-FHA" kind="show" identifier="Home" id="nrS-oW-4bV"/>
+                        <segue destination="DNk-DA-FHA" kind="show" identifier="Login" id="nrS-oW-4bV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcr-CZ-FWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,6 +248,6 @@
         <image name="ReCrowd" width="167" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nrS-oW-4bV"/>
+        <segue reference="cUA-Hy-lUu"/>
     </inferredMetricsTieBreakers>
 </document>

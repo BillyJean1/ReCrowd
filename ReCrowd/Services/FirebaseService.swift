@@ -10,6 +10,10 @@ import UIKit
 import Firebase
 import FirebaseDatabase // Kevin: We need to find out why this is needed but not needed :D
 
+/*
+ FaceBook UserID Kevin: D07p3uNKGURx5DorWgHDQVr9Fdp2
+ */
+
 class FirebaseService: NSObject {
     private var ref: DatabaseReference!
     
@@ -17,7 +21,7 @@ class FirebaseService: NSObject {
     public static let shared = FirebaseService()
     
     private override init() {
-         ref = Database.database().reference()
+        ref = Database.database().reference()
     }
     
     func getEvents() -> [Event] {
@@ -25,23 +29,23 @@ class FirebaseService: NSObject {
         return []
     }
     
-    func getEventsByUID() -> [Event]? {
-        if let uid = Auth.auth().currentUser?.uid {
-            // TODO: implement retrieval of Events by
-        }
-        return nil
-    }
-    
     func getCheckedInEvent() -> Event? {
-        if let events = self.getEventsByUID() {
-            // TODO: Check which is checked in at latest
+        print("FirebaseService :: getCheckedInEvent()")
+        var checkedinEvent: Event?
+        if let uid = Auth.auth().currentUser?.uid {
+            ref.child("check-ins").child("user-" + uid).child("checkin").child("event").observeSingleEvent(of: .value, with: { (snapshot) in
+                checkedinEvent = snapshot.value as? NSObject
+            }) { (error) in
+                print(error.localizedDescription)
+            }
         }
-        return nil
+        return checkedinEvent
     }
     
     func getEventRecommendations() -> [Recommendation]? {
-        if let event = self.getCheckedInEvent() {
-            // TODO: implement retrieval of recommendations linked to the event.
+        print("FirebaseService :: checkForRecommendations()")
+        if let event = getCheckedInEvent() {
+            print(event)
         }
         return nil
     }

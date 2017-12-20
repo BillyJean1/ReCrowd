@@ -12,6 +12,8 @@
 		04AC88831FE6FCC300526B63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88821FE6FCC300526B63 /* LoginViewController.swift */; };
 		04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
+		0A0358D11FE9595F00957E59 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0358D01FE9595F00957E59 /* CheckIn.swift */; };
+		0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */; };
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
 		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
@@ -58,6 +60,8 @@
 		04AC88821FE6FCC300526B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A0358D01FE9595F00957E59 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
+		0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		133353FF1FE807B1001F7E09 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 				5B336A6D1FE153AB00A91E61 /* User.swift */,
 				5BD65C121FE9263C00BD3618 /* Recommendation.swift */,
 				0AE8F0FA1FE2846D0080359F /* Event.swift */,
+				0A0358D01FE9595F00957E59 /* CheckIn.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 				04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */,
 				04AC88801FE6FCBD00526B63 /* HomeViewController.swift */,
 				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
+				0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */,
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
 				5BD65C181FE93C8400BD3618 /* Services */,
@@ -522,6 +528,7 @@
 				5BD65C221FE93C9600BD3618 /* NotificationService.swift in Sources */,
 				5BD65C1F1FE93C9600BD3618 /* LocationService.swift in Sources */,
 				04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */,
+				0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */,
 				04AC88811FE6FCBD00526B63 /* HomeViewController.swift in Sources */,
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
@@ -529,6 +536,7 @@
 				5BD65C201FE93C9600BD3618 /* CheckInService.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				5BD65C211FE93C9600BD3618 /* FirebaseService.swift in Sources */,
+				0A0358D11FE9595F00957E59 /* CheckIn.swift in Sources */,
 				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
 				5BD65C231FE93C9600BD3618 /* LoginService.swift in Sources */,
 			);
