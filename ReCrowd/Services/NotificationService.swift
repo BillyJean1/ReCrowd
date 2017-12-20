@@ -9,12 +9,10 @@ import Foundation
 import UserNotifications
 
 class NotificationService {
-    let center = UNUserNotificationCenter.current()
+    public let center = UNUserNotificationCenter.current()
     static let shared = NotificationService()
     
-    private init() {
-        askNotificationPermission()
-    }
+    private init() {}
     
     func sendNotification(withIdentifier id: String, withTitle title: String, withBody body: String, withSubtitle subtitle: String = "") {
         let notification = UNMutableNotificationContent()
@@ -22,14 +20,14 @@ class NotificationService {
         notification.body = body
         notification.subtitle = subtitle
         
-        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let notificationTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let request = UNNotificationRequest(identifier: id, content: notification, trigger: notificationTrigger)
         
         center.add(request, withCompletionHandler: nil)
     }
     
     public func askNotificationPermission() {
-        center.requestAuthorization(options: [.alert])
+        center.requestAuthorization(options: [.alert,.badge,.sound])
         { (success, error) in
             if success {
                 print("Permission Granted")

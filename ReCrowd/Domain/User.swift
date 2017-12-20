@@ -9,7 +9,7 @@
 import Foundation
 import FirebaseAuth
 
-class User{
+class User {
     public var name: String?
     public var email: String?
     public var id: String?
