@@ -27,22 +27,21 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate 
     
     private func showRecommendations(event: Event) {
         let camera = GMSCameraPosition.camera(withLatitude: event.latitude, longitude: event.longitude, zoom: Float(event.range/zoomFactor))
+        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
-        var mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView = addRecommendationsToMap(mapView: mapView, event: event)
-        view = mapView
+        addRecommendationsToMap(mapView: mapView, event: event)
     }
     
-    private func addRecommendationsToMap(mapView: GMSMapView, event: Event)-> GMSMapView {
-        RecommendationService.shared.checkForRecommendations()
-        if let recommendations = RecommendationService.shared.getRecommendations() {
-            for recommendation in recommendations {
-                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: recommendation.latitude, longitude: recommendation.longitude))
-                marker.title = recommendation.name
-                marker.map = mapView
+    private func addRecommendationsToMap(mapView: GMSMapView, event: Event) {
+        RecommendationService.shared.checkForRecommendations(completionHandler: { [weak weakSelf = self] (data) in
+            if let recommendations = data {
+                for recommendation in recommendations {
+                    let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: recommendation.latitude, longitude: recommendation.longitude))
+                    marker.title = recommendation.name
+                    marker.map = mapView
+                }
             }
-        }
-        return mapView
-    
+            weakSelf?.view = mapView
+        })
     }
 }

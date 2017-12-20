@@ -14,17 +14,21 @@ class RecommendationService {
 
     private init() {}
 
-    @objc public func checkForRecommendations() {
-        if let recommendations = FirebaseService.shared.getEventRecommendations() {
-            let notEqual = compareToSavedRecommendations(recommendations: recommendations)
-            if notEqual > 0 {
-                NotificationService.shared.sendNotification(
-                    withIdentifier: "Nieuwe_Aanbevelingen",
-                    withTitle: "ReCrowd - Nieuw aanbevelingen",
-                    withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
+    @objc public func checkForRecommendations(completionHandler: @escaping (_ recommendations: [Recommendation]?) -> ()) {
+        FirebaseService.shared.getEventRecommendations(completionHandler: { [weak weakSelf = self] (data) in
+            if let recommendations = data {
+                if let notEqual = weakSelf?.compareToSavedRecommendations(recommendations: recommendations) {
+                    if notEqual > 0 {
+                        NotificationService.shared.sendNotification(
+                            withIdentifier: "Nieuwe_Aanbevelingen",
+                            withTitle: "ReCrowd - Nieuw aanbevelingen",
+                            withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
+                    }
+                }
+                weakSelf?.saveRecommendations(recommendations: recommendations)
+                completionHandler(weakSelf?.getRecommendations())
             }
-            self.saveRecommendations(recommendations: recommendations)
-        }
+        })
     }
 
     public func getRecommendations() -> [Recommendation]? {
