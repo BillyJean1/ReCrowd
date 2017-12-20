@@ -28,5 +28,7 @@ class CheckInService: NSObject {
     public func registerCheckIn(withEvent eventInRange: Event) {
         FirebaseService.shared.registerCheckIn(withEvent: eventInRange)
     }
+    
+   
 
 }

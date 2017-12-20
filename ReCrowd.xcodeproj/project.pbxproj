@@ -190,10 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				04AC88821FE6FCC300526B63 /* LoginViewController.swift */,
-				5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */,
 				04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */,
 				04AC88801FE6FCBD00526B63 /* HomeViewController.swift */,
 				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
+				5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */,
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
@@ -712,6 +712,7 @@
 				DEVELOPMENT_TEAM = 59VJ7954M2;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = ReCrowd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -731,6 +732,7 @@
 				DEVELOPMENT_TEAM = 59VJ7954M2;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = ReCrowd/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.billyjean.one.ReCrowd;
 				PRODUCT_NAME = "$(TARGET_NAME)";

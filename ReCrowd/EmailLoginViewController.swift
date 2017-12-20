@@ -17,6 +17,7 @@ class EmailLoginViewController: UILoginViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var recrowdLogo: UIImageView!
     
     override func viewWillAppear(_ animated: Bool) {
         self.registerButton.backgroundColor =  UIColor(red: 90/255.0, green: 172/255.0, blue: 236/255.0, alpha: 1.0)
@@ -26,6 +27,9 @@ class EmailLoginViewController: UILoginViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
+        self.view.layer.insertSublayer(getGradientBackground(), at: 0)
+        self.view.bringSubview(toFront: recrowdLogo)
+          self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
     
     @IBAction func doEmailLogin(_ sender: UIButton) {
@@ -88,13 +92,9 @@ class EmailLoginViewController: UILoginViewController {
     private func proceedLogin(user: User) {
         self.errorLabel.isHidden = true
         self.passwordTextField.text = ""
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        homeVC.user = user
-        
-        self.present(homeVC, animated: true, completion: nil)
+        performSegue(withIdentifier: "Incheck", sender: self)
     }
+    
 }
 
 extension UITextField {
@@ -109,8 +109,7 @@ extension UITextField {
         
         self.leftViewMode = .always
         self.layer.masksToBounds = true
-        
-        
+    
         switch padding {
             
         case .left(let spacing):

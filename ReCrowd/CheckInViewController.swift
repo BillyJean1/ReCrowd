@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import AVFoundation
 
-class CheckInViewController: UIViewController {
+class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
+    // OUTLETS
+    @IBOutlet weak var welEenTicketButton: UIButton!
+    @IBOutlet weak var nietEenTicketButton: UIButton!
+    
+    // LOCATION CHECK-IN
     private var eventInRange: Event?
+
+    override func viewDidLoad() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     public func checkIn() {
@@ -22,6 +31,15 @@ class CheckInViewController: UIViewController {
     
     public func confirmEvent(withEvent eventInRange: Event) {
         CheckInService.shared.registerCheckIn(withEvent: eventInRange)
+    }
+    
+    @IBAction func doTicketScan(_ sender: UIButton) {
+        // TODO: poc kevin in mergen
+        performSegue(withIdentifier: "Home", sender: self)
+    }
+
+    @IBAction func doTicketlessCheckIn(_ sender: UIButton) {
+        performSegue(withIdentifier: "Home", sender: self)
     }
     
 }

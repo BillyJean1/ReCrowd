@@ -18,22 +18,32 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     private let loginService = LoginService()
     
     // OUTLETS
+    @IBOutlet weak var recrowdLogo: UIImageView!
     @IBOutlet weak var emailLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
-    
-        emailLoginButton.setFAText(prefixText: "", icon: .FAEnvelope, postfixText: "Login in with e-mail", size: 18,  forState: .normal)
-        emailLoginButton.setFATitleColor(color: .white, forState: .normal)
+       // emailLoginButton.setFAText(prefixText: "", icon: .FAEnvelope, postfixText: "Login in with e-mail", size: 18,  forState: .normal)
+        emailLoginButton.setImage(UIImage.init(icon: .FAEnvelope, size: CGSize(width: 22, height: 25), textColor: .white), for: .normal)
+        emailLoginButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)
+        emailLoginButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 106.0, 0.0, 0.0)
+        emailLoginButton.contentHorizontalAlignment = .left
+        //emailLoginButton.setFATitleColor(color: .white, forState: .normal)
+        self.view.layer.insertSublayer(getGradientBackground(), at: 0)
+        self.view.bringSubview(toFront: recrowdLogo)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+          self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
 
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
             if user != nil {
-                weakSelf?.performSegue(withIdentifier: "Home", sender: user)
+                weakSelf?.performSegue(withIdentifier: "Incheck", sender: user)
             }
             
             if error != nil {
@@ -50,16 +60,21 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "Home"){
-            if let destination = segue.destination as? HomeViewController {
+        if(segue.identifier == "Incheck"){
+            //if let destination = segue.destination as? CheckInViewController {
                 
                 if let initialViewController = UIStoryboard(name: "Main", bundle:nil).instantiateInitialViewController(){
                     if let appDelegate = (UIApplication.shared.delegate as? AppDelegate){
                         appDelegate.window?.rootViewController = initialViewController
                     }
                 }
-                destination.user = sender as? User!
-            }
+//                destination.user = sender as? User!
+                
+                
+                // .... segue to incheck instead of home........
+                
+            //}
         }
     }
 }
+

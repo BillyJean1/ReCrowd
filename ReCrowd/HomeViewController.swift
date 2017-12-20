@@ -10,10 +10,11 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    public var user: User?
+   public var user: User?
     
     override func viewDidLoad() {
-       print(user?.id ?? "lol no user")
+      // print(user?.id ?? "lol no user")
+        self.navigationController?.navigationBar.isHidden = true
     }
     
 }
