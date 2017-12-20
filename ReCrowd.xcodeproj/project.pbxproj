@@ -12,8 +12,13 @@
 		04AC88831FE6FCC300526B63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88821FE6FCC300526B63 /* LoginViewController.swift */; };
 		04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
-		0A0358D11FE9595F00957E59 /* CheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0358D01FE9595F00957E59 /* CheckIn.swift */; };
 		0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */; };
+		0A6DBED41FEA918B001D74EA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBECE1FEA918B001D74EA /* LocationService.swift */; };
+		0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBECF1FEA918B001D74EA /* CheckInService.swift */; };
+		0A6DBED61FEA918B001D74EA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED01FEA918B001D74EA /* LoginService.swift */; };
+		0A6DBED71FEA918B001D74EA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED11FEA918B001D74EA /* NotificationService.swift */; };
+		0A6DBED81FEA918B001D74EA /* RecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED21FEA918B001D74EA /* RecommendationService.swift */; };
+		0A6DBED91FEA918B001D74EA /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED31FEA918B001D74EA /* FirebaseService.swift */; };
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
 		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
@@ -26,12 +31,6 @@
 		5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */; };
 		5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */; };
 		5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C121FE9263C00BD3618 /* Recommendation.swift */; };
-		5BD65C1F1FE93C9600BD3618 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C191FE93C9500BD3618 /* LocationService.swift */; };
-		5BD65C201FE93C9600BD3618 /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1A1FE93C9600BD3618 /* CheckInService.swift */; };
-		5BD65C211FE93C9600BD3618 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1B1FE93C9600BD3618 /* FirebaseService.swift */; };
-		5BD65C221FE93C9600BD3618 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1C1FE93C9600BD3618 /* NotificationService.swift */; };
-		5BD65C231FE93C9600BD3618 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1D1FE93C9600BD3618 /* LoginService.swift */; };
-		5BD65C241FE93C9600BD3618 /* RecommendationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C1E1FE93C9600BD3618 /* RecommendationService.swift */; };
 		5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */; };
 		5BD969B31FDFEAC900CF2F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B11FDFEAC900CF2F12 /* Main.storyboard */; };
 		5BD969B51FDFEAC900CF2F12 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B41FDFEAC900CF2F12 /* Assets.xcassets */; };
@@ -61,8 +60,13 @@
 		04AC88821FE6FCC300526B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A0358D01FE9595F00957E59 /* CheckIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
+		0A6DBECE1FEA918B001D74EA /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		0A6DBECF1FEA918B001D74EA /* CheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
+		0A6DBED01FEA918B001D74EA /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		0A6DBED11FEA918B001D74EA /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		0A6DBED21FEA918B001D74EA /* RecommendationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationService.swift; sourceTree = "<group>"; };
+		0A6DBED31FEA918B001D74EA /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		133353FF1FE807B1001F7E09 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
@@ -77,12 +81,6 @@
 		5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewController.swift; sourceTree = "<group>"; };
 		5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5BD65C121FE9263C00BD3618 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
-		5BD65C191FE93C9500BD3618 /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationService.swift; path = ReCrowd/Services/LocationService.swift; sourceTree = SOURCE_ROOT; };
-		5BD65C1A1FE93C9600BD3618 /* CheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckInService.swift; path = ReCrowd/Services/CheckInService.swift; sourceTree = SOURCE_ROOT; };
-		5BD65C1B1FE93C9600BD3618 /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseService.swift; path = ReCrowd/Services/FirebaseService.swift; sourceTree = SOURCE_ROOT; };
-		5BD65C1C1FE93C9600BD3618 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationService.swift; path = ReCrowd/Services/NotificationService.swift; sourceTree = SOURCE_ROOT; };
-		5BD65C1D1FE93C9600BD3618 /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginService.swift; path = ReCrowd/Services/LoginService.swift; sourceTree = SOURCE_ROOT; };
-		5BD65C1E1FE93C9600BD3618 /* RecommendationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendationService.swift; path = ReCrowd/Services/RecommendationService.swift; sourceTree = SOURCE_ROOT; };
 		5BD969AA1FDFEAC900CF2F12 /* ReCrowd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReCrowd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BD969B21FDFEAC900CF2F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +124,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A67E2571FEA903B008EC990 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				04AC88821FE6FCC300526B63 /* LoginViewController.swift */,
+				5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */,
+				04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */,
+				04AC88801FE6FCBD00526B63 /* HomeViewController.swift */,
+				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
+				0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A67E2581FEA905D008EC990 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				0A6DBECF1FEA918B001D74EA /* CheckInService.swift */,
+				0A6DBED31FEA918B001D74EA /* FirebaseService.swift */,
+				0A6DBECE1FEA918B001D74EA /* LocationService.swift */,
+				0A6DBED01FEA918B001D74EA /* LoginService.swift */,
+				0A6DBED11FEA918B001D74EA /* NotificationService.swift */,
+				0A6DBED21FEA918B001D74EA /* RecommendationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		29DAE96E254ED742D768B40E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,7 +176,6 @@
 				5B336A6D1FE153AB00A91E61 /* User.swift */,
 				5BD65C121FE9263C00BD3618 /* Recommendation.swift */,
 				0AE8F0FA1FE2846D0080359F /* Event.swift */,
-				0A0358D01FE9595F00957E59 /* CheckIn.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -164,19 +187,6 @@
 				5B97CC431FE7CC630094608B /* Info.plist */,
 			);
 			path = ReCrowdUITests;
-			sourceTree = "<group>";
-		};
-		5BD65C181FE93C8400BD3618 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				5BD65C1A1FE93C9600BD3618 /* CheckInService.swift */,
-				5BD65C1B1FE93C9600BD3618 /* FirebaseService.swift */,
-				5BD65C191FE93C9500BD3618 /* LocationService.swift */,
-				5BD65C1D1FE93C9600BD3618 /* LoginService.swift */,
-				5BD65C1C1FE93C9600BD3618 /* NotificationService.swift */,
-				5BD65C1E1FE93C9600BD3618 /* RecommendationService.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		5BD969A11FDFEAC900CF2F12 = {
@@ -204,15 +214,10 @@
 		5BD969AC1FDFEAC900CF2F12 /* ReCrowd */ = {
 			isa = PBXGroup;
 			children = (
-				04AC88821FE6FCC300526B63 /* LoginViewController.swift */,
-				5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */,
-				04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */,
-				04AC88801FE6FCBD00526B63 /* HomeViewController.swift */,
-				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
-				0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */,
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
-				5BD65C181FE93C8400BD3618 /* Services */,
+				0A67E2571FEA903B008EC990 /* Controller */,
+				0A67E2581FEA905D008EC990 /* Service */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
 				5BD969CD1FDFEB0600CF2F12 /* Supporting Files */,
 				5B336A691FE149BC00A91E61 /* Plist Files */,
@@ -530,23 +535,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BD65C241FE93C9600BD3618 /* RecommendationService.swift in Sources */,
+				0A6DBED61FEA918B001D74EA /* LoginService.swift in Sources */,
+				0A6DBED91FEA918B001D74EA /* FirebaseService.swift in Sources */,
 				5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */,
+				0A6DBED81FEA918B001D74EA /* RecommendationService.swift in Sources */,
 				04AC88831FE6FCC300526B63 /* LoginViewController.swift in Sources */,
-				5BD65C221FE93C9600BD3618 /* NotificationService.swift in Sources */,
-				5BD65C1F1FE93C9600BD3618 /* LocationService.swift in Sources */,
 				04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */,
 				0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */,
+				0A6DBED71FEA918B001D74EA /* NotificationService.swift in Sources */,
 				04AC88811FE6FCBD00526B63 /* HomeViewController.swift in Sources */,
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
-				5BD65C201FE93C9600BD3618 /* CheckInService.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
-				5BD65C211FE93C9600BD3618 /* FirebaseService.swift in Sources */,
-				0A0358D11FE9595F00957E59 /* CheckIn.swift in Sources */,
+				0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */,
 				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
-				5BD65C231FE93C9600BD3618 /* LoginService.swift in Sources */,
+				0A6DBED41FEA918B001D74EA /* LocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

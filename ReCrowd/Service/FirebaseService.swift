@@ -57,17 +57,21 @@ class FirebaseService: NSObject {
         var checkedInEvent: Event?
         if let uid = Auth.auth().currentUser?.uid {
             ref.child("check-ins").child("user-" + uid).child("checkin").child("event").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let checkedInEventObject = snapshot.value as? NSObject {
-                    print("FirebaseService :: Debug: converting to event!")
-                    checkedInEvent = Event(withId: checkedInEventObject.value(forKey: "id") as! Int,
-                                           named: checkedInEventObject.value(forKey: "name") as! String,
-                                           withLongitude: checkedInEventObject.value(forKey: "longitude") as! Double,
-                                           withLatitude: checkedInEventObject.value(forKey: "id") as! Double,
-                                           range: checkedInEventObject.value(forKey: "range") as! Double,
-                                           start: checkedInEventObject.value(forKey: "start") as! TimeInterval,
-                                           end: checkedInEventObject.value(forKey: "end") as! TimeInterval)
+                if (snapshot.hasChild("id") && snapshot.hasChild("name") && snapshot.hasChild("longitude") && snapshot.hasChild("latitude") && snapshot.hasChild("range") && snapshot.hasChild("start") && snapshot.hasChild("end")) {
+                    if let checkedInEventObject = snapshot.value as? NSObject {
+                        print("FirebaseService :: Debug: converting to event!")
+                        checkedInEvent = Event(withId: checkedInEventObject.value(forKey: "id") as! Int,
+                                               named: checkedInEventObject.value(forKey: "name") as! String,
+                                               withLongitude: checkedInEventObject.value(forKey: "longitude") as! Double,
+                                               withLatitude: checkedInEventObject.value(forKey: "latitude") as! Double,
+                                               range: checkedInEventObject.value(forKey: "range") as! Double,
+                                               start: checkedInEventObject.value(forKey: "start") as! TimeInterval,
+                                               end: checkedInEventObject.value(forKey: "end") as! TimeInterval)
+                    }
+                    completionHandler(checkedInEvent)
+                } else {
+                    print("not all keys")
                 }
-                completionHandler(checkedInEvent)
             }) { (error) in
                 print(error.localizedDescription)
             }
@@ -77,7 +81,7 @@ class FirebaseService: NSObject {
     func getEventRecommendations() -> [Recommendation]? {
         print("FirebaseService :: checkForRecommendations()")
         FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
-            print(event)
+            
         })
         return nil
     }

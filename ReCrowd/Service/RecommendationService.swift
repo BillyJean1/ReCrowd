@@ -18,11 +18,6 @@ class RecommendationService {
 
     @objc public func checkForRecommendations() {
         if let recommendations = FirebaseService.shared.getEventRecommendations() {
-            if let recommendations = FirebaseService.shared.getEventRecommendations() {
-                        let checkedInEvent = FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
-                            print(event)
-                        })
-                    }
             let notEqual = compareToSavedRecommendations(recommendations: recommendations)
             if notEqual > 0 {
                 NotificationService.shared.sendNotification(
