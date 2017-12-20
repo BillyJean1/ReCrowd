@@ -19,7 +19,9 @@ class RecommendationService {
     public func checkForRecommendations() {
         print("RecommendationService :: checkForRecommendations()")
         if let recommendations = FirebaseService.shared.getEventRecommendations() {
-            let checkedInEvent = FirebaseService.shared.getCheckedInEvent()
+            let checkedInEvent = FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
+                print(event)
+            })
         }
     }
 }
