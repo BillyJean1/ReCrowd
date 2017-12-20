@@ -12,17 +12,10 @@ class RecommendationService {
     public static let shared = RecommendationService()
     public static let recommendationsUserDefaultKey = "recommendations"
 
-    private init() {
-        checkForRecommendations() // This is only for demo. It fires a notification once after opening and immediataly closing the app
-    }
+    private init() {}
 
     @objc public func checkForRecommendations() {
         if let recommendations = FirebaseService.shared.getEventRecommendations() {
-            if let recommendations = FirebaseService.shared.getEventRecommendations() {
-                        let checkedInEvent = FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
-                            print(event)
-                        })
-                    }
             let notEqual = compareToSavedRecommendations(recommendations: recommendations)
             if notEqual > 0 {
                 NotificationService.shared.sendNotification(
@@ -30,7 +23,6 @@ class RecommendationService {
                     withTitle: "ReCrowd - Nieuw aanbevelingen",
                     withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
             }
-
             self.saveRecommendations(recommendations: recommendations)
         }
     }

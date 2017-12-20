@@ -62,7 +62,7 @@ class FirebaseService: NSObject {
                     checkedInEvent = Event(withId: checkedInEventObject.value(forKey: "id") as! Int,
                                            named: checkedInEventObject.value(forKey: "name") as! String,
                                            withLongitude: checkedInEventObject.value(forKey: "longitude") as! Double,
-                                           withLatitude: checkedInEventObject.value(forKey: "id") as! Double,
+                                           withLatitude: checkedInEventObject.value(forKey: "latitude") as! Double,
                                            range: checkedInEventObject.value(forKey: "range") as! Double,
                                            start: checkedInEventObject.value(forKey: "start") as! TimeInterval,
                                            end: checkedInEventObject.value(forKey: "end") as! TimeInterval)
