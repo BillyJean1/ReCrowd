@@ -49,4 +49,5 @@ class CheckInViewController: UIViewController {
         }
     }
     
+    @IBAction func unwindToCheckinVC(segue:UIStoryboardSegue) { }
 }

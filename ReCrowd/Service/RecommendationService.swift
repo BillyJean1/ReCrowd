@@ -11,43 +11,69 @@ import Foundation
 class RecommendationService {
     public static let shared = RecommendationService()
     public static let recommendationsUserDefaultKey = "recommendations"
+    public static let recommendationSavedKey = "saved_recommendation"
 
-    private init() {
-        checkForRecommendations() // This is only for demo. It fires a notification once after opening and immediataly closing the app
-    }
+    private init() {}
 
-    @objc public func checkForRecommendations() {
-        if let recommendations = FirebaseService.shared.getEventRecommendations() {
-            let notEqual = compareToSavedRecommendations(recommendations: recommendations)
-            if notEqual > 0 {
-                NotificationService.shared.sendNotification(
-                    withIdentifier: "Nieuwe_Aanbevelingen",
-                    withTitle: "ReCrowd - Nieuw aanbevelingen",
-                    withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
+    @objc public func checkForRecommendations(completionHandler: @escaping (_ recommendations: [Recommendation]?) -> ()) {
+        FirebaseService.shared.getEventRecommendations(completionHandler: { [weak weakSelf = self] (data) in
+            if let recommendations = data {
+                if let notEqual = weakSelf?.compareToSavedRecommendations(recommendations: recommendations) {
+                    if notEqual > 0 {
+                        NotificationService.shared.sendNotification(
+                            withIdentifier: "Nieuwe_Aanbevelingen",
+                            withTitle: "ReCrowd - Nieuw aanbevelingen",
+                            withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
+                    }
+                }
+                weakSelf?.saveRecommendations(recommendations: recommendations)
+                completionHandler(weakSelf?.getRecommendations())
             }
-
-            self.saveRecommendations(recommendations: recommendations)
-        }
+        })
     }
 
     public func getRecommendations() -> [Recommendation]? {
         let data = UserDefaults.standard.object(forKey: RecommendationService.recommendationsUserDefaultKey)
         if let decodedData = data as? Data {
-            if let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? [Recommendation] {
-                return decodedTeams
+            if let decodedRecommendations = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? [Recommendation] {
+                return decodedRecommendations
             }
         }
         return nil
     }
+    
+    public func getStartedRecommendation() -> Recommendation?  {
+        let userDefaults = UserDefaults.standard
+        let data = userDefaults.object(forKey: RecommendationService.recommendationSavedKey)
+        if let decodedData = data as? Data {
+            if let decodedRecommendation = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? Recommendation {
+                return decodedRecommendation
+            }
+        }
+        return nil
+    }
+    
+    public func startRecommendation(recommendation: Recommendation) {
+        deleteRecommendations(forKey: RecommendationService.recommendationsUserDefaultKey)
+        
+        let userDefaults = UserDefaults.standard
+        if userDefaults.object(forKey: RecommendationService.recommendationSavedKey) != nil {
+            deleteRecommendations(forKey: RecommendationService.recommendationSavedKey)
+        }
+        
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: recommendation)
+        userDefaults.setValue(encodedData, forKey: RecommendationService.recommendationSavedKey)
+        userDefaults.synchronize()
+    }
 
-    public func deleteRecommendations() {
-        UserDefaults.standard.removeObject(forKey: RecommendationService.recommendationsUserDefaultKey)
+    public func deleteRecommendations(forKey key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
     }
 
     private func saveRecommendations(recommendations: [Recommendation]) {
         let userDefaults = UserDefaults.standard
         if userDefaults.object(forKey: RecommendationService.recommendationsUserDefaultKey) != nil {
-            self.deleteRecommendations()
+            self.deleteRecommendations(forKey: RecommendationService.recommendationsUserDefaultKey)
         }
 
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: recommendations)

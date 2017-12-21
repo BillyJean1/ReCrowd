@@ -70,20 +70,43 @@ class FirebaseService: NSObject {
                     }
                     completionHandler(checkedInEvent)
                 } else {
-                    print("not all keys")
+                    completionHandler(nil)
                 }
             }) { (error) in
-                print(error.localizedDescription)
+                completionHandler(nil)
             }
         }
     }
     
-    func getEventRecommendations() -> [Recommendation]? {
-        print("FirebaseService :: checkForRecommendations()")
-        FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
-            
-        })
-        return nil
+    func getEventRecommendations(completionHandler: @escaping (_ recommendations: [Recommendation]?) -> ()) {
+        var recommendations: [Recommendation] = []
+        recommendations.append(Recommendation(withName: "Python", withPoint: 200, withLongitude: 5.0517359, withLatitude: 51.6485471, withDescription: "De python is een achtbaan voor echte thrill-seekers"))
+        recommendations.append(Recommendation(withName: "Joris en de Draak", withPoint: 200, withLongitude: 5.0515974, withLatitude: 51.646975, withDescription: "Joris en de Draak is een achtbaan voor echte thrill-seekers"))
+        recommendations.append(Recommendation(withName: "Fata Morgana", withPoint: 200, withLongitude: 5.0450622, withLatitude: 51.6470669, withDescription: "De Fata Morgana is een waterattractie voor echte theme-lovers"))
+        recommendations.append(Recommendation(withName: "Piranha", withPoint: 200, withLongitude: 5.0489554, withLatitude: 51.6472064, withDescription: "De Piranha is een waterattractie voor echte thrill-lovers"))
+        recommendations.append(Recommendation(withName: "Bobslee", withPoint: 200, withLongitude: 5.046126, withLatitude: 51.6470839, withDescription: "De Bobslee is een slee-attractie voor echte thrill-lovers"))
+        
+        var completed: [Recommendation] = []
+        var random = Int(arc4random_uniform(UInt32(recommendations.count)))
+        completed.append(recommendations[random])
+        recommendations.remove(at: random)
+        
+        random = Int(arc4random_uniform(UInt32(recommendations.count)))
+        completed.append(recommendations[random])
+        recommendations.remove(at: random)
+        
+        random = Int(arc4random_uniform(UInt32(recommendations.count)))
+        completed.append(recommendations[random])
+        recommendations.remove(at: random)
+    
+
+        completionHandler(completed)
+        
+
+//        print("FirebaseService :: checkForRecommendations()")
+//        FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
+//
+//        })
     }
     
     func registerCheckIn(atEvent event: Event) {

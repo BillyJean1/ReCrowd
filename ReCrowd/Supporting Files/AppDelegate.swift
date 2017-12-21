@@ -9,25 +9,37 @@
 import UIKit
 import Firebase
 import UserNotifications
+import GoogleMaps
+import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    private static let GOOGLE_API_KEY = "AIzaSyDm4djGvXBHtfJlaa__ggI3chJf5fs_E7M"
+
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         FirebaseApp.configure()
         NotificationService.shared.askNotificationPermission()
-        _ = RecommendationService.shared // Instantiate
+        _ = RecommendationService.shared
         
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+        self.configureGoogleMaps()
         return true
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        RecommendationService.shared.checkForRecommendations()
-        completionHandler(.newData)
+        if RecommendationService.shared.getStartedRecommendation() != nil {
+            RecommendationService.shared.checkForRecommendations(completionHandler: { data in
+                if data != nil {
+                    completionHandler(.newData)
+                } else {
+                    completionHandler(.noData)
+                }
+            })
+        }
+        completionHandler(.noData)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -50,6 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    private func configureGoogleMaps() {
+        GMSPlacesClient.provideAPIKey(AppDelegate.GOOGLE_API_KEY)
+        GMSServices.provideAPIKey(AppDelegate.GOOGLE_API_KEY)
     }
 }
 
