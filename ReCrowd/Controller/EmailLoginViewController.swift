@@ -90,10 +90,10 @@ class EmailLoginViewController: UILoginViewController {
         self.passwordTextField.text = ""
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-        homeVC.user = user
+        let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckinViewController") as! CheckInViewController
+        checkinVC.user = user
         
-        self.present(homeVC, animated: true, completion: nil)
+        self.present(checkinVC, animated: true, completion: nil)
     }
 }
 

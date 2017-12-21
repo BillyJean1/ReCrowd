@@ -11,6 +11,7 @@ import Foundation
 class RecommendationService {
     public static let shared = RecommendationService()
     public static let recommendationsUserDefaultKey = "recommendations"
+    public static let recommendationSavedKey = "saved_recommendation"
 
     private init() {}
 
@@ -34,21 +35,45 @@ class RecommendationService {
     public func getRecommendations() -> [Recommendation]? {
         let data = UserDefaults.standard.object(forKey: RecommendationService.recommendationsUserDefaultKey)
         if let decodedData = data as? Data {
-            if let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? [Recommendation] {
-                return decodedTeams
+            if let decodedRecommendations = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? [Recommendation] {
+                return decodedRecommendations
             }
         }
         return nil
     }
+    
+    public func getStartedRecommendation() -> Recommendation?  {
+        let userDefaults = UserDefaults.standard
+        let data = userDefaults.object(forKey: RecommendationService.recommendationSavedKey)
+        if let decodedData = data as? Data {
+            if let decodedRecommendation = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? Recommendation {
+                return decodedRecommendation
+            }
+        }
+        return nil
+    }
+    
+    public func startRecommendation(recommendation: Recommendation) {
+        deleteRecommendations(forKey: RecommendationService.recommendationsUserDefaultKey)
+        
+        let userDefaults = UserDefaults.standard
+        if userDefaults.object(forKey: RecommendationService.recommendationSavedKey) != nil {
+            deleteRecommendations(forKey: RecommendationService.recommendationSavedKey)
+        }
+        
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: recommendation)
+        userDefaults.setValue(encodedData, forKey: RecommendationService.recommendationSavedKey)
+        userDefaults.synchronize()
+    }
 
-    public func deleteRecommendations() {
-        UserDefaults.standard.removeObject(forKey: RecommendationService.recommendationsUserDefaultKey)
+    public func deleteRecommendations(forKey key: String) {
+        UserDefaults.standard.removeObject(forKey: key)
     }
 
     private func saveRecommendations(recommendations: [Recommendation]) {
         let userDefaults = UserDefaults.standard
         if userDefaults.object(forKey: RecommendationService.recommendationsUserDefaultKey) != nil {
-            self.deleteRecommendations()
+            self.deleteRecommendations(forKey: RecommendationService.recommendationsUserDefaultKey)
         }
 
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: recommendations)

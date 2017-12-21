@@ -30,13 +30,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        RecommendationService.shared.checkForRecommendations(completionHandler: { data in
-            if data != nil {
-                completionHandler(.newData)
-            } else {
-                completionHandler(.noData)
-            }
-        })
+        if RecommendationService.shared.getStartedRecommendation() != nil {
+            RecommendationService.shared.checkForRecommendations(completionHandler: { data in
+                if data != nil {
+                    completionHandler(.newData)
+                } else {
+                    completionHandler(.noData)
+                }
+            })
+        }
+        completionHandler(.noData)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

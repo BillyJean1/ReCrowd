@@ -70,10 +70,10 @@ class FirebaseService: NSObject {
                     }
                     completionHandler(checkedInEvent)
                 } else {
-                    print("not all keys")
+                    completionHandler(nil)
                 }
             }) { (error) in
-                print(error.localizedDescription)
+                completionHandler(nil)
             }
         }
     }

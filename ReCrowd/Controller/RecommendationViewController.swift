@@ -16,9 +16,13 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
     private let zoomFactor = 38.0
     
     override func viewDidLoad() {
-        FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (data) in
-            if let event = data {
-                weakSelf?.showRecommendations(event: event)
+      FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
+            if event != nil {
+                if let startedRecommendation = RecommendationService.shared.getStartedRecommendation() {
+                    weakSelf?.segueToRecommendationDetail(recommendation: startedRecommendation, isStarted: true)
+                } else {
+                    weakSelf?.showRecommendations(event: event!)
+                }
             } else {
                 weakSelf?.alertUserNotCheckedIn()
             }
@@ -49,18 +53,23 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         if let recommendation = marker.userData as? Recommendation {
-            // Segue to RecommendationDetailViewController
+            segueToRecommendationDetail(recommendation: recommendation)
         }
     }
     
     private func alertUserNotCheckedIn() {
         let alert = UIAlertController(title: "Niet ingechecked", message: "U lijkt momenteel niet ingechecked bij een evenement. U wordt terug gestuurd naar het incheck scherm.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckinViewController") as! CheckInViewController
-            self.present(checkinVC, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { [weak weakSelf = self] action in
+            weakSelf?.performSegue(withIdentifier: "unwindToCheckinVC", sender: self)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func segueToRecommendationDetail(recommendation: Recommendation, isStarted: Bool = false) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let recommendationVC = storyboard.instantiateViewController(withIdentifier: "RecommendationDetailViewController") as! RecommendationDetailViewController
+        recommendationVC.recommendation = recommendation
+        recommendationVC.recommendationWasStarted = isStarted
+        self.present(recommendationVC, animated: true, completion: nil)
     }
 }

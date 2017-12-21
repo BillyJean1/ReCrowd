@@ -27,4 +27,5 @@ class CheckInViewController: UIViewController {
         CheckInService.shared.registerCheckIn(withEvent: eventInRange)
     }
     
+    @IBAction func unwindToCheckinVC(segue:UIStoryboardSegue) { }
 }
