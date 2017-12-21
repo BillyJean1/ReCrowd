@@ -199,7 +199,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdU-bY-WJd">
-                                <rect key="frame" x="20" y="652" width="177" height="64"/>
+                                <rect key="frame" x="20" y="652" width="91" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Accepteren"/>
                                 <connections>
@@ -207,7 +207,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-EN-CIy">
-                                <rect key="frame" x="217" y="652" width="177" height="64"/>
+                                <rect key="frame" x="304" y="652" width="90" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Afwijzen"/>
                                 <connections>
@@ -222,13 +222,21 @@
                                     <action selector="stopRecommendation:" destination="F8f-xv-UbG" eventType="touchUpInside" id="Ipg-Xm-nYb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-XU-xgY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-XU-xgY">
                                 <rect key="frame" x="217" y="88" width="177" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="430-Th-Jl6">
+                                <rect key="frame" x="119" y="652" width="177" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Route"/>
+                                <connections>
+                                    <action selector="navigateRecommendation:" destination="F8f-xv-UbG" eventType="touchUpInside" id="Fte-US-Eyk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zcc-Vq-3lV"/>
@@ -240,12 +248,38 @@
                         <outlet property="distanceLabel" destination="DAN-XU-xgY" id="Ex2-u9-ni8"/>
                         <outlet property="nameLabel" destination="8JP-LJ-sUn" id="8CE-hL-oFT"/>
                         <outlet property="pointsLabel" destination="tWK-Wb-yFc" id="7in-eS-FbT"/>
+                        <outlet property="routeButton" destination="430-Th-Jl6" id="mLa-4x-n3s"/>
                         <outlet property="stopButton" destination="c1h-N2-6ZV" id="2Jw-X0-Umc"/>
+                        <segue destination="edB-oG-iJ4" kind="show" id="hxu-7S-lpl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzy-3z-kHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439.130434782609" y="63.586956521739133"/>
+            <point key="canvasLocation" x="3210" y="64"/>
+        </scene>
+        <!--Recommendation Navigation View Controller-->
+        <scene sceneID="Icx-lw-z16">
+            <objects>
+                <viewController storyboardIdentifier="RecommendationNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="edB-oG-iJ4" customClass="RecommendationNavigationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jwG-QJ-GgV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ja8-sT-wPN">
+                                <rect key="frame" x="185" y="65" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="aUV-GF-8O6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hV-3m-NfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3937" y="65"/>
         </scene>
         <!--Email Login View Controller-->
         <scene sceneID="HXz-hr-9Ci">

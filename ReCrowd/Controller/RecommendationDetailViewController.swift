@@ -21,6 +21,7 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var declineButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var routeButton: UIButton!
     
     let locationManager = CLLocationManager()
 
@@ -38,6 +39,15 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
+    }
+    
+    @IBAction func navigateRecommendation(_ sender: UIButton) {
+        if let rec = recommendation {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let recommendationNavigationVC = storyboard.instantiateViewController(withIdentifier: "RecommendationNavigationViewController") as! RecommendationNavigationViewController
+            recommendationNavigationVC.recommendation = rec
+            self.present(recommendationNavigationVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func stopRecommendation(_ sender: UIButton) {
@@ -107,12 +117,15 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         // Show decline + accept buttons if  recommendation is NOT saved (enabled = false)
         self.acceptButton.isEnabled = enabled
         self.acceptButton.isHidden = !enabled
-        
+    
         self.declineButton.isEnabled = enabled
         self.declineButton.isHidden = !enabled
         
-        // Show stop button if recommendation is saved (enabled = true)
+        // Show stop + route button if recommendation is saved (enabled = true)
         self.stopButton.isEnabled = !enabled
         self.stopButton.isHidden = enabled
+        
+        self.routeButton.isEnabled = !enabled
+        self.routeButton.isHidden = enabled
     }
 }
