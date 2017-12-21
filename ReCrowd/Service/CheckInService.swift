@@ -7,28 +7,90 @@
 //
 
 import UIKit
+import CoreLocation
 
-class CheckInService {
+class CheckInService: NSObject {
+    
+    /* Property to access this shared instance. */
     public static let shared = CheckInService()
-
-    private init() {}
     
-    public func checkIn() -> Event {
-        LocationService.shared.getLocation()
-        let eventInRange: Event = getEventInRange()
-        return eventInRange
+    /* Location Variables */
+    public var currentLocation: CLLocation = CLLocation()
+    public var eventInRange: Event?
+    private var locationManager: CLLocationManager = CLLocationManager()
+    
+    /* Notification Variables */
+    let updatedEventInRangeNotificationName = Notification.Name("updatedEventInRangeNotification")
+    let updatedEventInRangeNotification:Notification
+    
+    private override init() {
+        updatedEventInRangeNotification = Notification.init(name: self.updatedEventInRangeNotificationName)
     }
     
-    private func getEventInRange() -> Event {
-        FirebaseService.shared.getEvents(completionHandler: {_ in
-            //Hier iets doen wanneer er events terugkomen
+    public func updateEventInRange() {
+        print("CheckInService :: Updating event in range.")
+        updateCurrentLocation()
+    }
+    
+    public func checkIn(atEvent event: Event) {
+        print("CheckInService :: Checking you in at \(event.name).")
+        FirebaseService.shared.registerCheckIn(atEvent: event)
+    }
+    
+    private func updateCurrentLocation() {
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
+    }
+    
+    @objc private func getEventInRange(completionHandler: @escaping (_ event: Event) -> ()) {
+        FirebaseService.shared.getEvents(completionHandler: {events in
+            
+            let eventsSortedByClosestDistanceToFurthestDistance = events.sorted(by: { compareableEvent1, compareableEvent2 in
+                self.currentLocation.distance(from: CLLocation(latitude: compareableEvent1.latitude, longitude: compareableEvent1.longitude))
+                    < self.currentLocation.distance(from: CLLocation(latitude: compareableEvent2.latitude, longitude: compareableEvent2.longitude))
+            })
+            
+            let eventWithClosestDistance = eventsSortedByClosestDistanceToFurthestDistance[0]
+            
+            completionHandler(eventWithClosestDistance)
+            
         })
-
-        return Event(withId: 1, named: "Example event", withLongitude: 1.0001, withLatitude: 1.5, range: 600, start: NSDate().timeIntervalSince1970, end: NSDate().timeIntervalSince1970) // TODO: This is an example event.
     }
+}
 
-    public func registerCheckIn(withEvent eventInRange: Event) {
-        FirebaseService.shared.registerCheckIn(withEvent: eventInRange)
+extension CheckInService: CLLocationManagerDelegate {
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            currentLocation = location
+            getEventInRange(completionHandler: { newEventInRange in
+                self.eventInRange = newEventInRange
+                NotificationCenter.default.post(self.updatedEventInRangeNotification)
+            })
+        }
     }
-
+    
+    // Handle authorization for the location manager.
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .restricted:
+            print("Location access was restricted.")
+        case .denied:
+            print("User denied access to location.")
+        case .notDetermined:
+            print("Location status not determined.")
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedAlways: fallthrough
+        case .authorizedWhenInUse:
+            print("Location status is OK.")
+        }
+    }
+    
+    // Handle location manager errors.
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationManager.stopUpdatingLocation()
+        print("Error: \(error)")
+    }
+    
 }

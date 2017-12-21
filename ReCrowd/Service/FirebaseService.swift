@@ -109,17 +109,24 @@ class FirebaseService: NSObject {
 //        })
     }
     
-    func registerCheckIn(withEvent eventInRange: Event) {
-        self.ref.child("events").child("\(eventInRange.id)").setValue(["name":eventInRange.name, "longitude":eventInRange.longitude, "latitude":eventInRange.latitude])
-        
-        self.ref.child("checkIns").setValue(["uid":user?.id!,"event_id":eventInRange.id])
-        self.ref.child("check-ins").setValue(["uid":user?.id!,"event_id":eventInRange.id])
-        // Firebase stuff (tududu du du duu (tudu du du du duu)
+    func registerCheckIn(atEvent event: Event) {
+        if let userUid = Auth.auth().currentUser?.uid {
+            self.ref
+                .child("check-ins")
+                .child("user-\(userUid)")
+                .child("checkin")
+                .setValue([
+                    "checkin_time":  NSDate().timeIntervalSince1970,
+                    "event": [
+                        "end":       event.end,
+                        "id":        event.id,
+                        "latitude":  event.latitude,
+                        "longitude": event.longitude,
+                        "name":      event.name,
+                        "range":     event.range,
+                        "start":     event.start
+                        ]
+                    ])
+        }
     }
-    
-    // * This code can be used to create an event * //
-    //    func createEvent(){
-    //        self.ref.child("events").child("\(eventInRange.id)").setValue(["name":eventInRange.name, "longitude":eventInRange.longitude, "latitude":eventInRange.latitude, "range":eventInRange.range, "start":Int(eventInRange.start), "end":Int(eventInRange.end)])
-    //    }
-    
 }

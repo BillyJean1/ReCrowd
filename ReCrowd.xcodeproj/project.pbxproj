@@ -12,7 +12,6 @@
 		04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
 		0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */; };
-		0A6DBED41FEA918B001D74EA /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBECE1FEA918B001D74EA /* LocationService.swift */; };
 		0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBECF1FEA918B001D74EA /* CheckInService.swift */; };
 		0A6DBED61FEA918B001D74EA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED01FEA918B001D74EA /* LoginService.swift */; };
 		0A6DBED71FEA918B001D74EA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED11FEA918B001D74EA /* NotificationService.swift */; };
@@ -60,7 +59,6 @@
 		04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
-		0A6DBECE1FEA918B001D74EA /* LocationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0A6DBECF1FEA918B001D74EA /* CheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
 		0A6DBED01FEA918B001D74EA /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		0A6DBED11FEA918B001D74EA /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			children = (
 				0A6DBECF1FEA918B001D74EA /* CheckInService.swift */,
 				0A6DBED31FEA918B001D74EA /* FirebaseService.swift */,
-				0A6DBECE1FEA918B001D74EA /* LocationService.swift */,
 				0A6DBED01FEA918B001D74EA /* LoginService.swift */,
 				0A6DBED11FEA918B001D74EA /* NotificationService.swift */,
 				0A6DBED21FEA918B001D74EA /* RecommendationService.swift */,
@@ -551,7 +548,6 @@
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */,
 				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
-				0A6DBED41FEA918B001D74EA /* LocationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
