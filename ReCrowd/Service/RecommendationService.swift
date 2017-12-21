@@ -31,6 +31,10 @@ class RecommendationService {
             }
         })
     }
+    
+    public func stopStartedRecommendation() {
+        deleteRecommendations(forKey: RecommendationService.recommendationSavedKey)
+    }
 
     public func getRecommendations() -> [Recommendation]? {
         let data = UserDefaults.standard.object(forKey: RecommendationService.recommendationsUserDefaultKey)

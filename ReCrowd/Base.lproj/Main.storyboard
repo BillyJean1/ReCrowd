@@ -149,8 +149,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recommendation points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-Wb-yFc">
-                                <rect key="frame" x="20" y="81" width="374" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWK-Wb-yFc">
+                                <rect key="frame" x="20" y="81" width="177" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -167,7 +167,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdU-bY-WJd">
                                 <rect key="frame" x="20" y="652" width="177" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Accept"/>
+                                <state key="normal" title="Accepteren"/>
                                 <connections>
                                     <action selector="confirmAcceptRecommendation:" destination="F8f-xv-UbG" eventType="touchUpInside" id="y97-XP-8Dd"/>
                                 </connections>
@@ -175,11 +175,26 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-EN-CIy">
                                 <rect key="frame" x="217" y="652" width="177" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Decline"/>
+                                <state key="normal" title="Afwijzen"/>
                                 <connections>
                                     <action selector="declineRecommendation:" destination="F8f-xv-UbG" eventType="touchUpInside" id="edk-5i-2qG"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1h-N2-6ZV">
+                                <rect key="frame" x="119" y="336" width="177" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stoppen"/>
+                                <connections>
+                                    <action selector="stopRecommendation:" destination="F8f-xv-UbG" eventType="touchUpInside" id="Ipg-Xm-nYb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAN-XU-xgY">
+                                <rect key="frame" x="217" y="88" width="177" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zcc-Vq-3lV"/>
@@ -188,8 +203,10 @@
                         <outlet property="acceptButton" destination="qdU-bY-WJd" id="Fyx-vO-JR4"/>
                         <outlet property="declineButton" destination="jHN-EN-CIy" id="vVf-YF-IJc"/>
                         <outlet property="descriptionLabel" destination="LWr-wo-YvO" id="fIq-o3-5Xp"/>
+                        <outlet property="distanceLabel" destination="DAN-XU-xgY" id="Ex2-u9-ni8"/>
                         <outlet property="nameLabel" destination="8JP-LJ-sUn" id="8CE-hL-oFT"/>
                         <outlet property="pointsLabel" destination="tWK-Wb-yFc" id="7in-eS-FbT"/>
+                        <outlet property="stopButton" destination="c1h-N2-6ZV" id="2Jw-X0-Umc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzy-3z-kHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
