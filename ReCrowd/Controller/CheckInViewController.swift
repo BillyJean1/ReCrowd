@@ -10,21 +10,43 @@ import UIKit
 
 class CheckInViewController: UIViewController {
     
-    public var user: User?
+    public var user: User? // Guys, waarvoor is deze variabelen nuttig?
+    private var detectedEvent: Event?
     
-    private var eventInRange: Event?
+    @IBOutlet weak var locatieDisplay: UILabel!
     
-    @IBAction func checkMeIn(_ sender: UIButton) {
-        checkIn()
+    @IBOutlet weak var iHaveATicketButton: UIButton!
+    @IBOutlet weak var iHaveNoTicketButton: UIButton!
+    
+//        performSegue(withIdentifier: "Recommendations", sender: self)
+    
+    override func viewDidLoad() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
+        CheckInService.shared.updateEventInRange()
+    }
+    
+    @IBAction func iHaveATicketButtonPressed(_ sender: UIButton) {
+        if let detectedEvent = CheckInService.shared.eventInRange {
+            print("CheckInViewController :: iHaveATicketButtonPressed() -> notImplementedYet");
+            // MARK: Hier kan de code om het ticket te scannen dus. Vervolgens dient de checkIn methode uitgevoerd te worden: checkIn(atEvent: detectedEvent)
+        }
+    }
+    
+    @IBAction func iHaveNoTicketButtonPressed(_ sender: UIButton) {
+        if let detectedEvent = CheckInService.shared.eventInRange {
+            checkIn(atEvent: detectedEvent)
+        }
+    }
+    
+    func checkIn(atEvent event: Event){
+        CheckInService.shared.checkIn(atEvent: event)
         performSegue(withIdentifier: "Recommendations", sender: self)
     }
-    
-    public func checkIn() {
-        eventInRange = CheckInService.shared.checkIn()
-    }
-    
-    public func confirmEvent(withEvent eventInRange: Event) {
-        CheckInService.shared.registerCheckIn(withEvent: eventInRange)
+
+    @objc func showDetectedEvent() {
+        if let detectedEvent = CheckInService.shared.eventInRange {
+            locatieDisplay.text = "We hebben gedetecteerd dat je je in de \(detectedEvent.name) bevindt."
+        }
     }
     
 }
