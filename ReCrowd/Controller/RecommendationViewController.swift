@@ -16,12 +16,16 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
     private let zoomFactor = 38.0
     
     override func viewDidLoad() {
-      FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
+        loadRecommendations()
+    }
+
+    private func loadRecommendations() {
+        FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
             if event != nil {
+                weakSelf?.showRecommendations(event: event!)
+
                 if let startedRecommendation = RecommendationService.shared.getStartedRecommendation() {
                     weakSelf?.segueToRecommendationDetail(recommendation: startedRecommendation, isStarted: true)
-                } else {
-                    weakSelf?.showRecommendations(event: event!)
                 }
             } else {
                 weakSelf?.alertUserNotCheckedIn()
