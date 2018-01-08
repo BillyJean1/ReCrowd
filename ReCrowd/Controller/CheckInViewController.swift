@@ -18,11 +18,19 @@ class CheckInViewController: UIViewController {
     @IBOutlet weak var iHaveATicketButton: UIButton!
     @IBOutlet weak var iHaveNoTicketButton: UIButton!
     
-//        performSegue(withIdentifier: "Recommendations", sender: self)
+// performSegue(withIdentifier: "Recommendations", sender: self)
     
     override func viewDidLoad() {
-        NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
-        CheckInService.shared.updateEventInRange()
+        FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
+            let userIsAlreadyCheckedIn = event != nil
+            if userIsAlreadyCheckedIn {
+                self.performSegue(withIdentifier: "Recommendations", sender: self)
+            } else {
+                NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
+                CheckInService.shared.updateEventInRange()
+            }
+        })
+        
     }
     
     @IBAction func iHaveATicketButtonPressed(_ sender: UIButton) {

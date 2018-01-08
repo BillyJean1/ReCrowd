@@ -15,9 +15,9 @@ class CheckInService: NSObject {
     public static let shared = CheckInService()
     
     /* Location Variables */
-    public var currentLocation: CLLocation = CLLocation()
+    public var currentLocation = CLLocation()
     public var eventInRange: Event?
-    private var locationManager: CLLocationManager = CLLocationManager()
+    private var locationManager = CLLocationManager()
     
     /* Notification Variables */
     let updatedEventInRangeNotificationName = Notification.Name("updatedEventInRangeNotification")
@@ -43,7 +43,7 @@ class CheckInService: NSObject {
         locationManager.requestLocation()
     }
     
-    @objc private func getEventInRange(completionHandler: @escaping (_ event: Event) -> ()) {
+    @objc private func getEventInRange(completionHandler: @escaping (_ event: Event?) -> ()) {
         FirebaseService.shared.getEvents(completionHandler: {events in
             
             let eventsSortedByClosestDistanceToFurthestDistance = events.sorted(by: { compareableEvent1, compareableEvent2 in
@@ -53,7 +53,13 @@ class CheckInService: NSObject {
             
             let eventWithClosestDistance = eventsSortedByClosestDistanceToFurthestDistance[0]
             
-            completionHandler(eventWithClosestDistance)
+            if (self.currentLocation.distance(from: CLLocation(latitude: eventWithClosestDistance.latitude, longitude: eventWithClosestDistance.longitude)) <= eventWithClosestDistance.range) {
+                completionHandler(eventWithClosestDistance)
+            } else {
+                completionHandler(nil)
+            }
+            
+            
             
         })
     }
