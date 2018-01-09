@@ -80,33 +80,32 @@ class FirebaseService: NSObject {
     
     func getEventRecommendations(completionHandler: @escaping (_ recommendations: [Recommendation]?) -> ()) {
         var recommendations: [Recommendation] = []
-        recommendations.append(Recommendation(withName: "Python", withPoint: 200, withLongitude: 5.0517359, withLatitude: 51.6485471, withDescription: "De python is een achtbaan voor echte thrill-seekers"))
-        recommendations.append(Recommendation(withName: "Joris en de Draak", withPoint: 200, withLongitude: 5.0515974, withLatitude: 51.646975, withDescription: "Joris en de Draak is een achtbaan voor echte thrill-seekers"))
-        recommendations.append(Recommendation(withName: "Fata Morgana", withPoint: 200, withLongitude: 5.0450622, withLatitude: 51.6470669, withDescription: "De Fata Morgana is een waterattractie voor echte theme-lovers"))
-        recommendations.append(Recommendation(withName: "Piranha", withPoint: 200, withLongitude: 5.0489554, withLatitude: 51.6472064, withDescription: "De Piranha is een waterattractie voor echte thrill-lovers"))
-        recommendations.append(Recommendation(withName: "Bobslee", withPoint: 200, withLongitude: 5.046126, withLatitude: 51.6470839, withDescription: "De Bobslee is een slee-attractie voor echte thrill-lovers"))
-        
-        var completed: [Recommendation] = []
-        var random = Int(arc4random_uniform(UInt32(recommendations.count)))
-        completed.append(recommendations[random])
-        recommendations.remove(at: random)
-        
-        random = Int(arc4random_uniform(UInt32(recommendations.count)))
-        completed.append(recommendations[random])
-        recommendations.remove(at: random)
-        
-        random = Int(arc4random_uniform(UInt32(recommendations.count)))
-        completed.append(recommendations[random])
-        recommendations.remove(at: random)
-    
-
-        completionHandler(completed)
-        
-
-//        print("FirebaseService :: checkForRecommendations()")
-//        FirebaseService.shared.getCheckedInEvent(completionHandler: { event in
-//
-//        })
+        getCheckedInEvent(completionHandler: { [weak self] (event) in
+            self?.ref.child("recommendations").child("event-\(event!.id)").observeSingleEvent(of: .value, with: { (snapshot) in
+                if (true) {
+                    let enumerator = snapshot.children
+                    while let rest = enumerator.nextObject() as? DataSnapshot {
+                        if let value = rest.value as? NSObject {
+                            if (rest.hasChild("name") && rest.hasChild("longitude") && rest.hasChild("latitude") && rest.hasChild("description") && rest.hasChild("points")) {
+                                let name = value.value(forKey: "name") as! String
+                                let longitude = value.value(forKey: "longitude") as! Double
+                                let latitude = value.value(forKey: "latitude") as! Double
+                                let description = value.value(forKey: "description") as! String
+                                let points = value.value(forKey: "points") as! Int
+                                
+                                let recommendation = Recommendation(withName: name, withPoint: points, withLongitude: longitude, withLatitude: latitude, withDescription: description)
+                                recommendations.append(recommendation)
+                            }
+                        }
+                    }
+                    completionHandler(recommendations)
+                } else {
+                    completionHandler(nil)
+                }
+            }) { (error) in
+                completionHandler(nil)
+            }
+        })
     }
     
     func registerCheckIn(atEvent event: Event) {
@@ -125,7 +124,7 @@ class FirebaseService: NSObject {
                         "name":      event.name,
                         "range":     event.range,
                         "start":     event.start
-                        ]
+                    ]
                     ])
         }
     }
