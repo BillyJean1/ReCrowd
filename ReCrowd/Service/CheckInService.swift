@@ -23,6 +23,9 @@ class CheckInService: NSObject {
     let updatedEventInRangeNotificationName = Notification.Name("updatedEventInRangeNotification")
     let updatedEventInRangeNotification:Notification
     
+    /* Gives the current checked in event */
+    var currentCheckedInEvent:Event?
+    
     private override init() {
         updatedEventInRangeNotification = Notification.init(name: self.updatedEventInRangeNotificationName)
     }
@@ -34,6 +37,7 @@ class CheckInService: NSObject {
     
     public func checkIn(atEvent event: Event) {
         print("CheckInService :: Checking you in at \(event.name).")
+        currentCheckedInEvent = event
         FirebaseService.shared.registerCheckIn(atEvent: event)
     }
     
