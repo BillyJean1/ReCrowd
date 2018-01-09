@@ -14,7 +14,7 @@ import GooglePlaces
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    private static let GOOGLE_API_KEY = "AIzaSyDm4djGvXBHtfJlaa__ggI3chJf5fs_E7M"
+    public static let GOOGLE_API_KEY = "AIzaSyDm4djGvXBHtfJlaa__ggI3chJf5fs_E7M"
 
     var window: UIWindow?
 
