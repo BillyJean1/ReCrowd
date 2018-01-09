@@ -103,13 +103,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="sqj-Bp-siv">
                                         <rect key="frame" x="100" y="258" width="214" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Goedemorgen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-s8-JBJ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Goedemorgen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-s8-JBJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="214" height="28"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="U96-RK-z6q"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Naam !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-6F-Qt6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Naam !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UL-6F-Qt6">
                                                 <rect key="frame" x="0.0" y="33" width="214" height="27"/>
                                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="24"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,19 +186,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-g0-XRd">
-                                <rect key="frame" x="20" y="209" width="374" height="478"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-g0-XRd">
+                                <rect key="frame" x="20" y="78" width="386" height="601"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-RL-hKR">
-                                        <rect key="frame" x="8" y="8" width="133" height="92"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLQ-dJ-CVB">
+                                        <rect key="frame" x="182" y="8" width="196" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Button" image="KnuffelButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34C-bb-Esf">
+                                        <rect key="frame" x="268" y="322" width="110" height="271"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="ShowButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-2j-jGJ">
+                                        <rect key="frame" x="268" y="199" width="110" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="KortingButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ei-gt-eOo">
+                                        <rect key="frame" x="8" y="199" width="252" height="261"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="ConsumptieButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ari-f5-Abj">
+                                        <rect key="frame" x="8" y="468" width="252" height="125"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="BackstageButton"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-RL-hKR">
+                                        <rect key="frame" x="8" y="7" width="166" height="184"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="FastlaneTicketButton"/>
                                     </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f4m-g0-XRd" firstAttribute="leading" secondItem="Dv7-8j-mGJ" secondAttribute="leading" constant="10" id="24e-PH-UvZ"/>
+                            <constraint firstItem="Dv7-8j-mGJ" firstAttribute="bottom" secondItem="f4m-g0-XRd" secondAttribute="bottom" id="Ltj-Sm-qGx"/>
+                            <constraint firstItem="f4m-g0-XRd" firstAttribute="top" secondItem="Dv7-8j-mGJ" secondAttribute="top" constant="10" id="R9G-GF-FaM"/>
+                            <constraint firstItem="Dv7-8j-mGJ" firstAttribute="trailing" secondItem="f4m-g0-XRd" secondAttribute="trailing" constant="10" id="r0d-gC-N54"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Dv7-8j-mGJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="no don't do it " id="c3b-T7-W6r"/>
@@ -352,6 +385,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Gkd-JO-FaN" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xB7-Fu-6eR">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -365,9 +399,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BackstageButton" width="477" height="217"/>
+        <image name="ConsumptieButton" width="477" height="393"/>
+        <image name="FastlaneTicketButton" width="315" height="306"/>
+        <image name="KnuffelButton" width="363" height="306"/>
+        <image name="KortingButton" width="207" height="219"/>
         <image name="NoTicketButton" width="702" height="269"/>
         <image name="ReCrowd" width="167" height="203"/>
         <image name="ScanButton" width="701" height="334"/>
+        <image name="ShowButton" width="207" height="391"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cUA-Hy-lUu"/>
