@@ -25,7 +25,7 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
     @IBOutlet weak var routeButton: UIButton!
     
     let locationManager = CLLocationManager()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setButtonUsability(enabled: recommendationWasStarted != true)
@@ -37,14 +37,13 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         }
         
         // Obtain location
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
-        locationManager.requestLocation()
+        self.startLocationUpdates()
         
         // Check if destination is already reached
         if recommendationWasStarted == true, let currentLocation = self.location, let recommendation = self.recommendation {
             RecommendationService.shared.checkDestinationIsReached(currentLocation: currentLocation, recommendation: recommendation, vc: self)
         }
+    
     }
     
     @IBAction func navigateRecommendation(_ sender: UIButton) {
@@ -82,6 +81,10 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
             if let lat = recommendation?.latitude, let lng = recommendation?.longitude {
                 let distance = location.distance(from: CLLocation(latitude: lat, longitude: lng))
                 self.distanceLabel.text = "Afstand: \(Int(distance)) meter"
+            }
+            
+            if let recommendation = self.recommendation, self.recommendationWasStarted! == true {
+                RecommendationService.shared.checkDestinationIsReached(currentLocation: location, recommendation: recommendation, vc: self)
             }
         }
     }
@@ -123,6 +126,16 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         }
     }
 
+    private func startLocationUpdates() {
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestLocation()
+        
+        locationManager.allowsBackgroundLocationUpdates = true
+        locationManager.pausesLocationUpdatesAutomatically = false
+        locationManager.startUpdatingLocation()
+    }
+    
     private func setButtonUsability(enabled: Bool) {
         // Show decline + accept buttons if  recommendation is NOT saved (enabled = false)
         self.acceptButton.isEnabled = enabled
@@ -137,5 +150,8 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         
         self.routeButton.isEnabled = !enabled
         self.routeButton.isHidden = enabled
+        
+        // Start recommendation status
+        self.recommendationWasStarted = !enabled
     }
 }
