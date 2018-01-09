@@ -22,6 +22,8 @@
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
 		133354041FE809E9001F7E09 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133353FF1FE807B1001F7E09 /* LoginTests.swift */; };
 		136320F91FE9380900173EA6 /* CheckInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136320F81FE9380900173EA6 /* CheckInTests.swift */; };
+		13C9F3E91FFCF93E000D481D /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3E81FFCF93E000D481D /* EventTests.swift */; };
+		13C9F3EB1FFCFD66000D481D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3EA1FFCFD66000D481D /* UserTests.swift */; };
 		5623B94AC79D4B944DB2A4DB /* Pods_ReCrowd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */; };
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
 		5B336A6E1FE153AB00A91E61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6D1FE153AB00A91E61 /* User.swift */; };
@@ -69,6 +71,8 @@
 		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		133353FF1FE807B1001F7E09 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		136320F81FE9380900173EA6 /* CheckInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTests.swift; sourceTree = "<group>"; };
+		13C9F3E81FFCF93E000D481D /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
+		13C9F3EA1FFCFD66000D481D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReCrowd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3860F741519FCFE8F560C926 /* Pods-ReCrowd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowd/Pods-ReCrowd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -232,6 +236,8 @@
 				133353FF1FE807B1001F7E09 /* LoginTests.swift */,
 				5BD969C41FDFEAC900CF2F12 /* Info.plist */,
 				5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */,
+				13C9F3E81FFCF93E000D481D /* EventTests.swift */,
+				13C9F3EA1FFCFD66000D481D /* UserTests.swift */,
 			);
 			path = ReCrowdTests;
 			sourceTree = "<group>";
@@ -559,7 +565,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13C9F3E91FFCF93E000D481D /* EventTests.swift in Sources */,
 				5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */,
+				13C9F3EB1FFCFD66000D481D /* UserTests.swift in Sources */,
 				136320F91FE9380900173EA6 /* CheckInTests.swift in Sources */,
 				133354041FE809E9001F7E09 /* LoginTests.swift in Sources */,
 			);
