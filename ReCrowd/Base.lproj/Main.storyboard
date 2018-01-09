@@ -281,36 +281,6 @@
             </objects>
             <point key="canvasLocation" x="3937" y="65"/>
         </scene>
-        <!--Reward View Controller-->
-        <scene sceneID="hpn-nF-3Kg">
-            <objects>
-                <viewController id="dpr-nN-z3o" customClass="RewardViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="PRV-gt-6N7">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="P6i-Nt-XsH"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NF1-be-tF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4672" y="64"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="9bd-K0-dLh">
-            <objects>
-                <viewController id="2R1-yF-sus" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CEG-Hc-f63">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="xWQ-8W-kpi"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="52b-W2-NnZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5427" y="63"/>
-        </scene>
         <!--Email Login View Controller-->
         <scene sceneID="HXz-hr-9Ci">
             <objects>
