@@ -25,6 +25,31 @@ class FirebaseService: NSObject {
         ref = Database.database().reference()
     }
     
+    func getRewardsForEvent(completionHandler: @escaping (_ rewards: [Reward]) -> ()) {
+        var rewards = [Reward]()
+        getCheckedInEvent(completionHandler: { [weak self] (event) in
+            print("We are gonna get the rewards for event id '\(event!.id)' rewards.")
+            self?.ref.child("rewards").child("event-\(event!.id)").observeSingleEvent(of: .value, with: { (snapshot) in
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? DataSnapshot {
+                    if let value = rest.value as? NSObject{
+                        let cost = value.value(forKey: "cost") as! Double
+                        let description = value.value(forKey: "description") as! String
+                        let name = value.value(forKey: "name") as! String
+
+                        let reward = Reward(named: name, withDescription: description, withCost: cost)
+                        print("Reward '\(reward.name)' found.")
+                        rewards.append(reward)
+                    }
+                }
+                print("We have found \(rewards.count) rewards for event with id '\(event!.id)'.")
+                completionHandler(rewards)
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        })
+    }
+
     func getEvents(completionHandler: @escaping (_ event: [Event]) -> ()) {
         var events = [Event]()
         
@@ -82,26 +107,24 @@ class FirebaseService: NSObject {
         var recommendations: [Recommendation] = []
         getCheckedInEvent(completionHandler: { [weak self] (event) in
             self?.ref.child("recommendations").child("event-\(event!.id)").observeSingleEvent(of: .value, with: { (snapshot) in
-                if (true) {
-                    let enumerator = snapshot.children
-                    while let rest = enumerator.nextObject() as? DataSnapshot {
-                        if let value = rest.value as? NSObject {
-                            if (rest.hasChild("name") && rest.hasChild("longitude") && rest.hasChild("latitude") && rest.hasChild("description") && rest.hasChild("points")) {
-                                let name = value.value(forKey: "name") as! String
-                                let longitude = value.value(forKey: "longitude") as! Double
-                                let latitude = value.value(forKey: "latitude") as! Double
-                                let description = value.value(forKey: "description") as! String
-                                let points = value.value(forKey: "points") as! Int
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? DataSnapshot {
+                    if let value = rest.value as? NSObject {
+                        if (rest.hasChild("name") && rest.hasChild("longitude") && rest.hasChild("latitude") && rest.hasChild("description") && rest.hasChild("points")) {
+                            let name = value.value(forKey: "name") as! String
+                            let longitude = value.value(forKey: "longitude") as! Double
+                            let latitude = value.value(forKey: "latitude") as! Double
+                            let description = value.value(forKey: "description") as! String
+                            let points = value.value(forKey: "points") as! Int
 
-                                let recommendation = Recommendation(withName: name, withPoint: points, withLongitude: longitude, withLatitude: latitude, withDescription: description)
-                                recommendations.append(recommendation)
-                            }
+                            let recommendation = Recommendation(withName: name, withPoint: points, withLongitude: longitude, withLatitude: latitude, withDescription: description)
+                            recommendations.append(recommendation)
                         }
+                    } else {
+                        completionHandler(nil)
                     }
-                    completionHandler(recommendations)
-                } else {
-                    completionHandler(nil)
                 }
+                completionHandler(recommendations)
             }) { (error) in
                 completionHandler(nil)
             }

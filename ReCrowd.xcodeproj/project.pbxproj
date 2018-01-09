@@ -11,6 +11,7 @@
 		04AC88831FE6FCC300526B63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88821FE6FCC300526B63 /* LoginViewController.swift */; };
 		04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
+		0A312D962004CE85000A87FE /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A312D952004CE85000A87FE /* Reward.swift */; };
 		0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */; };
 		0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBECF1FEA918B001D74EA /* CheckInService.swift */; };
 		0A6DBED61FEA918B001D74EA /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBED01FEA918B001D74EA /* LoginService.swift */; };
@@ -62,6 +63,7 @@
 		04AC88821FE6FCC300526B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A312D952004CE85000A87FE /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		0A6DBECF1FEA918B001D74EA /* CheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
 		0A6DBED01FEA918B001D74EA /* LoginService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				5B336A6D1FE153AB00A91E61 /* User.swift */,
 				5BD65C121FE9263C00BD3618 /* Recommendation.swift */,
 				0AE8F0FA1FE2846D0080359F /* Event.swift */,
+				0A312D952004CE85000A87FE /* Reward.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */,
 				0A6DBED71FEA918B001D74EA /* NotificationService.swift in Sources */,
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
+				0A312D962004CE85000A87FE /* Reward.swift in Sources */,
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
 				5B9DEAD81FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift in Sources */,
 				5B586C902004CE16000DC68E /* RewardService.swift in Sources */,
