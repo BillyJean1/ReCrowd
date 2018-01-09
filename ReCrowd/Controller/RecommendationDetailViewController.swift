@@ -12,6 +12,7 @@ import CoreLocation
 class RecommendationDetailViewController: UIViewController, CLLocationManagerDelegate {
     var recommendation: Recommendation?
     var recommendationWasStarted: Bool?
+    var location: CLLocation?
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
@@ -39,6 +40,11 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         locationManager.delegate = self
         locationManager.requestAlwaysAuthorization()
         locationManager.requestLocation()
+        
+        // Check if destination is already reached
+        if recommendationWasStarted == true, let currentLocation = self.location, let recommendation = self.recommendation {
+            RecommendationService.shared.checkDestinationIsReached(currentLocation: currentLocation, recommendation: recommendation, vc: self)
+        }
     }
     
     @IBAction func navigateRecommendation(_ sender: UIButton) {
@@ -63,6 +69,7 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
         let alert = UIAlertController(title: "Aanbeveling accepteren", message: "Weet je zeker dat je deze suggestie wil accepteren?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Ja", style: .default, handler: { [weak weakSelf = self] action in
             weakSelf?.acceptRecommendation()
+            
         }))
         alert.addAction(UIAlertAction(title: "Nee", style: .default, handler: { action in }))
         self.present(alert, animated: true, completion: nil)
@@ -70,6 +77,8 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
+            self.location = location
+            
             if let lat = recommendation?.latitude, let lng = recommendation?.longitude {
                 let distance = location.distance(from: CLLocation(latitude: lat, longitude: lng))
                 self.distanceLabel.text = "Afstand: \(Int(distance)) meter"
@@ -107,12 +116,13 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
     }
     
     private func acceptRecommendation() {
-        if recommendation != nil {
-            RecommendationService.shared.startRecommendation(recommendation: recommendation!)
+        if let recommendation = self.recommendation, let currentLocation = self.location {
+            RecommendationService.shared.startRecommendation(recommendation: recommendation)
+            RecommendationService.shared.checkDestinationIsReached(currentLocation: currentLocation, recommendation: recommendation, vc: self)
             setButtonUsability(enabled: false)
         }
     }
-    
+
     private func setButtonUsability(enabled: Bool) {
         // Show decline + accept buttons if  recommendation is NOT saved (enabled = false)
         self.acceptButton.isEnabled = enabled

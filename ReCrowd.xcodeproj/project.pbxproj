@@ -25,6 +25,7 @@
 		5623B94AC79D4B944DB2A4DB /* Pods_ReCrowd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */; };
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
 		5B336A6E1FE153AB00A91E61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6D1FE153AB00A91E61 /* User.swift */; };
+		5B586C902004CE16000DC68E /* RewardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B586C8F2004CE16000DC68E /* RewardService.swift */; };
 		5B97CC491FE7CC720094608B /* UILoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */; };
 		5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE16E1FE7E04F0045819F /* UILoginViewController.swift */; };
 		5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */; };
@@ -73,6 +74,7 @@
 		3860F741519FCFE8F560C926 /* Pods-ReCrowd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowd/Pods-ReCrowd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B336A6D1FE153AB00A91E61 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5B586C8F2004CE16000DC68E /* RewardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardService.swift; sourceTree = "<group>"; };
 		5B97CC391FE7CBFA0094608B /* UILoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5B97CC3F1FE7CC630094608B /* ReCrowdUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReCrowdUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B97CC431FE7CC630094608B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				0A6DBED01FEA918B001D74EA /* LoginService.swift */,
 				0A6DBED11FEA918B001D74EA /* NotificationService.swift */,
 				0A6DBED21FEA918B001D74EA /* RecommendationService.swift */,
+				5B586C8F2004CE16000DC68E /* RewardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
 				5B9DEAD81FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift in Sources */,
+				5B586C902004CE16000DC68E /* RewardService.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */,

@@ -251,9 +251,11 @@
                         <outlet property="routeButton" destination="430-Th-Jl6" id="mLa-4x-n3s"/>
                         <outlet property="stopButton" destination="c1h-N2-6ZV" id="2Jw-X0-Umc"/>
                         <segue destination="edB-oG-iJ4" kind="show" id="hxu-7S-lpl"/>
+                        <segue destination="oX4-zv-YaF" kind="unwind" identifier="unwindToRecommendationVC" unwindAction="unwindToRecommendationVCWithSegue:" id="04p-F6-fOn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzy-3z-kHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="oX4-zv-YaF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3210" y="64"/>
         </scene>
@@ -276,8 +278,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aUV-GF-8O6"/>
                     </view>
+                    <connections>
+                        <segue destination="clJ-oJ-hFe" kind="unwind" identifier="unwindToRecommendationVC" unwindAction="unwindToRecommendationVCWithSegue:" id="vfS-bQ-oau"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hV-3m-NfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="clJ-oJ-hFe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3937" y="65"/>
         </scene>

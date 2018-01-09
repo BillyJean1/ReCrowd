@@ -15,7 +15,6 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
     let locationManager = CLLocationManager()
 
     var recommendation: Recommendation?
-    var marker = GMSMarker()
     var mapView: GMSMapView?
     
     override func viewDidLoad() {
@@ -38,12 +37,24 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
         
     }
     
-    func route(startLocation: CLLocation, recommendation: Recommendation) {
-        if self.mapView == nil {
-            return;
-        } else {
-            self.mapView?.clear()
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            if let view = view as? GMSMapView {
+                view.clear()
+
+                if let recommendation = self.recommendation {
+                    self.route(startLocation: location, recommendation: recommendation)
+                    RecommendationService.shared.checkDestinationIsReached(currentLocation: location, recommendation: recommendation, vc: self)
+                }
+                
+                let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude))
+                marker.map = view
+                view.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 16)
+            }
         }
+    }
+    
+    func route(startLocation: CLLocation, recommendation: Recommendation) {
         
         let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
         let destination = "\(recommendation.latitude),\(recommendation.longitude)"
@@ -60,8 +71,7 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
                     let routes = json["routes"] as! NSArray
                     
                     OperationQueue.main.addOperation({
-                        for route in routes
-                        {
+                        for route in routes {
                             let routeOverviewPolyline:NSDictionary = (route as! NSDictionary).value(forKey: "overview_polyline") as! NSDictionary
                             let points = routeOverviewPolyline.object(forKey: "points")
                             let path = GMSPath.init(fromEncodedPath: points! as! String)
@@ -72,7 +82,6 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
                             self.mapView!.animate(with: GMSCameraUpdate.fit(bounds, withPadding: 30.0))
                             
                             polyline.map = self.mapView
-                            
                         }
                     })
                 }catch let error as NSError{
@@ -80,20 +89,5 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
                 }
             }
         }).resume()
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            if let view = view as? GMSMapView {
-
-                if let recommendation = self.recommendation {
-                    self.route(startLocation: location, recommendation: recommendation)
-                }
-                
-                marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-                marker.map = view
-                view.camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude, longitude: location.coordinate.longitude, zoom: 16)
-            }
-        }
     }
 }

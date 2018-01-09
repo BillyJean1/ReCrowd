@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreLocation
+import UIKit
 
 class RecommendationService {
     public static let shared = RecommendationService()
@@ -72,6 +74,30 @@ class RecommendationService {
 
     public func deleteRecommendations(forKey key: String) {
         UserDefaults.standard.removeObject(forKey: key)
+    }
+    
+    private func isRecommendationDestintionInReach(currentLocation: CLLocation, recommendation: Recommendation) -> Bool {
+        let destination = CLLocation(latitude: recommendation.latitude, longitude: recommendation.longitude)
+        let distanceInMeters = currentLocation.distance(from: destination)
+        
+        return distanceInMeters <= 50
+    }
+    
+    public func checkDestinationIsReached(currentLocation: CLLocation, recommendation: Recommendation, vc: UIViewController) {
+        if self.isRecommendationDestintionInReach(currentLocation: currentLocation, recommendation: recommendation) {
+            let msg = "U heeft \(recommendation.points) punt(en) verdiend! Bedankt voor het meewerken aan drukteverdpreiding in het park."
+            
+            
+            let alert = UIAlertController(title: "Doelbestemming bereikt!", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                
+                RecommendationService.shared.stopStartedRecommendation()
+                _ = RewardService.shared.addRewardPoints(add: recommendation.points)
+                
+                vc.performSegue(withIdentifier: "unwindToRecommendationVC", sender: vc)
+            }))
+            vc.present(alert, animated: true, completion: nil)
+        }
     }
 
     private func saveRecommendations(recommendations: [Recommendation]) {
