@@ -12,13 +12,22 @@ class RewardService {
     public static let shared = RewardService()
     public static let rewardPointsDefaultKey = "reward_points"
     
-    public func getRewardPoints() -> Int {
+    public func getCurrentRewardPointsForUser() -> Int {
         return UserDefaults.standard.integer(forKey: RewardService.rewardPointsDefaultKey)
     }
     
-    public func addRewardPoints(add: Int) -> Int {
-        let currentRewardPoints = self.getRewardPoints()
+    @discardableResult
+    public func addRewardPointsForUser(add: Int) -> Int {
+        let currentRewardPoints = self.getCurrentRewardPointsForUser()
         let newRewardPoints = currentRewardPoints + add
+        UserDefaults.standard.set(newRewardPoints, forKey: RewardService.rewardPointsDefaultKey)
+        return newRewardPoints
+    }
+    
+    @discardableResult
+    public func decreaseRewardPointsForUser(by number: Int) -> Int {
+        let currentRewardPoints = self.getCurrentRewardPointsForUser()
+        let newRewardPoints = currentRewardPoints + number
         UserDefaults.standard.set(newRewardPoints, forKey: RewardService.rewardPointsDefaultKey)
         return newRewardPoints
     }

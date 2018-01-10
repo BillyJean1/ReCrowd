@@ -98,7 +98,7 @@ class RecommendationService {
             let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                 
-                _ = RewardService.shared.addRewardPoints(add: recommendation.points)
+                _ = RewardService.shared.addRewardPointsForUser(add: recommendation.points)
                 RecommendationService.shared.stopStartedRecommendation()
                 vc.performSegue(withIdentifier: "unwindToRecommendationVC", sender: vc)
             }))
@@ -106,7 +106,7 @@ class RecommendationService {
         }
         else {
             // Do background notification
-            _ = RewardService.shared.addRewardPoints(add: recommendation.points)
+            _ = RewardService.shared.addRewardPointsForUser(add: recommendation.points)
             RecommendationService.shared.stopStartedRecommendation()
             NotificationService.shared.sendNotification(withIdentifier: title, withTitle: title, withBody: msg)
             vc.performSegue(withIdentifier: "unwindToRecommendationVC", sender: vc)
