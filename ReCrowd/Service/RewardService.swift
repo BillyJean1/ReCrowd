@@ -16,6 +16,12 @@ class RewardService {
         return UserDefaults.standard.integer(forKey: RewardService.rewardPointsDefaultKey)
     }
     
+    @objc private func getRewardsForEvent(completionHandler: @escaping (_ rewards: [Reward]) -> ()) {
+        FirebaseService.shared.getRewardsForEvent(completionHandler:  { (rewards) in
+            completionHandler(rewards)
+        })
+    }
+    
     @discardableResult
     public func addRewardPointsForUser(add: Int) -> Int {
         let currentRewardPoints = self.getCurrentRewardPointsForUser()
