@@ -24,6 +24,7 @@ class CheckInViewController: UIViewController {
         FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
             let userIsAlreadyCheckedIn = event != nil
             if userIsAlreadyCheckedIn {
+                CheckInService.shared.currentCheckedInEvent = event
                 self.performSegue(withIdentifier: "Recommendations", sender: self)
             } else {
                 NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)

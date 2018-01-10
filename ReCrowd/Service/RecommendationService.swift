@@ -25,7 +25,7 @@ class RecommendationService {
                         NotificationService.shared.sendNotification(
                             withIdentifier: "Nieuwe_Aanbevelingen",
                             withTitle: "ReCrowd - Nieuw aanbevelingen",
-                            withBody: "Er zijn \(notEqual) nieuwe aanbevelingen! Ga erna toe om punten te verdienen.")
+                            withBody: "Er zijn \(notEqual) nieuwe suggesties! Accepteer om punten te verdienen.")
                     }
                 }
                 weakSelf?.saveRecommendations(recommendations: recommendations)
@@ -84,19 +84,32 @@ class RecommendationService {
     }
     
     public func checkDestinationIsReached(currentLocation: CLLocation, recommendation: Recommendation, vc: UIViewController) {
-        if self.isRecommendationDestintionInReach(currentLocation: currentLocation, recommendation: recommendation) {
-            let msg = "U heeft \(recommendation.points) punt(en) verdiend! Bedankt voor het meewerken aan drukteverdpreiding in het park."
-            
-            
-            let alert = UIAlertController(title: "Doelbestemming bereikt!", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        if self.isRecommendationDestintionInReach(currentLocation: currentLocation, recommendation: recommendation) == false {
+            return
+        }
+        
+        let msg = "U heeft \(recommendation.points) punt(en) verdiend! Bedankt voor het meewerken aan drukteverdpreiding in het park."
+        let title = "Doelbestemming bereikt!"
+        
+        let state: UIApplicationState = UIApplication.shared.applicationState
+        if state == .active {
+
+            // Do foreground alert
+            let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                 
-                RecommendationService.shared.stopStartedRecommendation()
                 _ = RewardService.shared.addRewardPoints(add: recommendation.points)
-                
+                RecommendationService.shared.stopStartedRecommendation()
                 vc.performSegue(withIdentifier: "unwindToRecommendationVC", sender: vc)
             }))
             vc.present(alert, animated: true, completion: nil)
+        }
+        else {
+            // Do background notification
+            _ = RewardService.shared.addRewardPoints(add: recommendation.points)
+            RecommendationService.shared.stopStartedRecommendation()
+            NotificationService.shared.sendNotification(withIdentifier: title, withTitle: title, withBody: msg)
+            vc.performSegue(withIdentifier: "unwindToRecommendationVC", sender: vc)
         }
     }
 
@@ -146,4 +159,5 @@ class RecommendationService {
         }
         return notEqual
     }
+
 }
