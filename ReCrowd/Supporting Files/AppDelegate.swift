@@ -20,15 +20,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        application.isStatusBarHidden = true
         FirebaseApp.configure()
         NotificationService.shared.askNotificationPermission()
         _ = RecommendationService.shared
-        
+
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         self.configureGoogleMaps()
         return true
     }
-    
+
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         if RecommendationService.shared.getStartedRecommendation() != nil {
             RecommendationService.shared.checkForRecommendations(completionHandler: { data in
@@ -63,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
+
     private func configureGoogleMaps() {
         GMSPlacesClient.provideAPIKey(AppDelegate.GOOGLE_API_KEY)
         GMSServices.provideAPIKey(AppDelegate.GOOGLE_API_KEY)
