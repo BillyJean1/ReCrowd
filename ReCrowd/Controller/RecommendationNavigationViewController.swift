@@ -83,6 +83,13 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
                             
                             polyline.map = self.mapView
                         }
+                        
+                        // Set destination marker
+                        if let view = self.view as? GMSMapView {
+                            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: recommendation.latitude, longitude: recommendation.longitude))
+                            marker.icon = GMSMarker.markerImage(with: UIColor.green)
+                            marker.map = view
+                        }
                     })
                 }catch let error as NSError{
                     print("error:\(error)")

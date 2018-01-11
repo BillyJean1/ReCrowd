@@ -22,6 +22,14 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var emailLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
+    override func viewDidAppear(_ animated: Bool) {
+        if (loginService.isAuth()) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckInViewController") as! CheckInViewController
+            self.present(checkinVC, animated: true, completion: nil)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
@@ -39,7 +47,6 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
           self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: nil, action: nil)
     }
 
-    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
             if user != nil {

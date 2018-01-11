@@ -2,54 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RewardDetailViewController.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/HomeViewController.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/New Group/CheckInService.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/New Group/FirebaseService.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/AccountTabIcon.imageset/AccountTabIcon@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/AccountTabIcon.imageset/AccountTabIcon@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/AccountTabIcon.imageset/AccountTabIcon@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/AccountTabIcon.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/BackstageButton.imageset/BackstageButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/BackstageButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinIcon.imageset/CoinIcon@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinIcon.imageset/CoinIcon@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinIcon.imageset/CoinIcon@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinIcon.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ConsumptieButton.imageset/ConsumptieButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ConsumptieButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/FastlaneTicketButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/FastlaneTicketButton.imageset/FastlaneTicketButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/InformationTabIcon.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/InformationTabIcon.imageset/InformationTabIcon@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/InformationTabIcon.imageset/InformationTabIcon@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/InformationTabIcon.imageset/InformationTabIcon@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/KnuffelButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/KnuffelButton.imageset/KnuffelButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/KortingButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/KortingButton.imageset/KortingButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/MedalTabIcon.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/MedalTabIcon.imageset/MedalTabIcon@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/MedalTabIcon.imageset/MedalTabIcon@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/MedalTabIcon.imageset/MedalTabIcon@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/NoTicketButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/NoTicketButton.imageset/NoTicketButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/RecommendedTabIcon.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/RecommendedTabIcon.imageset/RecommendedTabIcon@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/RecommendedTabIcon.imageset/RecommendedTabIcon@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/RecommendedTabIcon.imageset/RecommendedTabIcon@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ScanButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ScanButton.imageset/ScanButton.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ShowButton.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ShowButton.imageset/ShowButton.png" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Domain/Facility.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Service/MapService.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ehbo.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ehbo.imageset/ehbo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/flag.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/flag.imageset/flag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/pin.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/pin.imageset/pin.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/placeholder.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/placeholder.imageset/placeholder.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/question.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/question.imageset/question.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/toilet.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/toilet.imageset/toilet.png" />
       <change beforePath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" />
       <change beforePath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/EmailLoginViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/EmailLoginViewController.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/CheckInViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/CheckInViewController.swift" />
       <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/LoginViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/LoginViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/UILoginViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/UILoginViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Info.plist" afterPath="$PROJECT_DIR$/ReCrowd/Info.plist" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Supporting Files/AppDelegate.swift" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/AppDelegate.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationNavigationViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationNavigationViewController.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationViewController.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Service/FirebaseService.swift" afterPath="$PROJECT_DIR$/ReCrowd/Service/FirebaseService.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Service/LoginService.swift" afterPath="$PROJECT_DIR$/ReCrowd/Service/LoginService.swift" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -90,6 +64,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,8 +77,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,11 +110,12 @@
       <updated>1515503164305</updated>
       <workItem from="1515503165615" duration="68000" />
       <workItem from="1515576702792" duration="1158000" />
+      <workItem from="1515669741954" duration="354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1226000" />
+    <option name="totallyTimeSpent" value="1580000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -149,12 +124,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />

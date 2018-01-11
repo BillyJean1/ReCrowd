@@ -212,7 +212,7 @@ waar je je bevindt...</string>
         <!--Reward Detail View Controller-->
         <scene sceneID="YOH-UR-Mac">
             <objects>
-                <viewController id="cJS-PF-BeF" customClass="RewardDetailViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecommendationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cJS-PF-BeF" customClass="RewardDetailViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Af4-MH-Elr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

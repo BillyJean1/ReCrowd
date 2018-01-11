@@ -16,16 +16,20 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
     private let zoomFactor = 38.0
     
     override func viewDidLoad() {
-        loadRecommendations()
+        loadMapFeatures()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadMapFeatures()
     }
 
-    private func loadRecommendations() {
+    private func loadMapFeatures() {
         FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
             if event != nil {
-                weakSelf?.showRecommendations(event: event!)
-
                 if let startedRecommendation = RecommendationService.shared.getStartedRecommendation() {
                     weakSelf?.segueToRecommendationDetail(recommendation: startedRecommendation, isStarted: true)
+                } else {
+                    weakSelf?.showMapFeatures(event: event!)
                 }
             } else {
                 weakSelf?.alertUserNotCheckedIn()
@@ -33,25 +37,31 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
         })
     }
     
-    private func showRecommendations(event: Event) {
+    private func showMapFeatures(event: Event) {
         let camera = GMSCameraPosition.camera(withLatitude: event.latitude, longitude: event.longitude, zoom: Float(event.range/zoomFactor))
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.delegate = self
         
         addRecommendationsToMap(mapView: mapView, event: event)
+        addFacilitiesToMap(mapView: mapView)
     }
     
     private func addRecommendationsToMap(mapView: GMSMapView, event: Event) {
         RecommendationService.shared.checkForRecommendations(completionHandler: { [weak weakSelf = self] (data) in
             if let recommendations = data {
                 for recommendation in recommendations {
-                    let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: recommendation.latitude, longitude: recommendation.longitude))
-                    marker.title = recommendation.name
-                    marker.userData = recommendation
-                    marker.map = mapView
+                    MapService.shared.setRecommendationMarker(mapView: mapView, recommendation: recommendation)
                 }
             }
             weakSelf?.view = mapView
+        })
+    }
+    
+    private func addFacilitiesToMap(mapView: GMSMapView) {
+        FirebaseService.shared.getFacilities(completionHandler: { (facilities) in
+            for facility in facilities {
+                MapService.shared.setFacilityMarker(mapView: mapView, facility: facility)
+            }
         })
     }
     
@@ -75,7 +85,9 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
         recommendationVC.recommendation = recommendation
         recommendationVC.recommendationWasStarted = isStarted
         self.present(recommendationVC, animated: true, completion: nil)
+        
     }
     
     @IBAction func unwindToRecommendationVC(segue:UIStoryboardSegue) { }
 }
+
