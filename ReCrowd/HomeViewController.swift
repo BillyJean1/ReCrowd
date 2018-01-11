@@ -12,16 +12,27 @@ class HomeViewController: UIViewController {
     
    public var user: User?
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.hidesBackButton = true
+        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.addCoin()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.addCoin()
+           self.navigationController?.navigationBar.topItem?.title = "Beloningen"
+        self.navigationItem.hidesBackButton = true
+    }
     
     override func viewDidLoad() {
-      // print(user?.id ?? "lol no user")
-        //self.navigationController?.navigationBar.isHidden = true
-        self.navigationController?.navigationBar.isTranslucent = false
-        self.navigationController?.navigationBar.topItem?.title = "Beloningen"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController!.navigationBar.barTintColor = UIColor(red: 255/255.0, green: 167/255.0, blue: 20/255.0, alpha: 1.0)
         
+    }
+    
+    func addCoin (){
         let coin = UIButton(type: .custom)
         coin.setImage(#imageLiteral(resourceName: "CoinIcon"), for: .normal)
         coin.tintColor = UIColor.white
@@ -36,5 +47,19 @@ class HomeViewController: UIViewController {
         self.navigationController!.navigationBar.topItem?.setRightBarButtonItems([coinItem], animated: true)
     }
 
+    @IBAction func goToRewardDetailView(_ sender: UIButton) {
+        performSegue(withIdentifier: "RewardDetails", sender: sender)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "RewardDetails"){
+            if let destination = segue.destination as? RewardDetailViewController{
+                destination.hidesBottomBarWhenPushed = true
+                if let button = sender as? UIButton{
+                    destination.image = button.currentImage
+                }
+            }
+        }
+    }
     
 }
