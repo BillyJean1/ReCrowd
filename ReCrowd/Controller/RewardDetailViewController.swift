@@ -10,7 +10,7 @@ import UIKit
 
 class RewardDetailViewController: UIViewController {
 
-    let reward:Reward? = nil
+    var reward:Reward? = nil
     var imageName:String = ""
     
     @IBOutlet weak var buyRewardButton: UIButton!
@@ -39,6 +39,21 @@ class RewardDetailViewController: UIViewController {
     }
     
     @IBAction func buyReward(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Item kopen", message: "Weet u zeker dat u dit item wilt kopen?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Nee", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Ja", style: .default, handler:
+            { (_) in
+                RewardService.shared.decreaseRewardPointsForUser(by: (self.reward?.cost)!)
+                RewardService.shared.addReward(reward: self.reward!)
+                
+                let alert2 = UIAlertController(title:"Gekocht", message: "Item aangeschaft!", preferredStyle: .alert)
+                alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert2, animated: true, completion: nil)
+                
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
     }
     
 

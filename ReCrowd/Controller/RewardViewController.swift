@@ -31,9 +31,12 @@ class RewardViewController: UIViewController {
         RewardService.shared.getRewardForEvent(completionHandler: {reward in
             destinationVC.priceLabel.text = "\(reward.cost)"
             destinationVC.rewardDescription.text = "\(reward._description)"
-            
-            if  RewardService.shared.getCurrentRewardPointsForUser() < reward.cost{
+            destinationVC.reward = reward
+            let rewardPoints = RewardService.shared.getCurrentRewardPointsForUser()
+            print("Current reward points for this user: \(rewardPoints)")
+            if rewardPoints < reward.cost{
                 destinationVC.buyRewardButton.isEnabled = false
+                destinationVC.buyRewardButton.alpha = 0.5
             }
             
             
