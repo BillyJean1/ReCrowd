@@ -25,13 +25,40 @@ class FirebaseService: NSObject {
         ref = Database.database().reference()
     }
     
+    func getFacilities(completionHandler: @escaping (_ facility: [Facility]) -> ()) {
+        self.getCheckedInEvent(completionHandler: { [weak self] (event) in
+            var facilities = [Facility]()
+            
+            self?.ref.child("facilities").child("event-\(event!.id)").observeSingleEvent(of: .value, with: { (snapshot) in
+                let enumerator = snapshot.children
+                while let rest = enumerator.nextObject() as? DataSnapshot {
+                    if let value = rest.value as? NSObject {
+                        
+                        let name = value.value(forKey: "name") as! String
+                        let description = value.value(forKey: "description") as! String
+                        let type = value.value(forKey: "type") as? String ?? " "
+                        let lat = value.value(forKey: "latitude") as! Double
+                        let lng = value.value(forKey: "longitude") as! Double
+                        
+                        let facility = Facility(name: name, description: description, type: type, latitude: lat, longitude: lng)
+                        facilities.append(facility)
+                    }
+                }
+                completionHandler(facilities)
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+        })
+    }
+    
     func getEvents(completionHandler: @escaping (_ event: [Event]) -> ()) {
         var events = [Event]()
         
         self.ref.child("events").observeSingleEvent(of: .value, with: { (snapshot) in
             let enumerator = snapshot.children
             while let rest = enumerator.nextObject() as? DataSnapshot {
-                if let value = rest.value as? NSObject{
+                if let value = rest.value as? NSObject, let id = Int(rest.key) {
+    
                     let name = value.value(forKey: "name")
                     let longitude = value.value(forKey: "longitude") as! Double
                     let latitude = value.value(forKey: "latitude") as! Double
@@ -39,7 +66,7 @@ class FirebaseService: NSObject {
                     let start = value.value(forKey: "start") as! TimeInterval
                     let end = value.value(forKey: "end") as! TimeInterval
                     
-                    let event = Event(withId: 1, named: name as! String, withLongitude: longitude, withLatitude: latitude , range: range, start: start, end: end)
+                    let event = Event(withId: id, named: name as! String, withLongitude: longitude, withLatitude: latitude , range: range, start: start, end: end)
                     events.append(event)
                 }
                 

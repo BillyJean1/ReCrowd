@@ -142,7 +142,7 @@
         <!--Recommendation View Controller-->
         <scene sceneID="9Db-DV-t19">
             <objects>
-                <viewController id="hFS-S6-BAT" customClass="RecommendationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecommendationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hFS-S6-BAT" customClass="RecommendationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m2L-hx-3ov" customClass="Recom">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

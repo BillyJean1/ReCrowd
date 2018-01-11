@@ -21,15 +21,24 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var emailLoginButton: UIButton!
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
     
+    override func viewDidAppear(_ animated: Bool) {
+        if (loginService.isAuth()) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckinViewController") as! CheckInViewController
+            self.present(checkinVC, animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
-    
         emailLoginButton.setFAText(prefixText: "", icon: .FAEnvelope, postfixText: "Login in with e-mail", size: 18,  forState: .normal)
         emailLoginButton.setFATitleColor(color: .white, forState: .normal)
+        
+        // Skip login if already authenticated
+   
     }
 
-    
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
             if user != nil {

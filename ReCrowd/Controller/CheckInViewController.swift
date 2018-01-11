@@ -22,20 +22,22 @@ class CheckInViewController: UIViewController {
     
     override func viewDidLoad() {
         FirebaseService.shared.getCheckedInEvent(completionHandler: { [weak weakSelf = self] (event) in
-            let userIsAlreadyCheckedIn = event != nil
-            if userIsAlreadyCheckedIn {
-                CheckInService.shared.currentCheckedInEvent = event
-                self.performSegue(withIdentifier: "Recommendations", sender: self)
-            } else {
-                NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
-                CheckInService.shared.updateEventInRange()
+            if let weakSelf = weakSelf {
+                let userIsAlreadyCheckedIn = event != nil
+                if userIsAlreadyCheckedIn {
+                    CheckInService.shared.currentCheckedInEvent = event
+                    weakSelf.performSegue(withIdentifier: "Recommendations", sender: weakSelf)
+                } else {
+                    NotificationCenter.default.addObserver(weakSelf, selector: #selector(weakSelf.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
+                    CheckInService.shared.updateEventInRange()
+                }
             }
         })
         
     }
     
     @IBAction func iHaveATicketButtonPressed(_ sender: UIButton) {
-        if let detectedEvent = CheckInService.shared.eventInRange {
+        if let _ = CheckInService.shared.eventInRange {
             print("CheckInViewController :: iHaveATicketButtonPressed() -> notImplementedYet");
             // MARK: Hier kan de code om het ticket te scannen dus. Vervolgens dient de checkIn methode uitgevoerd te worden: checkIn(atEvent: detectedEvent)
         }
