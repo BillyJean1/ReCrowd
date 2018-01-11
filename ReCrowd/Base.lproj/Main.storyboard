@@ -130,6 +130,10 @@
                                     <constraint firstAttribute="height" constant="338" id="o8a-BD-nH9"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-VN-HMa">
+                                <rect key="frame" x="11" y="348" width="392" height="378"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fFx-0P-P17">
                                 <rect key="frame" x="11" y="541" width="392" height="185"/>
                                 <state key="normal" title="Button" image="NoTicketButton"/>
@@ -147,16 +151,29 @@
                                     <action selector="iHaveATicketButtonPressed:" destination="DNk-DA-FHA" eventType="touchUpInside" id="8nN-ff-pnv"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STY-Qy-U1H">
+                                <rect key="frame" x="32" y="503" width="351" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">We zijn aan het detecteren
+waar je je bevindt...</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="btA-md-RAc" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" id="5dN-Rk-fm6"/>
+                            <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="aLS-VN-HMa" secondAttribute="trailing" constant="11" id="6Xd-rd-EOU"/>
                             <constraint firstItem="btA-md-RAc" firstAttribute="top" secondItem="f48-oh-sFY" secondAttribute="top" constant="-64" id="Fun-ma-ODB"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="bottom" secondItem="fFx-0P-P17" secondAttribute="bottom" constant="10" id="IWi-hZ-0zY"/>
+                            <constraint firstItem="aLS-VN-HMa" firstAttribute="top" secondItem="ptO-YA-oln" secondAttribute="top" id="XXg-CZ-kFd"/>
+                            <constraint firstItem="aLS-VN-HMa" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="11" id="cAY-d0-IAB"/>
                             <constraint firstItem="ptO-YA-oln" firstAttribute="top" secondItem="btA-md-RAc" secondAttribute="bottom" constant="10" id="evj-gV-dKD"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="fFx-0P-P17" secondAttribute="trailing" constant="11" id="fMI-0b-4zo"/>
                             <constraint firstItem="fFx-0P-P17" firstAttribute="top" secondItem="ptO-YA-oln" secondAttribute="bottom" constant="8" id="g3P-t4-s6X"/>
+                            <constraint firstItem="f48-oh-sFY" firstAttribute="bottom" secondItem="aLS-VN-HMa" secondAttribute="bottom" constant="10" id="ljM-P5-k1f"/>
                             <constraint firstItem="fFx-0P-P17" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="11" id="mdO-8a-BQE"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="btA-md-RAc" secondAttribute="trailing" id="pjs-2E-jK3"/>
                             <constraint firstItem="ptO-YA-oln" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="11" id="uP9-xx-QCf"/>
@@ -165,8 +182,10 @@
                         <viewLayoutGuide key="safeArea" id="f48-oh-sFY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraView" destination="aLS-VN-HMa" id="ohi-Wn-jX4"/>
                         <outlet property="iHaveATicketButton" destination="ptO-YA-oln" id="ndA-YV-8yn"/>
                         <outlet property="iHaveNoTicketButton" destination="fFx-0P-P17" id="3vb-oT-DbL"/>
+                        <outlet property="locationLabel" destination="STY-Qy-U1H" id="RdW-R1-E8m"/>
                         <segue destination="4n6-sN-vSK" kind="show" identifier="Home" id="V2c-do-6DV"/>
                     </connections>
                 </viewController>

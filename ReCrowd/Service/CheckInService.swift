@@ -11,6 +11,10 @@ import CoreLocation
 
 class CheckInService: NSObject {
     
+    /* UserID's
+     Ramon: tSlTCQdcEzYtZV4uwsN8sKymMoF3
+     */
+    
     /* Property to access this shared instance. */
     public static let shared = CheckInService()
     

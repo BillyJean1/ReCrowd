@@ -15,12 +15,38 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     private var detectedEvent: Event?
     
     // OUTLETS
-    @IBOutlet weak var locatieDisplay: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var iHaveATicketButton: UIButton!
     @IBOutlet weak var iHaveNoTicketButton: UIButton!
     
     // LOCATION CHECK-IN
     private var eventInRange: Event?
+    
+    // CAMERA
+    var captureSession:AVCaptureSession?
+    var videoPreviewLayer:AVCaptureVideoPreviewLayer?
+    
+    // This view will display everything that the camera records (awesome variable name)
+    @IBOutlet weak var cameraView: UIView!
+    var qrCodeHighlightFrameView:UIView?
+    
+    // What do we want to scan? For now: let's just scan everything possible
+    let supportedCodeTypes = [AVMetadataObject.ObjectType.upce,
+                              AVMetadataObject.ObjectType.code39,
+                              AVMetadataObject.ObjectType.code39Mod43,
+                              AVMetadataObject.ObjectType.code93,
+                              AVMetadataObject.ObjectType.code128,
+                              AVMetadataObject.ObjectType.ean8,
+                              AVMetadataObject.ObjectType.ean13,
+                              AVMetadataObject.ObjectType.aztec,
+                              AVMetadataObject.ObjectType.pdf417,
+                              AVMetadataObject.ObjectType.qr]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        locationLabel.isHidden = false
+        iHaveATicketButton.isHidden = true
+        iHaveNoTicketButton.isHidden = true
+    }
 
     override func viewDidLoad() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -40,11 +66,45 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     @IBAction func iHaveATicketButtonPressed(_ sender: UIButton) {
-        if let detectedEvent = CheckInService.shared.eventInRange {
-            print("CheckInViewController :: iHaveATicketButtonPressed() -> notImplementedYet");
-            performSegue(withIdentifier: "Home", sender: self)
-            // MARK: Hier kan de code om het ticket te scannen dus. Vervolgens dient de checkIn methode uitgevoerd te worden: checkIn(atEvent: detectedEvent)
-        }
+        print("User has pressed the the button which indicates that he/she has a ticket.")
+        
+            iHaveATicketButton.isHidden = true
+            iHaveNoTicketButton.isHidden = true
+            
+            let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+            
+            do {
+                let input = try AVCaptureDeviceInput(device: captureDevice!)
+                captureSession = AVCaptureSession()
+                captureSession?.addInput(input)
+                
+                // Bunch of stuff from the tutorial {
+                let captureMetadataOutput = AVCaptureMetadataOutput()
+                captureSession?.addOutput(captureMetadataOutput)
+                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
+                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+                videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+                videoPreviewLayer?.frame = cameraView.bounds
+                cameraView.layer.addSublayer(videoPreviewLayer!)
+                // }
+                
+                // And last but not least, start the video capture. Now the camera part works.
+                captureSession?.startRunning()
+                
+                // To highlight the QRCode / BarCode, we need the following coe:
+                qrCodeHighlightFrameView = UIView()
+                if let qrCodeHighlightFrameView = qrCodeHighlightFrameView {
+                    qrCodeHighlightFrameView.layer.borderColor = UIColor.green.cgColor
+                    qrCodeHighlightFrameView.layer.borderWidth = 2
+                    cameraView.addSubview(qrCodeHighlightFrameView)
+                    cameraView.bringSubview(toFront: qrCodeHighlightFrameView)
+                }
+                
+            } catch {
+                print(error)
+                return
+            }
     }
     
     @IBAction func iHaveNoTicketButtonPressed(_ sender: UIButton) {
@@ -55,18 +115,46 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     }
     
     func checkIn(atEvent event: Event){
+        print("Checking you in.")
         CheckInService.shared.checkIn(atEvent: event)
         performSegue(withIdentifier: "Home", sender: self)
     }
     
     @objc func showDetectedEvent() {
         if let detectedEvent = CheckInService.shared.eventInRange {
-            locatieDisplay.text = "We hebben gedetecteerd dat je je in de \(detectedEvent.name) bevindt."
+            print("Detected event: \(detectedEvent.name).")
+            locationLabel.isHidden = true
+            iHaveATicketButton.isHidden = false
+            iHaveNoTicketButton.isHidden = false
         }
     }
     
-    public func confirmEvent(withEvent eventInRange: Event) {
-        CheckInService.shared.checkIn(atEvent: eventInRange)
+    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        
+        // Check if the metadataObjects array is not nil and it contains at least one object.
+        if metadataObjects == nil || metadataObjects.count == 0 {
+            qrCodeHighlightFrameView?.frame = CGRect.zero
+            print("QR/Barcode scanner :: No QR/barcode was detected.")
+            return
+        }
+        
+        // Get the metadata object we want (first one).
+        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        
+        if supportedCodeTypes.contains(metadataObj.type) {
+            // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
+            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+            qrCodeHighlightFrameView?.frame = barCodeObject!.bounds
+            
+            if metadataObj.stringValue != nil {
+                print("QR/Barcode scanner :: Detected code: \(String(describing: metadataObj.stringValue)).")
+                if let detectedEvent = CheckInService.shared.eventInRange {
+                    // Todo: we should do something with the scanned ticket
+                    checkIn(atEvent: detectedEvent)
+                    performSegue(withIdentifier: "Home", sender: self)
+                }
+            }
+        }
     }
     
     @IBAction func unwindToCheckinVC(segue:UIStoryboardSegue) { }
