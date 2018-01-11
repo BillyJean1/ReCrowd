@@ -78,6 +78,7 @@ extension CheckInService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
             currentLocation = location
+            print("Location was updated! Latitude: \(currentLocation.coordinate.latitude), longitude: \(currentLocation.coordinate.longitude).")
             getEventInRange(completionHandler: { newEventInRange in
                 self.eventInRange = newEventInRange
                 NotificationCenter.default.post(self.updatedEventInRangeNotification)
