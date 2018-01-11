@@ -11,9 +11,9 @@ import Foundation
 class Reward: NSObject {
     public var name: String
     public var _description: String
-    public var cost: Double
+    public var cost: Int
     
-    init(named name: String, withDescription description: String, withCost cost: Double) {
+    init(named name: String, withDescription description: String, withCost cost: Int) {
         self.name = name
         self._description = description
         self.cost = cost

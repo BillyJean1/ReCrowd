@@ -198,9 +198,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-Yl-Ye2">
-                                <rect key="frame" x="20" y="65" width="374" height="250"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-KI-ICb">
+                                <rect key="frame" x="20" y="65" width="374" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-Yl-Ye2">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jat-Zi-kNs">
+                                        <rect key="frame" x="0.0" y="250" width="89" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAO-hQ-VHg">
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-qq-JpC">
+                                                <rect key="frame" x="39" y="0.0" width="50" height="50"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-N2-O6T">
                                 <rect key="frame" x="20" y="598" width="374" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,25 +228,38 @@
                                 <state key="normal" title="Kopen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="buyReward:" destination="cJS-PF-BeF" eventType="touchUpInside" id="Wgn-dE-MCq"/>
+                                </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="COv-pk-Z4J">
+                                <rect key="frame" x="20" y="401" width="374" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="JKo-HN-C0G" firstAttribute="top" secondItem="3yH-Yl-Ye2" secondAttribute="top" id="bY5-xF-aTq"/>
-                            <constraint firstItem="JKo-HN-C0G" firstAttribute="trailing" secondItem="3yH-Yl-Ye2" secondAttribute="trailing" constant="20" id="dgF-WT-91B"/>
-                            <constraint firstItem="3yH-Yl-Ye2" firstAttribute="leading" secondItem="JKo-HN-C0G" secondAttribute="leading" constant="20" id="z6U-7b-vYO"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="JKo-HN-C0G"/>
                     </view>
+                    <connections>
+                        <outlet property="buyRewardButton" destination="FcF-N2-O6T" id="MFh-zy-jWp"/>
+                        <outlet property="coinIcon" destination="mLF-qq-JpC" id="pax-sR-ahN"/>
+                        <outlet property="priceLabel" destination="DAO-hQ-VHg" id="m1t-SL-cd9"/>
+                        <outlet property="rewardDescription" destination="COv-pk-Z4J" id="fZW-4R-RMb"/>
+                        <outlet property="rewardImage" destination="3yH-Yl-Ye2" id="tRe-3D-Iy0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qr2-kE-HKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2031.8840579710147" y="2428.5326086956525"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Reward View Controller-->
         <scene sceneID="yYf-Pt-s7F">
             <objects>
-                <viewController id="o4d-O5-kJM" customClass="HomeViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="o4d-O5-kJM" customClass="RewardViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBV-pv-uSU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,35 +267,53 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-g0-XRd">
                                 <rect key="frame" x="20" y="78" width="386" height="601"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLQ-dJ-CVB">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JLQ-dJ-CVB">
                                         <rect key="frame" x="182" y="8" width="204" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="KnuffelButton"/>
+                                        <connections>
+                                            <action selector="rewardButtonPressed:" destination="o4d-O5-kJM" eventType="touchUpInside" id="1UL-gH-Xqv"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34C-bb-Esf">
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34C-bb-Esf">
                                         <rect key="frame" x="268" y="322" width="118" height="271"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="ShowButton"/>
+                                        <connections>
+                                            <action selector="rewardButtonPressed:" destination="o4d-O5-kJM" eventType="touchUpInside" id="9Uo-UQ-qDJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-2j-jGJ">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPE-2j-jGJ">
                                         <rect key="frame" x="268" y="199" width="118" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="KortingButton"/>
+                                        <connections>
+                                            <action selector="rewardButtonPressed:" destination="o4d-O5-kJM" eventType="touchUpInside" id="nUT-Nw-LhK"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ei-gt-eOo">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ei-gt-eOo">
                                         <rect key="frame" x="8" y="199" width="252" height="261"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="ConsumptieButton"/>
+                                        <connections>
+                                            <action selector="rewardButtonPressed:" destination="o4d-O5-kJM" eventType="touchUpInside" id="2Py-Ah-ODJ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ari-f5-Abj">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ari-f5-Abj">
                                         <rect key="frame" x="8" y="468" width="252" height="125"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="BackstageButton"/>
+                                        <connections>
+                                            <action selector="rewardButtonPressed:" destination="o4d-O5-kJM" eventType="touchUpInside" id="6VP-UT-ha2"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-RL-hKR">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9e-RL-hKR">
                                         <rect key="frame" x="8" y="7" width="166" height="184"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="FastlaneTicketButton"/>
+                                        <connections>
+                                            <action selector="rewardButtonPressed:" destination="o4d-O5-kJM" eventType="touchUpInside" id="TT8-Bd-6dR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </scrollView>

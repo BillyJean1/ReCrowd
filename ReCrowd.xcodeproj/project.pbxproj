@@ -23,6 +23,7 @@
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
 		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
+		131467A0200762270083A8B9 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314679F200762270083A8B9 /* RewardViewController.swift */; };
 		133354041FE809E9001F7E09 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133353FF1FE807B1001F7E09 /* LoginTests.swift */; };
 		136320F91FE9380900173EA6 /* CheckInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136320F81FE9380900173EA6 /* CheckInTests.swift */; };
 		13C9F3E91FFCF93E000D481D /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3E81FFCF93E000D481D /* EventTests.swift */; };
@@ -75,6 +76,7 @@
 		0AD00A57200618B5008D392F /* UILoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoginViewController.swift; sourceTree = "<group>"; };
 		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = ../CheckInViewController.swift; sourceTree = "<group>"; };
 		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1314679F200762270083A8B9 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 		133353FF1FE807B1001F7E09 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		136320F81FE9380900173EA6 /* CheckInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTests.swift; sourceTree = "<group>"; };
 		13C9F3E81FFCF93E000D481D /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */,
 				5B9DEAD51FEBAD3900DB4D47 /* RecommendationDetailViewController.swift */,
 				5B9DEAD71FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift */,
+				1314679F200762270083A8B9 /* RewardViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -339,6 +342,11 @@
 		5BD969A21FDFEAC900CF2F12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+					3,
+				);
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = BillyJeanOne;
@@ -556,6 +564,7 @@
 				0A6DBED91FEA918B001D74EA /* FirebaseService.swift in Sources */,
 				0AD00A5A200618B5008D392F /* UILoginViewController.swift in Sources */,
 				5B9DEAD61FEBAD3900DB4D47 /* RecommendationDetailViewController.swift in Sources */,
+				131467A0200762270083A8B9 /* RewardViewController.swift in Sources */,
 				5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */,
 				0A6DBED81FEA918B001D74EA /* RecommendationService.swift in Sources */,
 				0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */,

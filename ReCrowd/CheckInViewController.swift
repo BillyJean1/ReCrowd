@@ -15,7 +15,7 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     private var detectedEvent: Event?
     
     // OUTLETS
-    @IBOutlet weak var locatieDisplay: UILabel!
+    // @IBOutlet weak var locatieDisplay: UILabel!
     @IBOutlet weak var iHaveATicketButton: UIButton!
     @IBOutlet weak var iHaveNoTicketButton: UIButton!
     
@@ -61,7 +61,7 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     @objc func showDetectedEvent() {
         if let detectedEvent = CheckInService.shared.eventInRange {
-            locatieDisplay.text = "We hebben gedetecteerd dat je je in de \(detectedEvent.name) bevindt."
+//            locatieDisplay.text = "We hebben gedetecteerd dat je je in de \(detectedEvent.name) bevindt."
         }
     }
     

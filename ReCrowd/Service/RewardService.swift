@@ -16,10 +16,10 @@ class RewardService {
         return UserDefaults.standard.integer(forKey: RewardService.rewardPointsDefaultKey)
     }
     
-    @objc private func getRewardsForEvent(completionHandler: @escaping (_ rewards: [Reward]) -> ()) {
-        FirebaseService.shared.getRewardsForEvent(completionHandler:  { (rewards) in
-            completionHandler(rewards)
-        })
+    @objc public func getRewardForEvent(completionHandler: @escaping (_ reward: Reward) -> (), id:Int) {
+        FirebaseService.shared.getRewardForEvent(completionHandler:  { (reward) in
+            completionHandler(reward)
+        }, id: id)
     }
     
     @discardableResult
