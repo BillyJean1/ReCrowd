@@ -37,7 +37,7 @@ class RewardService {
     @discardableResult
     public func decreaseRewardPointsForUser(by number: Int) -> Int {
         let currentRewardPoints = self.getCurrentRewardPointsForUser()
-        let newRewardPoints = currentRewardPoints + number
+        let newRewardPoints = currentRewardPoints - number
         UserDefaults.standard.set(newRewardPoints, forKey: RewardService.rewardPointsDefaultKey)
         return newRewardPoints
     }
@@ -67,7 +67,7 @@ class RewardService {
         else{
             currentRewards = [Reward]()
         }
-        
+    
         currentRewards.append(reward)
         
         let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: currentRewards)

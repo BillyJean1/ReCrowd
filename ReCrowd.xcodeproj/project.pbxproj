@@ -28,6 +28,9 @@
 		136320F91FE9380900173EA6 /* CheckInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136320F81FE9380900173EA6 /* CheckInTests.swift */; };
 		13C9F3E91FFCF93E000D481D /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3E81FFCF93E000D481D /* EventTests.swift */; };
 		13C9F3EB1FFCFD66000D481D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3EA1FFCFD66000D481D /* UserTests.swift */; };
+		13CED89F200CAD69000FFF9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CED89E200CAD69000FFF9E /* ProfileViewController.swift */; };
+		13CED8A3200CB802000FFF9E /* RewardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CED8A2200CB802000FFF9E /* RewardCollectionViewCell.swift */; };
+		13CED8A7200CB8DB000FFF9E /* RewardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CED8A6200CB8DB000FFF9E /* RewardCollectionView.swift */; };
 		5623B94AC79D4B944DB2A4DB /* Pods_ReCrowd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */; };
 		5B336A681FE146A200A91E61 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B336A671FE146A200A91E61 /* GoogleService-Info.plist */; };
 		5B336A6E1FE153AB00A91E61 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B336A6D1FE153AB00A91E61 /* User.swift */; };
@@ -81,6 +84,9 @@
 		136320F81FE9380900173EA6 /* CheckInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTests.swift; sourceTree = "<group>"; };
 		13C9F3E81FFCF93E000D481D /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		13C9F3EA1FFCFD66000D481D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		13CED89E200CAD69000FFF9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		13CED8A2200CB802000FFF9E /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardCollectionViewCell.swift; sourceTree = "<group>"; };
+		13CED8A6200CB8DB000FFF9E /* RewardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardCollectionView.swift; sourceTree = "<group>"; };
 		1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReCrowd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3860F741519FCFE8F560C926 /* Pods-ReCrowd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowd/Pods-ReCrowd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B336A671FE146A200A91E61 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -143,11 +149,12 @@
 				0AD00A56200618B5008D392F /* LoginViewController.swift */,
 				0AD00A57200618B5008D392F /* UILoginViewController.swift */,
 				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
-				04054E302004F40700A747B7 /* RewardDetailViewController.swift */,
 				0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */,
 				5B9DEAD51FEBAD3900DB4D47 /* RecommendationDetailViewController.swift */,
 				5B9DEAD71FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift */,
 				1314679F200762270083A8B9 /* RewardViewController.swift */,
+				04054E302004F40700A747B7 /* RewardDetailViewController.swift */,
+				13CED89E200CAD69000FFF9E /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -163,6 +170,23 @@
 				5B586C8F2004CE16000DC68E /* RewardService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		13CED8A0200CB7C2000FFF9E /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				13CED8A1200CB7D5000FFF9E /* Cells */,
+				13CED8A6200CB8DB000FFF9E /* RewardCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		13CED8A1200CB7D5000FFF9E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				13CED8A2200CB802000FFF9E /* RewardCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		29DAE96E254ED742D768B40E /* Frameworks */ = {
@@ -232,6 +256,7 @@
 			children = (
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
+				13CED8A0200CB7C2000FFF9E /* CollectionView */,
 				0A67E2571FEA903B008EC990 /* Controller */,
 				0A67E2581FEA905D008EC990 /* Service */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
@@ -560,6 +585,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD00A59200618B5008D392F /* LoginViewController.swift in Sources */,
+				13CED8A3200CB802000FFF9E /* RewardCollectionViewCell.swift in Sources */,
+				13CED8A7200CB8DB000FFF9E /* RewardCollectionView.swift in Sources */,
 				0A6DBED61FEA918B001D74EA /* LoginService.swift in Sources */,
 				0A6DBED91FEA918B001D74EA /* FirebaseService.swift in Sources */,
 				0AD00A5A200618B5008D392F /* UILoginViewController.swift in Sources */,
@@ -577,6 +604,7 @@
 				0AD00A58200618B5008D392F /* EmailLoginViewController.swift in Sources */,
 				5B586C902004CE16000DC68E /* RewardService.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
+				13CED89F200CAD69000FFF9E /* ProfileViewController.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */,
 			);

@@ -29,7 +29,6 @@ class RewardDetailViewController: UIViewController {
 
     
     private func setUpImages(){
-        coinIcon.image = UIImage(named: "CoinIcon")
         rewardImage.image = UIImage(named: imageName)
     }
     
@@ -46,6 +45,11 @@ class RewardDetailViewController: UIViewController {
             { (_) in
                 RewardService.shared.decreaseRewardPointsForUser(by: (self.reward?.cost)!)
                 RewardService.shared.addReward(reward: self.reward!)
+                
+                if RewardService.shared.getCurrentRewardPointsForUser()  < (self.reward?.cost)! {
+                    self.buyRewardButton.isEnabled = false
+                    self.buyRewardButton.alpha = 0.5
+                }
                 
                 let alert2 = UIAlertController(title:"Gekocht", message: "Item aangeschaft!", preferredStyle: .alert)
                 alert2.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

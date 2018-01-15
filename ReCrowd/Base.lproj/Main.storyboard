@@ -24,17 +24,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="i1s-cs-lkM">
-                                <rect key="frame" x="20" y="514" width="257" height="192"/>
+                                <rect key="frame" x="20" y="514" width="374" height="192"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="700-uv-jzM" userLabel="FBLoginButton" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="257" height="86"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="86"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="255" id="zA3-MJ-WrE"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtC-fG-C7i">
-                                        <rect key="frame" x="0.0" y="106" width="257" height="86"/>
+                                        <rect key="frame" x="0.0" y="106" width="374" height="86"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Log in with e-mail">
@@ -47,10 +47,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qnO-Mg-sW7">
-                                <rect key="frame" x="65" y="124" width="167" height="332"/>
+                                <rect key="frame" x="65" y="124" width="284" height="332"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReCrowd" translatesAutoresizingMaskIntoConstraints="NO" id="Imr-iP-Jdj">
-                                        <rect key="frame" x="0.0" y="0.0" width="167" height="332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="332"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -198,24 +198,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-KI-ICb">
-                                <rect key="frame" x="20" y="65" width="374" height="300"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-KI-ICb">
+                                <rect key="frame" x="20" y="65" width="374" height="282"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-Yl-Ye2">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jat-Zi-kNs">
-                                        <rect key="frame" x="0.0" y="250" width="89" height="50"/>
+                                        <rect key="frame" x="0.0" y="250" width="87" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAO-hQ-VHg">
-                                                <rect key="frame" x="0.0" y="0.0" width="39" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="39" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-qq-JpC">
-                                                <rect key="frame" x="39" y="0.0" width="50" height="50"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="CoinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-qq-JpC">
+                                                <rect key="frame" x="39" y="0.0" width="48" height="32"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
@@ -634,18 +634,87 @@
         <!--Profiel-->
         <scene sceneID="Usd-rM-bNO">
             <objects>
-                <viewController id="Tev-Kc-XG5" sceneMemberID="viewController">
+                <viewController id="Tev-Kc-XG5" customClass="ProfileViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5UW-2t-ubJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OJk-Vc-xmj">
+                                <rect key="frame" x="0.0" y="64" width="414" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxK-YB-Tbs">
+                                        <rect key="frame" x="371" y="8" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="LogoutButton"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZ4-W0-DbP">
+                                <rect key="frame" x="20" y="394" width="208" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CoinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="zmH-OL-Pgq">
+                                <rect key="frame" x="236" y="391" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wuc-ax-iys" customClass="RewardCollectionView" customModule="ReCrowd" customModuleProvider="target">
+                                <rect key="frame" x="20" y="450" width="374" height="237"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="R0a-xU-WsC">
+                                    <size key="itemSize" width="90" height="70"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reward" id="KgU-cC-m27" customClass="RewardCollectionViewCell" customModule="ReCrowd" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZB1-iF-Y1u">
+                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="80"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ZB1-iF-Y1u" firstAttribute="width" secondItem="KgU-cC-m27" secondAttribute="width" id="M85-nn-pC4"/>
+                                            <constraint firstItem="ZB1-iF-Y1u" firstAttribute="height" secondItem="KgU-cC-m27" secondAttribute="height" id="b49-Bb-WpV"/>
+                                            <constraint firstItem="ZB1-iF-Y1u" firstAttribute="centerX" secondItem="KgU-cC-m27" secondAttribute="centerX" id="dLq-QN-qpw"/>
+                                            <constraint firstItem="ZB1-iF-Y1u" firstAttribute="centerY" secondItem="KgU-cC-m27" secondAttribute="centerY" id="j9f-gw-X11"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="2" left="2" bottom="2" right="2"/>
+                                        <size key="customSize" width="110" height="80"/>
+                                        <connections>
+                                            <outlet property="rewardImage" destination="ZB1-iF-Y1u" id="qkh-Uz-UKy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Tev-Kc-XG5" id="Wbr-KF-hvc"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZh-W9-244"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profiel" image="AccountTabIcon" id="bC8-q4-PiE"/>
+                    <connections>
+                        <outlet property="collectionView" destination="wuc-ax-iys" id="oJX-mF-zRE"/>
+                        <outlet property="totalPoints" destination="nZ4-W0-DbP" id="4gW-9g-E2k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31N-Xw-1PD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3092.753623188406" y="367.66304347826087"/>
+            <point key="canvasLocation" x="3092.753623188406" y="366.84782608695656"/>
         </scene>
         <!--Beloningen-->
         <scene sceneID="1Cq-y6-Dma">
@@ -670,11 +739,13 @@
     <resources>
         <image name="AccountTabIcon" width="48" height="32"/>
         <image name="BackstageButton" width="477" height="217"/>
+        <image name="CoinIcon" width="48" height="32"/>
         <image name="ConsumptieButton" width="477" height="393"/>
         <image name="FastlaneTicketButton" width="315" height="306"/>
         <image name="InformationTabIcon" width="48" height="32"/>
         <image name="KnuffelButton" width="363" height="306"/>
         <image name="KortingButton" width="207" height="219"/>
+        <image name="LogoutButton" width="170" height="170"/>
         <image name="MedalTabIcon" width="48" height="32"/>
         <image name="NoTicketButton" width="702" height="269"/>
         <image name="ReCrowd" width="167" height="203"/>
