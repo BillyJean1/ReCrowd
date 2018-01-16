@@ -24,4 +24,6 @@ target 'ReCrowd' do
 
   # Pods for UI
   pod 'Font-Awesome-Swift', '~> 1.7.2'
+  pod 'paper-onboarding'
+
 end

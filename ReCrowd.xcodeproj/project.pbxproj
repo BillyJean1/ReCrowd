@@ -13,6 +13,8 @@
 		04AC88831FE6FCC300526B63 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88821FE6FCC300526B63 /* LoginViewController.swift */; };
 		04AC88851FE6FD3300526B63 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
+		04C9DEE0200DF05900BDB1D1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DEDF200DF05900BDB1D1 /* OnboardingView.swift */; };
+		04C9DEE2200DF1BA00BDB1D1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DEE1200DF1BA00BDB1D1 /* OnboardingViewController.swift */; };
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
 		0AE8F0F51FE277660080359F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F41FE277660080359F /* LocationService.swift */; };
 		0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F61FE27BEE0080359F /* CheckInService.swift */; };
@@ -57,6 +59,8 @@
 		04AC88821FE6FCC300526B63 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		04AC88841FE6FD3300526B63 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04C9DEDF200DF05900BDB1D1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		04C9DEE1200DF1BA00BDB1D1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		0AE8F0F41FE277660080359F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		0AE8F0F61FE27BEE0080359F /* CheckInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				5B336A6C1FE14B6200A91E61 /* Services */,
 				5BD969CD1FDFEB0600CF2F12 /* Supporting Files */,
 				5B336A691FE149BC00A91E61 /* Plist Files */,
+				04C9DEDF200DF05900BDB1D1 /* OnboardingView.swift */,
+				04C9DEE1200DF1BA00BDB1D1 /* OnboardingViewController.swift */,
 			);
 			path = ReCrowd;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-f0850809/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/paper-onboarding/paper_onboarding.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -401,6 +408,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/paper_onboarding.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -518,12 +526,14 @@
 				5B336A6E1FE153AB00A91E61 /* User.swift in Sources */,
 				04054E312004F40700A747B7 /* RewardDetailViewController.swift in Sources */,
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
+				04C9DEE2200DF1BA00BDB1D1 /* OnboardingViewController.swift in Sources */,
 				0AE8F0F91FE2831F0080359F /* FirebaseService.swift in Sources */,
 				5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */,
 				0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
+				04C9DEE0200DF05900BDB1D1 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

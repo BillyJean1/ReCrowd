@@ -11,6 +11,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
         <array key="ArialBold.ttf">
             <string>Arial-BoldMT</string>
         </array>
@@ -28,17 +31,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i1s-cs-lkM">
-                                <rect key="frame" x="20" y="514" width="257" height="187"/>
+                                <rect key="frame" x="20" y="514" width="374" height="187"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="700-uv-jzM" userLabel="FBLoginButton" customClass="FBSDKLoginButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="257" height="78.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="78.666666666666671"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="255" id="zA3-MJ-WrE"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mtC-fG-C7i">
-                                        <rect key="frame" x="0.0" y="108.66666666666663" width="257" height="78.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="108.66666666666663" width="374" height="78.333333333333314"/>
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Log in with e-mail">
@@ -51,10 +54,10 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qnO-Mg-sW7">
-                                <rect key="frame" x="65" y="124" width="167" height="332"/>
+                                <rect key="frame" x="65" y="124" width="284" height="332"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ReCrowd" translatesAutoresizingMaskIntoConstraints="NO" id="Imr-iP-Jdj">
-                                        <rect key="frame" x="0.0" y="0.0" width="167" height="332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="284" height="332"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -80,11 +83,61 @@
                         <outlet property="facebookLoginButton" destination="700-uv-jzM" id="iOs-5X-77h"/>
                         <outlet property="recrowdLogo" destination="Imr-iP-Jdj" id="LlZ-PY-qyQ"/>
                         <segue destination="DNk-DA-FHA" kind="show" identifier="Incheck" id="cUA-Hy-lUu"/>
+                        <segue destination="65E-bG-ACr" kind="show" identifier="Onboard" id="aq7-Vm-CXW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="52"/>
+            <point key="canvasLocation" x="-645" y="-119"/>
+        </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="cHE-6M-pqG">
+            <objects>
+                <viewController id="65E-bG-ACr" customClass="OnboardingViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Jt-dy-VDK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9A-fH-aXQ" customClass="OnboardingView" customModule="ReCrowd" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="772"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m3-gi-W13">
+                                <rect key="frame" x="140" y="593" width="116" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="clD-4G-CHC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="Beginnen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotStarted:" destination="65E-bG-ACr" eventType="touchUpInside" id="LKf-5V-aBX"/>
+                                    <segue destination="DNk-DA-FHA" kind="show" identifier="Incheck" id="T8Q-Jd-0oR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t9A-fH-aXQ" firstAttribute="top" secondItem="7Jt-dy-VDK" secondAttribute="top" id="Gon-5y-chV"/>
+                            <constraint firstItem="sk6-7b-V60" firstAttribute="bottom" secondItem="8m3-gi-W13" secondAttribute="bottom" constant="148" id="HYm-7g-qfw"/>
+                            <constraint firstItem="t9A-fH-aXQ" firstAttribute="leading" secondItem="7Jt-dy-VDK" secondAttribute="leading" id="JEP-1K-a8A"/>
+                            <constraint firstItem="t9A-fH-aXQ" firstAttribute="bottom" secondItem="sk6-7b-V60" secondAttribute="bottom" id="Jb6-Vm-57V"/>
+                            <constraint firstItem="8m3-gi-W13" firstAttribute="leading" secondItem="sk6-7b-V60" secondAttribute="leading" constant="140" id="Vpi-oa-Qay"/>
+                            <constraint firstItem="sk6-7b-V60" firstAttribute="trailing" secondItem="8m3-gi-W13" secondAttribute="trailing" constant="158" id="cKj-80-8A4"/>
+                            <constraint firstAttribute="trailing" secondItem="t9A-fH-aXQ" secondAttribute="trailing" id="wQs-en-qqc"/>
+                            <constraint firstItem="8m3-gi-W13" firstAttribute="top" secondItem="sk6-7b-V60" secondAttribute="top" constant="529" id="x6L-1m-6co"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sk6-7b-V60"/>
+                    </view>
+                    <connections>
+                        <outlet property="getStartedButton" destination="8m3-gi-W13" id="vXQ-yO-zbW"/>
+                        <outlet property="onboardingView" destination="t9A-fH-aXQ" id="Sat-1j-e0x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bJy-eT-5Ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="-642"/>
         </scene>
         <!--Check In View Controller-->
         <scene sceneID="vTu-GE-X9W">
@@ -176,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVy-k7-Imj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="860.86956521739137" y="75"/>
+            <point key="canvasLocation" x="1254" y="-74"/>
         </scene>
         <!--Informatie-->
         <scene sceneID="HB7-aN-jIJ">
@@ -537,11 +590,12 @@
                         <outlet property="recrowdLogo" destination="OWJ-PF-JbE" id="QCE-CH-K6p"/>
                         <outlet property="registerButton" destination="p5a-4L-3zs" id="6dt-Ob-iL9"/>
                         <segue destination="DNk-DA-FHA" kind="show" identifier="Incheck" id="nrS-oW-4bV"/>
+                        <segue destination="65E-bG-ACr" kind="show" identifier="Onboard" id="rNb-1h-tlU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcr-CZ-FWh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="843"/>
+            <point key="canvasLocation" x="-646" y="825"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kBx-7H-NbC">
@@ -564,7 +618,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iMT-Ae-pLf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-932" y="51"/>
+            <point key="canvasLocation" x="-1536" y="-119"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="hef-jm-hJ1">
@@ -572,6 +626,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4n6-sN-vSK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TiD-gD-kLm">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -584,7 +639,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rco-cz-YKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="75"/>
+            <point key="canvasLocation" x="1797" y="64"/>
         </scene>
         <!--Suggestie-->
         <scene sceneID="L5K-0G-saG">
@@ -657,6 +712,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Isn-ZB-0WG"/>
-        <segue reference="cUA-Hy-lUu"/>
+        <segue reference="T8Q-Jd-0oR"/>
+        <segue reference="aq7-Vm-CXW"/>
     </inferredMetricsTieBreakers>
 </document>

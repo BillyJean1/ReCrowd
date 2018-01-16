@@ -25,12 +25,10 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         facebookLoginButton.delegate = self
-       // emailLoginButton.setFAText(prefixText: "", icon: .FAEnvelope, postfixText: "Login in with e-mail", size: 18,  forState: .normal)
         emailLoginButton.setImage(UIImage.init(icon: .FAEnvelope, size: CGSize(width: 22, height: 25), textColor: .white), for: .normal)
         emailLoginButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, 5.0, 0.0, 0.0)
         emailLoginButton.titleEdgeInsets = UIEdgeInsetsMake(0.0, 106.0, 0.0, 0.0)
         emailLoginButton.contentHorizontalAlignment = .left
-        //emailLoginButton.setFATitleColor(color: .white, forState: .normal)
         self.view.layer.insertSublayer(getGradientBackground(), at: 0)
         self.view.bringSubview(toFront: recrowdLogo)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
@@ -43,7 +41,14 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         loginService.login(completionBlock: { [weak weakSelf = self] (user,error) in
             if user != nil {
-                weakSelf?.performSegue(withIdentifier: "Incheck", sender: user)
+                let userDefaults = UserDefaults.standard
+                    if userDefaults.bool(forKey: "onboardingComplete"){
+                         weakSelf?.performSegue(withIdentifier: "Incheck", sender: user)
+                       
+                    } else{
+                       weakSelf?.performSegue(withIdentifier: "Onboard", sender: self)
+                }
+               
             }
             
             if error != nil {

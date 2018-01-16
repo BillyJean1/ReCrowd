@@ -92,7 +92,12 @@ class EmailLoginViewController: UILoginViewController {
     private func proceedLogin(user: User) {
         self.errorLabel.isHidden = true
         self.passwordTextField.text = ""
-        performSegue(withIdentifier: "Incheck", sender: self)
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: "onboardingComplete"){
+            performSegue(withIdentifier: "Incheck", sender: self)
+        }else{
+            performSegue(withIdentifier: "Onboard", sender: self)
+        }
     }
     
 }
