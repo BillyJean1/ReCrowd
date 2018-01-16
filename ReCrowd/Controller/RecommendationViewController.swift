@@ -85,8 +85,8 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
         recommendationVC.recommendation = recommendation
         recommendationVC.recommendationWasStarted = isStarted
         self.present(recommendationVC, animated: true, completion: nil)
-        
     }
+    
     
     @IBAction func unwindToRecommendationVC(segue:UIStoryboardSegue) { }
 }

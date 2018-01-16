@@ -667,7 +667,7 @@ waar je je bevindt...</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUM-NI-5a7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3387" y="-404"/>
+            <point key="canvasLocation" x="3457" y="-566"/>
         </scene>
         <!--Recommendation Detail View Controller-->
         <scene sceneID="9BE-2H-UEU">
@@ -758,31 +758,22 @@ waar je je bevindt...</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICm-9g-yup" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zq6-5M-7iU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4094.202898550725" y="-404.34782608695656"/>
+            <point key="canvasLocation" x="4261" y="-567"/>
         </scene>
-        <!--Recommendation Navigation View Controller-->
+        <!--Route naar suggestie-->
         <scene sceneID="af4-uK-nOn">
             <objects>
-                <viewController storyboardIdentifier="RecommendationNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DCf-LL-rYr" customClass="RecommendationNavigationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecommendationNavigationViewController" title="Route naar suggestie" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DCf-LL-rYr" customClass="RecommendationNavigationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lrB-Vb-d59">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOp-bL-PHK">
-                                <rect key="frame" x="158" y="160" width="99" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="gxq-zY-QkB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHq-vg-V8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4968.115942028986" y="-404.34782608695656"/>
+            <point key="canvasLocation" x="5001" y="-567"/>
         </scene>
         <!--Uw Profiel-->
         <scene sceneID="Usd-rM-bNO">
@@ -928,7 +919,7 @@ waar je je bevindt...</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYF-nh-CU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2677" y="-397"/>
+            <point key="canvasLocation" x="2691" y="-566"/>
         </scene>
     </scenes>
     <resources>
@@ -950,7 +941,7 @@ waar je je bevindt...</string>
         <image name="ShowButton" width="207" height="391"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="T8Q-Jd-0oR"/>
+        <segue reference="cUA-Hy-lUu"/>
         <segue reference="aq7-Vm-CXW"/>
     </inferredMetricsTieBreakers>
 </document>

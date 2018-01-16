@@ -11,7 +11,7 @@ import CoreLocation
 import GoogleMaps
 import MapKit
 
-class RecommendationNavigationViewController: UIViewController, CLLocationManagerDelegate {
+class RecommendationNavigationViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     let locationManager = CLLocationManager()
 
     var recommendation: Recommendation?
@@ -23,6 +23,7 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
         if let lat = recommendation?.latitude, let lng = recommendation?.longitude {
             let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: lng, zoom: 16)
             self.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+            mapView?.delegate = self
             view = self.mapView
         }
         
@@ -85,10 +86,8 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
                         }
                         
                         // Set destination marker
-                        if let view = self.view as? GMSMapView {
-                            let marker = GMSMarker(position: CLLocationCoordinate2D(latitude: recommendation.latitude, longitude: recommendation.longitude))
-                            marker.icon = GMSMarker.markerImage(with: UIColor.green)
-                            marker.map = view
+                        if let view = self.view as? GMSMapView {                            MapService.shared.setRecommendationMarker(mapView: view, recommendation: recommendation)
+                    
                         }
                     })
                 }catch let error as NSError{
@@ -96,5 +95,11 @@ class RecommendationNavigationViewController: UIViewController, CLLocationManage
                 }
             }
         }).resume()
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        if let _ = marker.userData as? Recommendation {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
 }
