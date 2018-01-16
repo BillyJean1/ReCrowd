@@ -24,11 +24,12 @@ target 'ReCrowd' do
 
   # Pods for UI
   pod 'Font-Awesome-Swift', '~> 1.7.2'
-  
+  pod 'paper-onboarding'
+
   # Pods for Google Maps
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  
+
   # Pods for Anaylising
   pod 'Appsee'
 end

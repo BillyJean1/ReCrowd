@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class EmailLoginViewController: UILoginViewController {
-    
+
     // OUTLETS
     @IBOutlet weak var emailTextField: UITextField! { didSet { emailTextField.addPadding(UITextField.PaddingSide.left(5)) }}
     @IBOutlet weak var passwordTextField: UITextField! { didSet { passwordTextField.addPadding(UITextField.PaddingSide.left(5)) }}
@@ -87,18 +87,20 @@ class EmailLoginViewController: UILoginViewController {
         }
         return email.count >= 8 && password.count >= 8
     }
-    
+
     
     private func proceedLogin(user: User) {
         self.errorLabel.isHidden = true
         self.passwordTextField.text = ""
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckinViewController") as! CheckInViewController
-        checkinVC.user = user
-        
-        // self.present(checkinVC, animated: true, completion: nil)
-        performSegue(withIdentifier: "Incheck", sender: self)
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: "onboardingComplete"){
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckinViewController") as! CheckInViewController
+            checkinVC.user = user
+            performSegue(withIdentifier: "Incheck", sender: self)
+        }else{
+            performSegue(withIdentifier: "Onboard", sender: self)
+        }
     }
     
 }
@@ -115,7 +117,7 @@ extension UITextField {
         
         self.leftViewMode = .always
         self.layer.masksToBounds = true
-        
+
         switch padding {
             
         case .left(let spacing):
