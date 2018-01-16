@@ -28,4 +28,7 @@ target 'ReCrowd' do
   # Pods for Google Maps
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+  
+  # Pods for Anaylising
+  pod 'Appsee'
 end

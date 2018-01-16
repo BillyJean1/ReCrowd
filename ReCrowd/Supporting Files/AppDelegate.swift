@@ -11,6 +11,7 @@ import Firebase
 import UserNotifications
 import GoogleMaps
 import GooglePlaces
+import Appsee
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         application.isStatusBarHidden = true
         FirebaseApp.configure()
+        Appsee.start("069674b0efd44de89b8c0d91b9bc953e")
         NotificationService.shared.askNotificationPermission()
         _ = RecommendationService.shared
 
