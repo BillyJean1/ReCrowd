@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="" />
+    <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/CollectionView/Cells/RewardCollectionViewCell.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/CollectionView/RewardCollectionView.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Controller/ProfileViewController.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RewardViewController.swift" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/LogoutButton.imageset/Contents.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/LogoutButton.imageset/logout-1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/LogoutButton.imageset/logout-2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/LogoutButton.imageset/logout.png" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/CheckInViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/CheckInViewController.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/RewardDetailViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RewardDetailViewController.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Domain/Reward.swift" afterPath="$PROJECT_DIR$/ReCrowd/Domain/Reward.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Service/FirebaseService.swift" afterPath="$PROJECT_DIR$/ReCrowd/Service/FirebaseService.swift" />
+      <change beforePath="$PROJECT_DIR$/ReCrowd/Service/RewardService.swift" afterPath="$PROJECT_DIR$/ReCrowd/Service/RewardService.swift" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -41,8 +57,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -54,6 +68,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -88,11 +104,12 @@
       <workItem from="1515503165615" duration="68000" />
       <workItem from="1515576702792" duration="1158000" />
       <workItem from="1515669741954" duration="860000" />
+      <workItem from="1516093347463" duration="324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2086000" />
+    <option name="totallyTimeSpent" value="2410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -101,12 +118,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />

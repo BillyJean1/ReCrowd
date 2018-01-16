@@ -23,10 +23,14 @@
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
 		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
+		131467A0200762270083A8B9 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1314679F200762270083A8B9 /* RewardViewController.swift */; };
 		133354041FE809E9001F7E09 /* LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133353FF1FE807B1001F7E09 /* LoginTests.swift */; };
 		136320F91FE9380900173EA6 /* CheckInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 136320F81FE9380900173EA6 /* CheckInTests.swift */; };
 		13C9F3E91FFCF93E000D481D /* EventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3E81FFCF93E000D481D /* EventTests.swift */; };
 		13C9F3EB1FFCFD66000D481D /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C9F3EA1FFCFD66000D481D /* UserTests.swift */; };
+		13CED89F200CAD69000FFF9E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CED89E200CAD69000FFF9E /* ProfileViewController.swift */; };
+		13CED8A3200CB802000FFF9E /* RewardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CED8A2200CB802000FFF9E /* RewardCollectionViewCell.swift */; };
+		13CED8A7200CB8DB000FFF9E /* RewardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CED8A6200CB8DB000FFF9E /* RewardCollectionView.swift */; };
 		5623B94AC79D4B944DB2A4DB /* Pods_ReCrowd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */; };
 		5B09BB35200637E8007A79C5 /* Facility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB34200637E8007A79C5 /* Facility.swift */; };
 		5B09BB3720075C60007A79C5 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B09BB3620075C60007A79C5 /* MapService.swift */; };
@@ -77,10 +81,14 @@
 		0AD00A57200618B5008D392F /* UILoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILoginViewController.swift; sourceTree = "<group>"; };
 		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CheckInViewController.swift; path = ../CheckInViewController.swift; sourceTree = "<group>"; };
 		0AE8F0FA1FE2846D0080359F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		1314679F200762270083A8B9 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
 		133353FF1FE807B1001F7E09 /* LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTests.swift; sourceTree = "<group>"; };
 		136320F81FE9380900173EA6 /* CheckInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInTests.swift; sourceTree = "<group>"; };
 		13C9F3E81FFCF93E000D481D /* EventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTests.swift; sourceTree = "<group>"; };
 		13C9F3EA1FFCFD66000D481D /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		13CED89E200CAD69000FFF9E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		13CED8A2200CB802000FFF9E /* RewardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardCollectionViewCell.swift; sourceTree = "<group>"; };
+		13CED8A6200CB8DB000FFF9E /* RewardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardCollectionView.swift; sourceTree = "<group>"; };
 		1988A7A3146356BE241FB83C /* Pods_ReCrowd.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReCrowd.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3860F741519FCFE8F560C926 /* Pods-ReCrowd.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReCrowd.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReCrowd/Pods-ReCrowd.debug.xcconfig"; sourceTree = "<group>"; };
 		5B09BB34200637E8007A79C5 /* Facility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facility.swift; sourceTree = "<group>"; };
@@ -145,10 +153,12 @@
 				0AD00A56200618B5008D392F /* LoginViewController.swift */,
 				0AD00A57200618B5008D392F /* UILoginViewController.swift */,
 				0AE8F0F21FE277070080359F /* CheckInViewController.swift */,
-				04054E302004F40700A747B7 /* RewardDetailViewController.swift */,
 				0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */,
 				5B9DEAD51FEBAD3900DB4D47 /* RecommendationDetailViewController.swift */,
 				5B9DEAD71FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift */,
+				1314679F200762270083A8B9 /* RewardViewController.swift */,
+				04054E302004F40700A747B7 /* RewardDetailViewController.swift */,
+				13CED89E200CAD69000FFF9E /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +175,23 @@
 				5B09BB3620075C60007A79C5 /* MapService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		13CED8A0200CB7C2000FFF9E /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				13CED8A1200CB7D5000FFF9E /* Cells */,
+				13CED8A6200CB8DB000FFF9E /* RewardCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		13CED8A1200CB7D5000FFF9E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				13CED8A2200CB802000FFF9E /* RewardCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		29DAE96E254ED742D768B40E /* Frameworks */ = {
@@ -235,6 +262,7 @@
 			children = (
 				5BD969B11FDFEAC900CF2F12 /* Main.storyboard */,
 				5BD969B61FDFEAC900CF2F12 /* LaunchScreen.storyboard */,
+				13CED8A0200CB7C2000FFF9E /* CollectionView */,
 				0A67E2571FEA903B008EC990 /* Controller */,
 				0A67E2581FEA905D008EC990 /* Service */,
 				5B336A6F1FE153B900A91E61 /* Domain */,
@@ -345,6 +373,11 @@
 		5BD969A21FDFEAC900CF2F12 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					1,
+					2,
+					3,
+				);
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = BillyJeanOne;
@@ -558,11 +591,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AD00A59200618B5008D392F /* LoginViewController.swift in Sources */,
+				13CED8A3200CB802000FFF9E /* RewardCollectionViewCell.swift in Sources */,
+				13CED8A7200CB8DB000FFF9E /* RewardCollectionView.swift in Sources */,
 				0A6DBED61FEA918B001D74EA /* LoginService.swift in Sources */,
 				0A6DBED91FEA918B001D74EA /* FirebaseService.swift in Sources */,
 				5B09BB3720075C60007A79C5 /* MapService.swift in Sources */,
 				0AD00A5A200618B5008D392F /* UILoginViewController.swift in Sources */,
 				5B9DEAD61FEBAD3900DB4D47 /* RecommendationDetailViewController.swift in Sources */,
+				131467A0200762270083A8B9 /* RewardViewController.swift in Sources */,
 				5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */,
 				0A6DBED81FEA918B001D74EA /* RecommendationService.swift in Sources */,
 				0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */,
@@ -576,6 +612,7 @@
 				0AD00A58200618B5008D392F /* EmailLoginViewController.swift in Sources */,
 				5B586C902004CE16000DC68E /* RewardService.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
+				13CED89F200CAD69000FFF9E /* ProfileViewController.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */,
 			);
