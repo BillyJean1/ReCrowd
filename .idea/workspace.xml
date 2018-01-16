@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Domain/Facility.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Service/MapService.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ehbo.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/ehbo.imageset/ehbo.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/flag.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/flag.imageset/flag.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/pin.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/pin.imageset/pin.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/placeholder.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/placeholder.imageset/placeholder.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/question.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/question.imageset/question.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/toilet.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/toilet.imageset/toilet.png" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/CheckInViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/CheckInViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/LoginViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/LoginViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationNavigationViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationNavigationViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/RecommendationViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Service/FirebaseService.swift" afterPath="$PROJECT_DIR$/ReCrowd/Service/FirebaseService.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Service/LoginService.swift" afterPath="$PROJECT_DIR$/ReCrowd/Service/LoginService.swift" />
-    </list>
+    <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -110,12 +87,12 @@
       <updated>1515503164305</updated>
       <workItem from="1515503165615" duration="68000" />
       <workItem from="1515576702792" duration="1158000" />
-      <workItem from="1515669741954" duration="354000" />
+      <workItem from="1515669741954" duration="860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1580000" />
+    <option name="totallyTimeSpent" value="2086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
