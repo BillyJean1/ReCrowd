@@ -320,26 +320,12 @@ waar je je bevindt...</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Yrx-KI-ICb">
-                                <rect key="frame" x="20" y="65" width="414" height="282"/>
+                                <rect key="frame" x="20" y="65" width="414" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-Yl-Ye2">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-Yl-Ye2">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jat-Zi-kNs">
-                                        <rect key="frame" x="0.0" y="250" width="87" height="32"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAO-hQ-VHg">
-                                                <rect key="frame" x="0.0" y="0.0" width="39" height="32"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="mLF-qq-JpC">
-                                                <rect key="frame" x="39" y="0.0" width="48" height="32"/>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcF-N2-O6T">
@@ -356,17 +342,17 @@ waar je je bevindt...</string>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="CJq-1H-WBo">
-                                <rect key="frame" x="20" y="386.33333333333331" width="120" height="45"/>
+                                <rect key="frame" x="20" y="386.33333333333331" width="142" height="45"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="350" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-ko-AJL">
-                                        <rect key="frame" x="0.0" y="0.0" width="67" height="45"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="X5T-za-ZdD">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="45"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3500" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-ko-AJL">
+                                        <rect key="frame" x="53" y="0.0" width="89" height="45"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
                                         <color key="textColor" red="0.70588235294117641" green="0.8784313725490196" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CoinIcon" translatesAutoresizingMaskIntoConstraints="NO" id="X5T-za-ZdD">
-                                        <rect key="frame" x="72" y="0.0" width="48" height="45"/>
-                                    </imageView>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="59U-aO-6xY">
@@ -394,7 +380,6 @@ waar je je bevindt...</string>
                             <constraint firstItem="3yH-Yl-Ye2" firstAttribute="centerX" secondItem="59U-aO-6xY" secondAttribute="centerX" id="3fX-CP-7MH"/>
                             <constraint firstItem="JKo-HN-C0G" firstAttribute="trailing" secondItem="FcF-N2-O6T" secondAttribute="trailing" constant="20" id="5hb-xm-WTL"/>
                             <constraint firstItem="CJq-1H-WBo" firstAttribute="top" secondItem="3yH-Yl-Ye2" secondAttribute="bottom" constant="26" id="Cw2-YW-3G3"/>
-                            <constraint firstItem="JKo-HN-C0G" firstAttribute="trailing" secondItem="CJq-1H-WBo" secondAttribute="trailing" constant="274" id="HRy-Er-dBV"/>
                             <constraint firstItem="JKo-HN-C0G" firstAttribute="bottom" secondItem="FcF-N2-O6T" secondAttribute="bottom" constant="5" id="UqD-JD-g84"/>
                             <constraint firstItem="59U-aO-6xY" firstAttribute="top" secondItem="9yi-Ls-03g" secondAttribute="bottom" constant="7.3333333333333712" id="V8c-Ad-H3l"/>
                             <constraint firstItem="JKo-HN-C0G" firstAttribute="trailing" secondItem="9yi-Ls-03g" secondAttribute="trailing" constant="236" id="VBU-9t-sKI"/>
@@ -410,17 +395,18 @@ waar je je bevindt...</string>
                     </view>
                     <connections>
                         <outlet property="buyRewardButton" destination="FcF-N2-O6T" id="MFh-zy-jWp"/>
-                        <outlet property="coinIcon" destination="mLF-qq-JpC" id="pax-sR-ahN"/>
-                        <outlet property="priceLabel" destination="DAO-hQ-VHg" id="m1t-SL-cd9"/>
+                        <outlet property="coinIcon" destination="X5T-za-ZdD" id="wio-Rb-HZr"/>
+                        <outlet property="priceLabel" destination="ubl-ko-AJL" id="PSA-g5-BB6"/>
                         <outlet property="rewardDescription" destination="59U-aO-6xY" id="VdB-xt-y6e"/>
                         <outlet property="rewardImage" destination="3yH-Yl-Ye2" id="tRe-3D-Iy0"/>
+                        <outlet property="rewardLabel" destination="9yi-Ls-03g" id="14S-eP-1VW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qr2-kE-HKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860.86956521739137" y="2026.6304347826087"/>
         </scene>
-        <!--Reward View Controller-->
+        <!--Beloningen-->
         <scene sceneID="yYf-Pt-s7F">
             <objects>
                 <viewController id="o4d-O5-kJM" customClass="RewardViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
@@ -491,7 +477,7 @@ waar je je bevindt...</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dv7-8j-mGJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="jZC-Lo-TAh"/>
+                    <navigationItem key="navigationItem" title="Beloningen" id="jZC-Lo-TAh"/>
                     <connections>
                         <segue destination="cJS-PF-BeF" kind="show" identifier="RewardDetails" id="Chi-XY-AmI"/>
                     </connections>
@@ -655,8 +641,8 @@ waar je je bevindt...</string>
                     </tabBar>
                     <connections>
                         <segue destination="2SF-aS-V0D" kind="relationship" relationship="viewControllers" id="qTL-o0-2dR"/>
-                        <segue destination="8Mq-9B-LJr" kind="relationship" relationship="viewControllers" id="Ph4-7L-wu4"/>
-                        <segue destination="Tev-Kc-XG5" kind="relationship" relationship="viewControllers" id="FCA-rm-XQ2"/>
+                        <segue destination="esB-ys-QK5" kind="relationship" relationship="viewControllers" id="Ph4-7L-wu4"/>
+                        <segue destination="JFJ-qT-yoH" kind="relationship" relationship="viewControllers" id="FCA-rm-XQ2"/>
                         <segue destination="ffF-74-7hP" kind="relationship" relationship="viewControllers" id="Rbh-de-t82"/>
                     </connections>
                 </tabBarController>
@@ -664,7 +650,7 @@ waar je je bevindt...</string>
             </objects>
             <point key="canvasLocation" x="2032" y="-74"/>
         </scene>
-        <!--Suggestie-->
+        <!--Suggesties en Faciliteiten-->
         <scene sceneID="L5K-0G-saG">
             <objects>
                 <viewController id="8Mq-9B-LJr" customClass="RecommendationViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
@@ -674,14 +660,14 @@ waar je je bevindt...</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="q3o-k4-9zE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Suggestie" image="RecommendedTabIcon" id="oCq-8f-wJz"/>
+                    <navigationItem key="navigationItem" title="Suggesties en Faciliteiten" id="00T-ld-FRf"/>
                     <connections>
                         <segue destination="dYO-lt-1xx" kind="show" identifier="RecommendationDetailViewController" id="zvg-dQ-aMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cUM-NI-5a7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2786" y="-404"/>
+            <point key="canvasLocation" x="3387" y="-404"/>
         </scene>
         <!--Recommendation Detail View Controller-->
         <scene sceneID="9BE-2H-UEU">
@@ -766,11 +752,13 @@ waar je je bevindt...</string>
                         <outlet property="routeButton" destination="Ekw-6a-ZUG" id="3p2-YN-ngV"/>
                         <outlet property="stopButton" destination="vwE-pp-g1P" id="xVE-sj-BeT"/>
                         <segue destination="DCf-LL-rYr" kind="show" id="IQu-Qr-vEq"/>
+                        <segue destination="zq6-5M-7iU" kind="unwind" identifier="unwindToRecommendationVC" unwindAction="unwindToRecommendationVCWithSegue:" id="slT-HO-alA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICm-9g-yup" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zq6-5M-7iU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3786.9565217391309" y="-404.34782608695656"/>
+            <point key="canvasLocation" x="4094.202898550725" y="-404.34782608695656"/>
         </scene>
         <!--Recommendation Navigation View Controller-->
         <scene sceneID="af4-uK-nOn">
@@ -794,9 +782,9 @@ waar je je bevindt...</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHq-vg-V8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4660.8695652173919" y="-404.34782608695656"/>
+            <point key="canvasLocation" x="4968.115942028986" y="-404.34782608695656"/>
         </scene>
-        <!--Profiel-->
+        <!--Uw Profiel-->
         <scene sceneID="Usd-rM-bNO">
             <objects>
                 <viewController id="Tev-Kc-XG5" customClass="ProfileViewController" customModule="ReCrowd" customModuleProvider="target" sceneMemberID="viewController">
@@ -874,7 +862,7 @@ waar je je bevindt...</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NZh-W9-244"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profiel" image="AccountTabIcon" id="bC8-q4-PiE"/>
+                    <navigationItem key="navigationItem" title="Uw Profiel" id="W3D-33-of7"/>
                     <connections>
                         <outlet property="collectionView" destination="wuc-ax-iys" id="oJX-mF-zRE"/>
                         <outlet property="totalPoints" destination="nZ4-W0-DbP" id="4gW-9g-E2k"/>
@@ -883,7 +871,7 @@ waar je je bevindt...</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31N-Xw-1PD" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gbD-w6-4Cb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3007" y="405"/>
+            <point key="canvasLocation" x="3690" y="404"/>
         </scene>
         <!--Beloningen-->
         <scene sceneID="1Cq-y6-Dma">
@@ -903,6 +891,44 @@ waar je je bevindt...</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mga-zb-hfI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2031.8840579710147" y="842.93478260869574"/>
+        </scene>
+        <!--Profiel-->
+        <scene sceneID="yu4-fi-REH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JFJ-qT-yoH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profiel" image="AccountTabIcon" id="bC8-q4-PiE"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WZI-r4-VVX">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Tev-Kc-XG5" kind="relationship" relationship="rootViewController" id="bdQ-Jj-F0m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GqC-oF-BkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3005.7971014492755" y="404.34782608695656"/>
+        </scene>
+        <!--Suggestie-->
+        <scene sceneID="Lcs-Qa-pnz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="esB-ys-QK5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Suggestie" image="RecommendedTabIcon" id="oCq-8f-wJz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fy5-s2-xa1">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8Mq-9B-LJr" kind="relationship" relationship="rootViewController" id="JFT-l1-1os"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tYF-nh-CU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2677" y="-397"/>
         </scene>
     </scenes>
     <resources>

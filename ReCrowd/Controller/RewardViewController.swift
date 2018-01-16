@@ -27,9 +27,10 @@ class RewardViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? RewardDetailViewController{
+        if let destinationVC = segue.destination as? RewardDetailViewController {
         RewardService.shared.getRewardForEvent(completionHandler: {reward in
             destinationVC.priceLabel.text = "\(reward.cost)"
+            destinationVC.rewardLabel.text = "\(reward.name)"
             destinationVC.rewardDescription.text = "\(reward._description)"
             destinationVC.reward = reward
             let rewardPoints = RewardService.shared.getCurrentRewardPointsForUser()
@@ -38,8 +39,6 @@ class RewardViewController: UIViewController {
                 destinationVC.buyRewardButton.isEnabled = false
                 destinationVC.buyRewardButton.alpha = 0.5
             }
-            
-            
         }, id: (buttonId-1))
             
         switch buttonId{
