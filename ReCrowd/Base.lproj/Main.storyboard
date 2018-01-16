@@ -11,9 +11,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Arial.ttf">
-            <string>ArialMT</string>
-        </array>
         <array key="ArialBold.ttf">
             <string>Arial-BoldMT</string>
         </array>
@@ -99,15 +96,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t9A-fH-aXQ" customClass="OnboardingView" customModule="ReCrowd" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="772"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="778"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m3-gi-W13">
-                                <rect key="frame" x="140" y="593" width="116" height="31"/>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m3-gi-W13">
+                                <rect key="frame" x="140" y="593" width="116" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="clD-4G-CHC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="22"/>
                                 <state key="normal" title="Beginnen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -639,7 +636,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rco-cz-YKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1797" y="64"/>
+            <point key="canvasLocation" x="2032" y="-74"/>
         </scene>
         <!--Suggestie-->
         <scene sceneID="L5K-0G-saG">

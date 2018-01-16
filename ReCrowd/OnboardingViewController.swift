@@ -11,28 +11,29 @@ import paper_onboarding
 
 class OnboardingViewController: UIViewController, PaperOnboardingDataSource, PaperOnboardingDelegate {
     
+    
     @IBOutlet weak var getStartedButton: UIButton!
     @IBOutlet weak var onboardingView: OnboardingView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getStartedButton.alpha = 0
         onboardingView.dataSource = self
         onboardingView.delegate = self
     }
     
     func onboardingItemsCount() -> Int {
-        return 3
+        return 4
     }
     
     func onboardingItemAtIndex(_ index: Int) -> OnboardingItemInfo {
         let backgroundColorOne = UIColor(red: 217/255, green: 72/255, blue: 89/255, alpha: 1)
         let backgroundColorTwo = UIColor(red: 106/255, green: 166/255, blue: 211/255, alpha: 1)
         let backgroundColorThree = UIColor(red: 168/255, green: 200/255, blue: 78/255, alpha: 1)
-        
+        let backgroundColorFour = UIColor(red: 255/255, green: 167/255, blue: 20/255, alpha: 1)
         let titleFont = UIFont(name: "AvenirNext-Bold", size: 24)!
         let descriptionFont = UIFont(name: "AvenirNext-Regular", size: 18)!
-        return [OnboardingItemInfo(#imageLiteral(resourceName: "Bell"), "Welcome!", "Cupcake ipsum dolor sit amet. Jelly tootsie roll jelly-o. Gummi bears sweet roll jelly icing cupcake gummi bears soufflé.", #imageLiteral(resourceName: "Bell"), backgroundColorOne, UIColor.white, UIColor.white, titleFont, descriptionFont),OnboardingItemInfo(#imageLiteral(resourceName: "brush"), "A Great Rocket Start", "Cupcake ipsum dolor sit amet. Jelly tootsie roll jelly-o. Gummi bears sweet roll jelly icing cupcake gummi bears soufflé.", #imageLiteral(resourceName: "brush"), backgroundColorTwo, UIColor.white, UIColor.white, titleFont, descriptionFont),OnboardingItemInfo(#imageLiteral(resourceName: "Bear"), "A Great Rocket Start", "Cupcake ipsum dolor sit amet. Jelly tootsie roll jelly-o. Gummi bears sweet roll jelly icing cupcake gummi bears soufflé.", #imageLiteral(resourceName: "Bear"), backgroundColorThree, UIColor.white, UIColor.white, titleFont, descriptionFont) ][index]
+        return [OnboardingItemInfo(#imageLiteral(resourceName: "Bell"), "Suggesties", "Ontvang suggesties om de drukte in het park te vermijden en punten te sparen! Tevens draag je bij aan Crowd-Control in het park!", #imageLiteral(resourceName: "Bell"), backgroundColorOne, UIColor.white, UIColor.white, titleFont, descriptionFont),OnboardingItemInfo(#imageLiteral(resourceName: "CoinOnboarding"), "Sparen", "Spaar zoveel mogelijk punten om de mooiste beloningen te bemachtigen! Hoe meer punten je spaart, hoe vetter de beloningen worden!", #imageLiteral(resourceName: "CoinOnboarding"), backgroundColorTwo, UIColor.white, UIColor.white, titleFont, descriptionFont),OnboardingItemInfo(#imageLiteral(resourceName: "Bear"), "Beloningen", "Zet deze beloningen in om jou dag in het park nog leuker te maken en verlaat het park altijd met een glimlach!", #imageLiteral(resourceName: "Bear"), backgroundColorThree, UIColor.white, UIColor.white, titleFont, descriptionFont),OnboardingItemInfo(#imageLiteral(resourceName: "Facility"), "Faciliteiten", "Krijg inzicht in de faciliteiten in het park zoals toiletten en EHBO-posten! Hierdoor weet je altijd wat er dicht bij je in de buurt is!", #imageLiteral(resourceName: "Facility"), backgroundColorFour, UIColor.white, UIColor.white, titleFont, descriptionFont)][index]
     }
     
     @IBAction func gotStarted(_ sender: UIButton) {
@@ -42,14 +43,14 @@ class OnboardingViewController: UIViewController, PaperOnboardingDataSource, Pap
     }
     
     func onboardingDidTransitonToIndex(_ index: Int) {
-        if index == 2{
+        if index == 3{
             UIView.animate(withDuration: 0.4, animations: {
                 self.getStartedButton.alpha = 1
             })
         }
         
         func onboardingWillTransitonToIndex(_ index: Int) {
-            if index == 1 {
+            if index == 2 {
                 if self.getStartedButton.alpha == 1 {
                     UIView.animate(withDuration: 0.2, animations: {
                         self.getStartedButton.alpha = 0
