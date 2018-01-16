@@ -812,6 +812,9 @@ waar je je bevindt...</string>
                                         <rect key="frame" x="371" y="8" width="35" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="LogoutButton"/>
+                                        <connections>
+                                            <segue destination="gbD-w6-4Cb" kind="unwind" unwindAction="unwindToLoginWithSegue:" id="oZ1-xn-XQ6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -878,8 +881,9 @@ waar je je bevindt...</string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31N-Xw-1PD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="gbD-w6-4Cb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3092.753623188406" y="366.84782608695656"/>
+            <point key="canvasLocation" x="3007" y="405"/>
         </scene>
         <!--Beloningen-->
         <scene sceneID="1Cq-y6-Dma">

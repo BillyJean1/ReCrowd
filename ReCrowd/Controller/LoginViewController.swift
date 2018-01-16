@@ -71,5 +71,14 @@ class LoginViewController: UILoginViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         print("Facebook did log out.")
     }
+    
+    @IBAction func unwindToLogin(segue:UIStoryboardSegue) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
 }
 
