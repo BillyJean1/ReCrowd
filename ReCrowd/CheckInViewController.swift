@@ -57,7 +57,7 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             let userIsAlreadyCheckedIn = event != nil
             if userIsAlreadyCheckedIn {
                 CheckInService.shared.currentCheckedInEvent = event
-                self.performSegue(withIdentifier: "Home", sender: self)
+                weakSelf?.alertCheckoutContinue(event: event!)
             } else {
                 NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
                 CheckInService.shared.updateEventInRange()
@@ -67,44 +67,46 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     
     @IBAction func iHaveATicketButtonPressed(_ sender: UIButton) {
         print("User has pressed the the button which indicates that he/she has a ticket.")
+        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+        if captureDevice == nil {
+            return
+        }
+        
+        iHaveATicketButton.isHidden = true
+        iHaveNoTicketButton.isHidden = true
 
-            iHaveATicketButton.isHidden = true
-            iHaveNoTicketButton.isHidden = true
+        do {
+            let input = try AVCaptureDeviceInput(device: captureDevice!)
+            captureSession = AVCaptureSession()
+            captureSession?.addInput(input)
 
-            let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
+            // Bunch of stuff from the tutorial {
+            let captureMetadataOutput = AVCaptureMetadataOutput()
+            captureSession?.addOutput(captureMetadataOutput)
+            captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+            captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
+            videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
+            videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            videoPreviewLayer?.frame = cameraView.bounds
+            cameraView.layer.addSublayer(videoPreviewLayer!)
+            // }
 
-            do {
-                let input = try AVCaptureDeviceInput(device: captureDevice!)
-                captureSession = AVCaptureSession()
-                captureSession?.addInput(input)
+            // And last but not least, start the video capture. Now the camera part works.
+            captureSession?.startRunning()
 
-                // Bunch of stuff from the tutorial {
-                let captureMetadataOutput = AVCaptureMetadataOutput()
-                captureSession?.addOutput(captureMetadataOutput)
-                captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-                captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
-                videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
-                videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
-                videoPreviewLayer?.frame = cameraView.bounds
-                cameraView.layer.addSublayer(videoPreviewLayer!)
-                // }
-
-                // And last but not least, start the video capture. Now the camera part works.
-                captureSession?.startRunning()
-
-                // To highlight the QRCode / BarCode, we need the following coe:
-                qrCodeHighlightFrameView = UIView()
-                if let qrCodeHighlightFrameView = qrCodeHighlightFrameView {
-                    qrCodeHighlightFrameView.layer.borderColor = UIColor.green.cgColor
-                    qrCodeHighlightFrameView.layer.borderWidth = 2
-                    cameraView.addSubview(qrCodeHighlightFrameView)
-                    cameraView.bringSubview(toFront: qrCodeHighlightFrameView)
-                }
-
-            } catch {
-                print(error)
-                return
+            // To highlight the QRCode / BarCode, we need the following coe:
+            qrCodeHighlightFrameView = UIView()
+            if let qrCodeHighlightFrameView = qrCodeHighlightFrameView {
+                qrCodeHighlightFrameView.layer.borderColor = UIColor.green.cgColor
+                qrCodeHighlightFrameView.layer.borderWidth = 2
+                cameraView.addSubview(qrCodeHighlightFrameView)
+                cameraView.bringSubview(toFront: qrCodeHighlightFrameView)
             }
+
+        } catch {
+            print(error)
+            return
+        }
     }
     
     @IBAction func iHaveNoTicketButtonPressed(_ sender: UIButton) {
@@ -126,6 +128,9 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             locationLabel.isHidden = true
             iHaveATicketButton.isHidden = false
             iHaveNoTicketButton.isHidden = false
+        } else {
+            locationLabel.isHidden = true
+            iHaveATicketButton.isHidden = false
         }
     }
     
@@ -155,6 +160,25 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                 }
             }
         }
+    }
+    
+    private func alertCheckoutContinue(event: Event) {
+        let msg = "Wij hebben gedetecteerd dat u in de \(event.name) bent"
+        let title = "Evenement vastgesteld"
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // Checkout action
+        alert.addAction(UIAlertAction(title: "Uitchecken", style: .destructive, handler: { action in
+            NotificationCenter.default.addObserver(self, selector: #selector(self.showDetectedEvent), name: CheckInService.shared.updatedEventInRangeNotificationName, object: nil)
+            CheckInService.shared.checkOut(atEvent: event)
+            CheckInService.shared.updateEventInRange()
+        }))
+        // Continue acgion
+        alert.addAction(UIAlertAction(title: "Accepteren", style: .default, handler: { action in
+            self.performSegue(withIdentifier: "Home", sender: self)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func unwindToCheckinVC(segue:UIStoryboardSegue) { }

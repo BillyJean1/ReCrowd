@@ -34,6 +34,12 @@ class CheckInService: NSObject {
         updatedEventInRangeNotification = Notification.init(name: self.updatedEventInRangeNotificationName)
     }
     
+    public func checkOut(atEvent event: Event) {
+        print("CheckInService :: Checking you out at \(event.name).")
+        currentCheckedInEvent = nil
+        FirebaseService.shared.registerCheckOut(atEvent: event)
+    }
+    
     public func updateEventInRange() {
         print("CheckInService :: Updating event in range.")
         updateCurrentLocation()

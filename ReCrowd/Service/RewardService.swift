@@ -11,8 +11,6 @@ import Foundation
 class RewardService {
     public static let shared = RewardService()
     public static let rewardPointsDefaultKey = "reward_points"
-    
-    
     public static let rewardsSavedKey = "saved_rewards"
     
     private let userDefaults = UserDefaults.standard

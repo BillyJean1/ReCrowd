@@ -24,9 +24,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         return cell
     }
 
-    
-    
-    
     private func getCorrectImageString(index : Int) -> String{
         let reward = rewards[index]
         

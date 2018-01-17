@@ -160,6 +160,16 @@ class FirebaseService: NSObject {
         })
     }
     
+    func registerCheckOut(atEvent event: Event) {
+        if let userUid = Auth.auth().currentUser?.uid {
+            getCheckedInEvent(completionHandler: { [weak weakSelf = self] (checkedInEvent) in
+                if event.id == checkedInEvent?.id {
+                    weakSelf?.ref.child("check-ins").child("user-" + userUid).child("checkin").removeValue()
+                }
+            })
+        }
+    }
+    
     func registerCheckIn(atEvent event: Event) {
         if let userUid = Auth.auth().currentUser?.uid {
             self.ref

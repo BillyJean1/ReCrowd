@@ -205,9 +205,8 @@
                                     <action selector="iHaveATicketButtonPressed:" destination="DNk-DA-FHA" eventType="touchUpInside" id="8nN-ff-pnv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STY-Qy-U1H">
-                                <rect key="frame" x="32" y="503" width="351" height="68"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STY-Qy-U1H">
+                                <rect key="frame" x="32" y="503.00000000000006" width="351" height="40.666666666666686"/>
                                 <string key="text">We zijn aan het detecteren
 waar je je bevindt...</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -220,18 +219,23 @@ waar je je bevindt...</string>
                         <constraints>
                             <constraint firstItem="btA-md-RAc" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" id="5dN-Rk-fm6"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="aLS-VN-HMa" secondAttribute="trailing" constant="11" id="6Xd-rd-EOU"/>
+                            <constraint firstItem="f48-oh-sFY" firstAttribute="bottom" secondItem="STY-Qy-U1H" secondAttribute="bottom" constant="192.33333333333326" id="9nk-O2-Tgb"/>
                             <constraint firstItem="btA-md-RAc" firstAttribute="top" secondItem="f48-oh-sFY" secondAttribute="top" constant="-64" id="Fun-ma-ODB"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="bottom" secondItem="fFx-0P-P17" secondAttribute="bottom" constant="10" id="IWi-hZ-0zY"/>
+                            <constraint firstItem="STY-Qy-U1H" firstAttribute="top" secondItem="btA-md-RAc" secondAttribute="bottom" constant="165" id="R3g-iZ-ryK"/>
                             <constraint firstItem="aLS-VN-HMa" firstAttribute="top" secondItem="ptO-YA-oln" secondAttribute="top" id="XXg-CZ-kFd"/>
+                            <constraint firstItem="STY-Qy-U1H" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="32" id="aA5-qZ-08N"/>
                             <constraint firstItem="aLS-VN-HMa" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="11" id="cAY-d0-IAB"/>
                             <constraint firstItem="ptO-YA-oln" firstAttribute="top" secondItem="btA-md-RAc" secondAttribute="bottom" constant="10" id="evj-gV-dKD"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="fFx-0P-P17" secondAttribute="trailing" constant="11" id="fMI-0b-4zo"/>
                             <constraint firstItem="fFx-0P-P17" firstAttribute="top" secondItem="ptO-YA-oln" secondAttribute="bottom" constant="8" id="g3P-t4-s6X"/>
+                            <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="STY-Qy-U1H" secondAttribute="trailing" constant="31" id="iRn-e5-Ksk"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="bottom" secondItem="aLS-VN-HMa" secondAttribute="bottom" constant="10" id="ljM-P5-k1f"/>
                             <constraint firstItem="fFx-0P-P17" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="11" id="mdO-8a-BQE"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="btA-md-RAc" secondAttribute="trailing" id="pjs-2E-jK3"/>
                             <constraint firstItem="ptO-YA-oln" firstAttribute="leading" secondItem="f48-oh-sFY" secondAttribute="leading" constant="11" id="uP9-xx-QCf"/>
                             <constraint firstItem="f48-oh-sFY" firstAttribute="trailing" secondItem="ptO-YA-oln" secondAttribute="trailing" constant="11" id="xT7-ob-pOG"/>
+                            <constraint firstItem="STY-Qy-U1H" firstAttribute="leading" secondItem="btA-md-RAc" secondAttribute="trailing" constant="-382" id="yqU-fs-eLe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f48-oh-sFY"/>
                     </view>

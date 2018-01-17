@@ -102,7 +102,6 @@ class EmailLoginViewController: UILoginViewController {
             performSegue(withIdentifier: "Onboard", sender: self)
         }
     }
-    
 }
 
 extension UITextField {
