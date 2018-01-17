@@ -13,8 +13,10 @@ import Firebase
 import FirebaseAuth
 
 class LoginService {
+    public static let shared = LoginService()
     
     private let AUTH_ERROR = "Something went wrong logging in"
+    public static let USER_KEY = "logged_in_user"
     
     public func isAuth() -> Bool {
         let user = Auth.auth().currentUser
@@ -34,12 +36,33 @@ class LoginService {
                         let loggedInUser = User(id: resultObj.value(forKey: "id") as! String? ?? nil,
                                                 name: resultObj.value(forKey: "name") as! String? ?? nil,
                                                 email: resultObj.value(forKey: "email") as! String? ?? nil)
+                        
+                        self.saveLoggedInUser(user: loggedInUser)
                         completionBlock(loggedInUser, nil)
-                        FirebaseService.shared.user = loggedInUser
                     }
                 }
             })
         }
+    }
+    
+    public func saveLoggedInUser(user: User) {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: LoginService.USER_KEY)
+        
+        let encodedData: Data = NSKeyedArchiver.archivedData(withRootObject: user)
+        userDefaults.setValue(encodedData, forKey: LoginService.USER_KEY)
+        userDefaults.synchronize()
+    }
+    
+    public func getLoggedInUser() -> User? {
+        let userDefaults = UserDefaults.standard
+        let data = userDefaults.object(forKey: LoginService.USER_KEY)
+        if let decodedData = data as? Data {
+            if let decodedUser = NSKeyedUnarchiver.unarchiveObject(with: decodedData) as? User {
+                return decodedUser
+            }
+        }
+        return nil
     }
     
     private func authFacebook() {

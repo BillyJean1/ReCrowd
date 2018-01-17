@@ -10,6 +10,8 @@
 		04054E312004F40700A747B7 /* RewardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04054E302004F40700A747B7 /* RewardDetailViewController.swift */; };
 		046F73F71FE28873003DB052 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 046F73F81FE28873003DB052 /* FBSDKCoreKit.framework */; };
 		04AC88861FE7079A00526B63 /* Font_Awesome_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */; };
+		04C9DEE0200DF05900BDB1D1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DEDF200DF05900BDB1D1 /* OnboardingView.swift */; };
+		04C9DEE2200DF1BA00BDB1D1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DEE1200DF1BA00BDB1D1 /* OnboardingViewController.swift */; };
 		0A312D962004CE85000A87FE /* Reward.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A312D952004CE85000A87FE /* Reward.swift */; };
 		0A67E2551FEA6978008EC990 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */; };
 		0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6DBECF1FEA918B001D74EA /* CheckInService.swift */; };
@@ -20,8 +22,6 @@
 		0AD00A58200618B5008D392F /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD00A55200618B5008D392F /* EmailLoginViewController.swift */; };
 		0AD00A59200618B5008D392F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD00A56200618B5008D392F /* LoginViewController.swift */; };
 		0AD00A5A200618B5008D392F /* UILoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD00A57200618B5008D392F /* UILoginViewController.swift */; };
-		04C9DEE0200DF05900BDB1D1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DEDF200DF05900BDB1D1 /* OnboardingView.swift */; };
-		04C9DEE2200DF1BA00BDB1D1 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C9DEE1200DF1BA00BDB1D1 /* OnboardingViewController.swift */; };
 		0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0F21FE277070080359F /* CheckInViewController.swift */; };
 		0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE8F0FA1FE2846D0080359F /* Event.swift */; };
 		0EF3D5058EFF39E9F5CA9003 /* Pods_ReCrowdTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E96437D879B73FE0E9E8122C /* Pods_ReCrowdTests.framework */; };
@@ -43,6 +43,7 @@
 		5B9BE1761FE7E2900045819F /* LoginViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */; };
 		5B9DEAD61FEBAD3900DB4D47 /* RecommendationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DEAD51FEBAD3900DB4D47 /* RecommendationDetailViewController.swift */; };
 		5B9DEAD81FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B9DEAD71FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift */; };
+		5BBE7678200F557C00482324 /* DateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBE7677200F557C00482324 /* DateService.swift */; };
 		5BD65C131FE9263C00BD3618 /* Recommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD65C121FE9263C00BD3618 /* Recommendation.swift */; };
 		5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */; };
 		5BD969B31FDFEAC900CF2F12 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD969B11FDFEAC900CF2F12 /* Main.storyboard */; };
@@ -73,10 +74,6 @@
 		04AC88871FE7079A00526B63 /* Font_Awesome_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Font_Awesome_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C9DEDF200DF05900BDB1D1 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		04C9DEE1200DF1BA00BDB1D1 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		0AE8F0F21FE277070080359F /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
-		0AE8F0F41FE277660080359F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
-		0AE8F0F61FE27BEE0080359F /* CheckInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
-		0AE8F0F81FE2831F0080359F /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		0A312D952004CE85000A87FE /* Reward.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reward.swift; sourceTree = "<group>"; };
 		0A67E2541FEA6978008EC990 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		0A6DBECF1FEA918B001D74EA /* CheckInService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
@@ -110,6 +107,7 @@
 		5B9BE1751FE7E2900045819F /* LoginViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTest.swift; sourceTree = "<group>"; };
 		5B9DEAD51FEBAD3900DB4D47 /* RecommendationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationDetailViewController.swift; sourceTree = "<group>"; };
 		5B9DEAD71FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationNavigationViewController.swift; sourceTree = "<group>"; };
+		5BBE7677200F557C00482324 /* DateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateService.swift; sourceTree = "<group>"; };
 		5BD65C121FE9263C00BD3618 /* Recommendation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendation.swift; sourceTree = "<group>"; };
 		5BD969AA1FDFEAC900CF2F12 /* ReCrowd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReCrowd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD969AD1FDFEAC900CF2F12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +179,7 @@
 				0A6DBED21FEA918B001D74EA /* RecommendationService.swift */,
 				5B586C8F2004CE16000DC68E /* RewardService.swift */,
 				5B09BB3620075C60007A79C5 /* MapService.swift */,
+				5BBE7677200F557C00482324 /* DateService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -621,17 +620,14 @@
 				0AE8F0FB1FE2846D0080359F /* Event.swift in Sources */,
 				5B9DEAD81FEBE5A700DB4D47 /* RecommendationNavigationViewController.swift in Sources */,
 				5B09BB35200637E8007A79C5 /* Facility.swift in Sources */,
+				5BBE7678200F557C00482324 /* DateService.swift in Sources */,
 				0AD00A58200618B5008D392F /* EmailLoginViewController.swift in Sources */,
 				5B586C902004CE16000DC68E /* RewardService.swift in Sources */,
 				04C9DEE2200DF1BA00BDB1D1 /* OnboardingViewController.swift in Sources */,
-				0AE8F0F91FE2831F0080359F /* FirebaseService.swift in Sources */,
-				5B336A6B1FE14B4800A91E61 /* LoginService.swift in Sources */,
-				0AE8F0F71FE27BEE0080359F /* CheckInService.swift in Sources */,
 				0AE8F0F31FE277070080359F /* CheckInViewController.swift in Sources */,
 				13CED89F200CAD69000FFF9E /* ProfileViewController.swift in Sources */,
 				5BD969AE1FDFEAC900CF2F12 /* AppDelegate.swift in Sources */,
 				0A6DBED51FEA918B001D74EA /* CheckInService.swift in Sources */,
-				5B9BE16F1FE7E04F0045819F /* UILoginViewController.swift in Sources */,
 				04C9DEE0200DF05900BDB1D1 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

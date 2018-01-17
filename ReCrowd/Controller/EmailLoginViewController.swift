@@ -47,8 +47,9 @@ class EmailLoginViewController: UILoginViewController {
                     return
                 }
                 
-                self.proceedLogin(user: User())
-                print("success login!")
+                let user =  User(id: user?.uid ?? nil, name: user?.displayName ?? nil, email: email)
+                LoginService.shared.saveLoggedInUser(user: user)
+                self.proceedLogin(user: user)
             })
         }
     }
@@ -94,9 +95,6 @@ class EmailLoginViewController: UILoginViewController {
         self.passwordTextField.text = ""
         let userDefaults = UserDefaults.standard
         if userDefaults.bool(forKey: "onboardingComplete"){
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let checkinVC = storyboard.instantiateViewController(withIdentifier: "CheckinViewController") as! CheckInViewController
-            checkinVC.user = user
             performSegue(withIdentifier: "Incheck", sender: self)
         }else{
             performSegue(withIdentifier: "Onboard", sender: self)

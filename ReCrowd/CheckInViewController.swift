@@ -10,11 +10,11 @@ import UIKit
 import AVFoundation
 
 class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
-    public var user: User? // Guys, waarvoor is deze variabelen nuttig?
     private var detectedEvent: Event?
     
     // OUTLETS
+    @IBOutlet weak var greetingsLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var iHaveATicketButton: UIButton!
     @IBOutlet weak var iHaveNoTicketButton: UIButton!
@@ -43,6 +43,11 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
                               AVMetadataObject.ObjectType.qr]
 
     override func viewWillAppear(_ animated: Bool) {
+        greetingsLabel.text = DateService.shared.getDayZoneString()
+        
+        let user = LoginService.shared.getLoggedInUser()
+        nameLabel.text = user?.name ?? (user?.email ?? "Bezoeker")
+        
         locationLabel.isHidden = false
         iHaveATicketButton.isHidden = true
         iHaveNoTicketButton.isHidden = true

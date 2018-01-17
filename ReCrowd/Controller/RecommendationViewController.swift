@@ -13,7 +13,7 @@ import CoreLocation
 
 class RecommendationViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     private let locationManager = CLLocationManager()
-    private let zoomFactor = 43.0
+    private let zoomFactor = 55.0
     
     override func viewDidLoad() {
         loadMapFeatures()
@@ -86,7 +86,6 @@ class RecommendationViewController: UIViewController, CLLocationManagerDelegate,
         recommendationVC.recommendationWasStarted = isStarted
         self.present(recommendationVC, animated: true, completion: nil)
     }
-    
     
     @IBAction func unwindToRecommendationVC(segue:UIStoryboardSegue) { }
 }

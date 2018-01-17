@@ -10,22 +10,15 @@ import UIKit
 import Firebase
 import FirebaseDatabase // Kevin: We need to find out why this is needed but not needed :D
 
-/*
- FaceBook UserID Kevin: D07p3uNKGURx5DorWgHDQVr9Fdp2
- */
+
 
 class FirebaseService: NSObject {
     private var ref: DatabaseReference!
-    
-    public var user:User?
-    
     public static let shared = FirebaseService()
     
     private override init() {
         ref = Database.database().reference()
     }
-    
-
 
     func getFacilities(completionHandler: @escaping (_ facility: [Facility]) -> ()) {
         self.getCheckedInEvent(completionHandler: { [weak self] (event) in

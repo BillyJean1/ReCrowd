@@ -241,9 +241,11 @@ waar je je bevindt...</string>
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="aLS-VN-HMa" id="ohi-Wn-jX4"/>
+                        <outlet property="greetingsLabel" destination="hzG-s8-JBJ" id="FT3-wb-FW6"/>
                         <outlet property="iHaveATicketButton" destination="ptO-YA-oln" id="ndA-YV-8yn"/>
                         <outlet property="iHaveNoTicketButton" destination="fFx-0P-P17" id="3vb-oT-DbL"/>
                         <outlet property="locationLabel" destination="STY-Qy-U1H" id="RdW-R1-E8m"/>
+                        <outlet property="nameLabel" destination="2UL-6F-Qt6" id="XEY-Tc-8mN"/>
                         <segue destination="4n6-sN-vSK" kind="show" identifier="Home" id="V2c-do-6DV"/>
                     </connections>
                 </viewController>
