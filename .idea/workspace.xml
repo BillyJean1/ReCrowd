@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/OnboardingView.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/OnboardingViewController.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/RewardDetailViewController.swift" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bear.imageset/Bear@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bear.imageset/Bear@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bear.imageset/Bear@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bear.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bell.imageset/Bell@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bell.imageset/Bell@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bell.imageset/Bell@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Bell.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinOnboarding.imageset/CoinOnboarding@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinOnboarding.imageset/CoinOnboarding@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinOnboarding.imageset/CoinOnboarding@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/CoinOnboarding.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Facility.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Facility.imageset/Facility@1x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Facility.imageset/Facility@2x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Facility.imageset/Facility@3x.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Informationscreen.imageset/Contents.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/ReCrowd/Supporting Files/Assets.xcassets/Informationscreen.imageset/Informationscreen.png" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Podfile" afterPath="$PROJECT_DIR$/Podfile" />
-      <change beforePath="$PROJECT_DIR$/Podfile.lock" afterPath="$PROJECT_DIR$/Podfile.lock" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ReCrowd.xcodeproj/project.pbxproj" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" afterPath="$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/EmailLoginViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/EmailLoginViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/Controller/LoginViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/Controller/LoginViewController.swift" />
-      <change beforePath="$PROJECT_DIR$/ReCrowd/HomeViewController.swift" afterPath="$PROJECT_DIR$/ReCrowd/HomeViewController.swift" />
-    </list>
+    <list default="true" id="2fa6123b-09a5-4575-9d36-a0d508277b46" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -48,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="386">
-              <caret line="921" column="50" lean-forward="true" selection-start-line="921" selection-start-column="50" selection-end-line="921" selection-end-column="50" />
+              <caret line="910" column="50" lean-forward="false" selection-start-line="910" selection-start-column="50" selection-end-line="910" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -158,12 +128,12 @@
       <workItem from="1515669741954" duration="860000" />
       <workItem from="1516093347463" duration="324000" />
       <workItem from="1516099201665" duration="1440000" />
-      <workItem from="1516100900210" duration="114000" />
+      <workItem from="1516100900210" duration="669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3964000" />
+    <option name="totallyTimeSpent" value="4519000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -202,7 +172,7 @@
     <entry file="file://$PROJECT_DIR$/ReCrowd/Base.lproj/Main.storyboard">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
-          <caret line="921" column="50" lean-forward="true" selection-start-line="921" selection-start-column="50" selection-end-line="921" selection-end-column="50" />
+          <caret line="910" column="50" lean-forward="false" selection-start-line="910" selection-start-column="50" selection-end-line="910" selection-end-column="50" />
           <folding />
         </state>
       </provider>
