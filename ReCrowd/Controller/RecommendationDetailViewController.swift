@@ -80,7 +80,7 @@ class RecommendationDetailViewController: UIViewController, CLLocationManagerDel
             
             if let lat = recommendation?.latitude, let lng = recommendation?.longitude {
                 let distance = location.distance(from: CLLocation(latitude: lat, longitude: lng))
-                self.distanceLabel.text = "Afstand: \(Int(distance)) meter"
+                self.distanceLabel.text = "\(Int(distance))M"
             }
             
             if let recommendation = self.recommendation, self.recommendationWasStarted! == true {
