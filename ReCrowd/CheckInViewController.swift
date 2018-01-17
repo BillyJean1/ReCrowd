@@ -117,7 +117,6 @@ class CheckInViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     @IBAction func iHaveNoTicketButtonPressed(_ sender: UIButton) {
         if let detectedEvent = CheckInService.shared.eventInRange {
             checkIn(atEvent: detectedEvent)
-            performSegue(withIdentifier: "Home", sender: self)
         }
     }
     
